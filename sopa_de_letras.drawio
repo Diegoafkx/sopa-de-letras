@@ -79,7 +79,7 @@
         <mxCell id="p8p6fkgJktezZmNcpXsv-24" value="«interface»&lt;br&gt;&lt;b&gt;Inicio&lt;/b&gt;" style="html=1;whiteSpace=wrap;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="340" y="700" width="110" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="p8p6fkgJktezZmNcpXsv-25" value="«interface»&lt;br&gt;&lt;b&gt;Sopa De Letras&lt;/b&gt;" style="html=1;whiteSpace=wrap;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+        <mxCell id="p8p6fkgJktezZmNcpXsv-25" value="«interface»&lt;br&gt;&lt;b&gt;Sopa De Letras(Grafos)&lt;/b&gt;" style="html=1;whiteSpace=wrap;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="520" y="820" width="110" height="50" as="geometry" />
         </mxCell>
         <mxCell id="p8p6fkgJktezZmNcpXsv-26" value="«interface»&lt;br&gt;&lt;b&gt;Nuevas_Palabras&lt;/b&gt;" style="html=1;whiteSpace=wrap;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
