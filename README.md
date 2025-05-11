@@ -1,3 +1,3 @@
 # sopa-de-letras
-Estudaintes:
-Digo Arreaza 
+Estudiantes:
+Diego Arreaza 
