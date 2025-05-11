@@ -41,7 +41,7 @@
           <mxGeometry y="78" width="140" height="26" as="geometry" />
         </mxCell>
         <mxCell id="p8p6fkgJktezZmNcpXsv-12" value="Configurador_Sopa_de_Letras" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="324" y="440" width="180" height="86" as="geometry" />
+          <mxGeometry x="289" y="440" width="180" height="86" as="geometry" />
         </mxCell>
         <mxCell id="p8p6fkgJktezZmNcpXsv-13" value="+ field: type" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="p8p6fkgJktezZmNcpXsv-12" vertex="1">
           <mxGeometry y="26" width="180" height="26" as="geometry" />
@@ -111,6 +111,12 @@
               <mxPoint x="770" y="355" />
               <mxPoint x="760" y="350" />
             </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="W46oFYUZNGHQCWjOWdAy-4" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;fontSize=12;curved=1;exitX=0.529;exitY=1.038;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="p8p6fkgJktezZmNcpXsv-11" target="p8p6fkgJktezZmNcpXsv-12">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="410" y="400" as="sourcePoint" />
+            <mxPoint x="570" y="400" as="targetPoint" />
           </mxGeometry>
         </mxCell>
       </root>
