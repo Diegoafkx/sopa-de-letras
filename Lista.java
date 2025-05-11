@@ -67,7 +67,10 @@ public class Lista <T> {
             }   
         }
     }
-    
+    public void PreInsertar(T x, Nodo <T> pValor){
+        Nodo <T> pNew = new Nodo<>(x);
+        
+    }
     public String Recorrer(){
         Nodo <T> pAux;
         String resultado ="";
