@@ -3,13 +3,21 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package sopas_de_letras;
-
+import javax.swing.JFileChooser ;
+import javax.swing.filechooser.FileNameExtensionFilter;
+import java.io.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 /**
  *
  * @author Windows 10 Pro
  */
 public class Ventana1 extends javax.swing.JFrame {
-
+    private JFileChooser Buscador = new JFileChooser();
+    private int retorno;
+    private File Archivo;
+    private FileReader Texto;
+    private BufferedReader lector;
     /**
      * Creates new form Ventana1
      */
@@ -27,44 +35,98 @@ public class Ventana1 extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        Agregar = new javax.swing.JButton();
-        exit = new javax.swing.JButton();
+        Search = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jText = new javax.swing.JTextField();
+        Continue = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Agregar.setText("Agregar");
-        Agregar.addActionListener(new java.awt.event.ActionListener() {
+        Search.setText("Buscar");
+        Search.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AgregarActionPerformed(evt);
+                SearchActionPerformed(evt);
             }
         });
-        jPanel1.add(Agregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 130, -1, -1));
+        jPanel1.add(Search, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 190, -1, -1));
 
-        exit.setText("x");
-        exit.addActionListener(new java.awt.event.ActionListener() {
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Selecione el diccionario.");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 350, 50));
+        jPanel1.add(jText, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, 240, -1));
+
+        Continue.setText("Continuar");
+        Continue.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                exitActionPerformed(evt);
+                ContinueActionPerformed(evt);
             }
         });
-        jPanel1.add(exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 0, -1, 20));
+        jPanel1.add(Continue, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 260, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 300));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void AgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarActionPerformed
+    private void SearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchActionPerformed
         // TODO add your handling code here:
         
-    }//GEN-LAST:event_AgregarActionPerformed
+        this.setVisible(false);
+        Buscador.setDialogTitle("Buscar Archivo");
+        
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("letras","txt"); 
+        Buscador.setFileFilter(filter);
+        Buscador.setFileSelectionMode(JFileChooser.FILES_ONLY);
+        retorno = Buscador.showOpenDialog(this);
+        
+        if (retorno == JFileChooser.APPROVE_OPTION){
+            Archivo = Buscador.getSelectedFile();
+            jText.setText(Archivo.getPath());
+            this.setVisible(true);
+            
+            
+            
+        }
+        
+    }//GEN-LAST:event_SearchActionPerformed
 
-    private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
-        // TODO add your handling code here:
-        this.dispose();
-    }//GEN-LAST:event_exitActionPerformed
+    private void ContinueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContinueActionPerformed
+        
+        try {
+            // TODO add your handling code here:
+            String Direccion = Archivo.getPath();
+            Texto = new FileReader(Direccion);
+            if (Texto.ready()){
+                
+                
+                lector = new BufferedReader(Texto);
+                String cadena;
+                while ((cadena = lector.readLine())!= null){
+                    if (cadena.equals("dic")){
+                        
+                    }
+                    else if(cadena.equals("/dic")){
+                        
+                    }
+                    else{
+                        Lista palabras = new Lista("palabras");
+                        Lista.Insertar(cadena);
+                    }
+                }
+            }else {
+                
+            }
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Ventana1.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Ventana1.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+    }//GEN-LAST:event_ContinueActionPerformed
 
     /**
      * @param args the command line arguments
@@ -102,8 +164,10 @@ public class Ventana1 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Agregar;
-    private javax.swing.JButton exit;
+    private javax.swing.JButton Continue;
+    private javax.swing.JButton Search;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField jText;
     // End of variables declaration//GEN-END:variables
 }
