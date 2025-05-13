@@ -13,11 +13,9 @@ public class Nodo {
     protected String data;
     protected Nodo  pNext;
     
-    Nodo(String elem, Nodo sig){
+    Nodo(String elem){
         data=elem;
-        pNext=sig;
+        pNext=null;
     }
-    
-    
     
 }

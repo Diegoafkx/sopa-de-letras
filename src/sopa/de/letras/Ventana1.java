@@ -17,12 +17,14 @@ public class Ventana1 extends javax.swing.JFrame {
     /**
      * Creates new form Elegir_Diccionario
      */
-    private JFileChooser Buscador = new JFileChooser();
+    
     private int retorno;
     private File Archivo;
     private FileReader Texto;
     private BufferedReader lector;
-    private Lista palabras;
+    private Lista palabras = new Lista ();
+    private Lista Letras = new Lista();
+    
     public Ventana1() {
         initComponents();
     }
@@ -40,6 +42,7 @@ public class Ventana1 extends javax.swing.JFrame {
         Search = new javax.swing.JButton();
         Continue = new javax.swing.JButton();
         jText = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -69,6 +72,9 @@ public class Ventana1 extends javax.swing.JFrame {
         });
         jPanel1.add(jText, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 270, -1));
 
+        jLabel1.setText("Ingrese el archivo con el diccionario.");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 300, 50));
+
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 410, 310));
 
         pack();
@@ -77,6 +83,7 @@ public class Ventana1 extends javax.swing.JFrame {
     private void SearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
+        JFileChooser Buscador = new JFileChooser();
         Buscador.setDialogTitle("Buscar Archivo");
         
         FileNameExtensionFilter filter = new FileNameExtensionFilter("letras","txt"); 
@@ -87,10 +94,7 @@ public class Ventana1 extends javax.swing.JFrame {
         if (retorno == JFileChooser.APPROVE_OPTION){
             Archivo = Buscador.getSelectedFile();
             jText.setText(Archivo.getPath());
-            this.setVisible(true);
-            
-            
-            
+            this.setVisible(true);  
         }
     }//GEN-LAST:event_SearchActionPerformed
 
@@ -101,48 +105,62 @@ public class Ventana1 extends javax.swing.JFrame {
     private void ContinueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContinueActionPerformed
         // TODO add your handling code here:
          
-        try {
-            // TODO add your handling code here:
-            String Direccion = Archivo.getPath();
-            Texto = new FileReader(Direccion);
-            if (Texto.ready()){
+        if (retorno == JFileChooser.APPROVE_OPTION){
+            try {
+                // TODO add your handling code here:
+                String Direccion = Archivo.getPath();
+                Texto = new FileReader(Direccion);
                 
-                
+                    
                 lector = new BufferedReader(Texto);
                 String cadena;
                 while ((cadena = lector.readLine())!= null){
                     if (cadena.equals("dic")){
-                        palabras = new Lista();
                         boolean firstime = true;
-                        while(cadena.equals("/dic")== true){
+                        if(cadena.equals("/dic")== false){
                             if(firstime == true){
                                 palabras.PreInsertar(cadena);
                                 firstime = false;
+                            }else{
+                                palabras.Insertar(cadena);
+                                       
                             }
-                            else{
                             
-                                
-                            
+                        }
+                         
+                    }
+                    else if(cadena.equals("tab")){
+                        boolean firstime = true;
+                        if(cadena.equals("/dic")== false){
+                            if(firstime == true){
+                                Letras.PreInsertar(cadena);
+                                firstime = false;
+                            }else{
+                                Letras.Insertar(cadena);
                             }
                         }
                     }
-                    
-                    else{
-                        
-                        
-                    }
-                }
-            }
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(Ventana1.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(Ventana1.class.getName()).log(Level.SEVERE, null, ex);
+                } 
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(Ventana1.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {
+                Logger.getLogger(Ventana1.class.getName()).log(Level.SEVERE, null, ex);
+            } 
         }
+        Ventana2 v2 = new Ventana2(this);
     }//GEN-LAST:event_ContinueActionPerformed
 
     /**
-     * @param args the command line arguments
+     * @return 
      */
+    public Lista get_palabras(){
+        
+        return palabras; 
+    }
+    public Lista get_letras(){
+        
+        return Letras; 
+    }
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -170,6 +188,7 @@ public class Ventana1 extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new Ventana1().setVisible(true);
             }
@@ -179,6 +198,7 @@ public class Ventana1 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Continue;
     private javax.swing.JButton Search;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jText;
     // End of variables declaration//GEN-END:variables

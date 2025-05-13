@@ -11,7 +11,7 @@ package sopa.de.letras;
 public class Lista  {
     private Nodo pfirst;
     private Nodo pfinal;
-
+    private Nodo pNew; 
     private int iN;
 
 
@@ -26,10 +26,6 @@ public class Lista  {
         return this.iN;
     }
 
-    public boolean Es_Vacio(){
-        return this.pfirst == null;
-    }
-
     public  Nodo Primero(){
     return this.pfirst;
     }
@@ -39,64 +35,72 @@ public class Lista  {
 
     }
 
-    public Nodo Ultimo(){
-        return null;
-        
-    }
 
     public Nodo Proximo(Nodo pValor){
-        if (pValor !=null){
-            pValor = pValor.pNext;
-            return pValor;
-        }
-        else{
-            return null;
-        }
+        
+        pValor = pValor.pNext;
+        return pValor;
+        
     }
         
         public void PreInsertar(String x){
-        Nodo pNew = new Nodo(x,pfirst);
-        this.pfirst =pNew;
+        pNew = new Nodo(x);
         iN++;
         if(pfinal == null){
-            
+            this.pfirst =pNew;
             pfinal = pfirst;
             
             }    
         }
     
-        public void Insertar(String x,Nodo pValor){
-        Nodo pNew = new Nodo(x,pValor);
-        if(this.Es_Vacio()){
-            this.pfirst =pNew;
-            this.pfinal = this.pfirst;
-            iN++;
-        }
-        else{
-            if(pValor != this.Ultimo()){
-                pNew.pNext = pValor.pNext;
-                pValor.pNext = pNew;
-                this.pfinal = pNew;
-                iN++;
+        public void Insertar(String x){
+        
+        Nodo pLast = pNew;    
+        pNew = new Nodo(x);
+        pLast.pNext = pNew;
+        iN++;
             }   
-        }
-    }
+        
+    
    
     public String Recorrer(){
-        Nodo  pAux;
-        String resultado ="";
-
-        if (this.Es_Vacio()){
-            resultado = "La lista es vacia";
-
+        String aux;
+        if(pfirst != null){
+            aux = this.Leer(pfirst);
+            Nodo paux = this.Proximo(pfirst);
+            while(this.Proximo(paux)!= null){
+                aux =aux+"\n"+this.Leer(paux);
+                paux = this.Proximo(paux);
+            }
+            aux =aux+"\n"+this.Leer(paux);
         }
         else{
-            pAux= this.Primero();
-            while(pAux != this.Ultimo()){
-                resultado = resultado + this.Leer(pAux) + ", ";
-                pAux = this.Proximo(pAux);
+           aux = "La lista esta vacia";
+        }
+        return aux;
+    }
+    
+    public String Eliminar(String daux){
+        
+        if(daux.equals(this.Leer(pfirst))== false){
+            Nodo paux = this.Proximo(pfirst);
+            Nodo paux1 = paux;
+            
+            for (int i = 0; i < 10; i++) {
+                if(daux.equals(this.Leer(paux))== false){
+                    paux = this.Proximo(paux);
+                    
+                }
+                else{
+                    paux1.pNext = paux.pNext;
+                    return "Se a eliminado con exito";
+                }    
             }
         }
-        return resultado;
+        else{
+            pfirst = this.Proximo(pfirst);
+            return "Se a eliminado con exito";
+        }
+        return "Ha surrgido un error.\nNo se encuentro la palaabraa";
     }
 }
