@@ -10,12 +10,20 @@ package sopa.de.letras;
  */
 public class Nodo {
     
+    /**
+     *
+     */
     protected String data;
+
+    /**
+     *
+     */
     protected Nodo  pNext;
     
+    protected Nodo pPrevious;
     Nodo(String elem){
         data=elem;
         pNext=null;
+        pPrevious = null;
     }
-    
 }

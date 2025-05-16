@@ -22,20 +22,37 @@ public class Lista  {
 
     }
 
+    /**
+     *
+     * @return
+     */
     public int Tamaño( ){
         return this.iN;
     }
 
+    /**
+     *
+     * @return
+     */
     public  Nodo Primero(){
     return this.pfirst;
     }
 
+    /**
+     *
+     * @param pValor
+     * @return
+     */
     public String Leer(Nodo pValor){
         return pValor.data;
 
     }
 
-
+    /**
+     *
+     * @param pValor
+     * @return
+     */
     public Nodo Proximo(Nodo pValor){
         
         pValor = pValor.pNext;
@@ -43,27 +60,47 @@ public class Lista  {
         
     }
         
-        public void PreInsertar(String x){
+        
+    /**
+     *
+     * @param x
+     */
+    public void PreInsertar(String x){
         pNew = new Nodo(x);
         iN++;
         if(pfinal == null){
-            this.pfirst =pNew;
-            pfinal = pfirst;
+            this.pfirst = this.pfinal = pNew ;
             
-            }    
+            }else{
+            pNew.pNext = pfirst;
+            pfirst.pPrevious = pNew; 
+            pfirst = pNew;
+            }
         }
     
-        public void Insertar(String x){
+    /**
+     *
+     * @param x
+     */
+    public void Insertar(String x){
         
-        Nodo pLast = pNew;    
         pNew = new Nodo(x);
-        pLast.pNext = pNew;
         iN++;
-            }   
+        if(pfinal == null){
+            this.pfirst = this.pfinal =pNew;
+            
+            }else{
+            pNew.pPrevious = pfinal;
+            pfinal.pNext = pNew;
+            pfinal = pNew;
+            }
+        }   
         
-    
-   
-    public String Recorrer(){
+    /**
+     *
+     * @return
+     */
+    public String Datos(){
         String aux;
         if(pfirst != null){
             aux = this.Leer(pfirst);
@@ -74,12 +111,19 @@ public class Lista  {
             }
             aux =aux+"\n"+this.Leer(paux);
         }
-        else{
+        else if(pfirst == null){
+            aux = this.Leer(pfirst);
+        }else{
            aux = "La lista esta vacia";
         }
         return aux;
     }
     
+    /**
+     *
+     * @param daux
+     * @return
+     */
     public String Eliminar(String daux){
         
         if(daux.equals(this.Leer(pfirst))== false){

@@ -25,6 +25,9 @@ public class Ventana1 extends javax.swing.JFrame {
     private Lista palabras = new Lista ();
     private Lista Letras = new Lista();
     
+    /**
+     *
+     */
     public Ventana1() {
         initComponents();
     }
@@ -114,30 +117,41 @@ public class Ventana1 extends javax.swing.JFrame {
                     
                 lector = new BufferedReader(Texto);
                 String cadena;
+                boolean firstime = true;
+                boolean firstime1 = true;
                 while ((cadena = lector.readLine())!= null){
-                    if (cadena.equals("dic")){
-                        boolean firstime = true;
+                    if ((cadena.equals("dic"))== false){
+                        
                         if(cadena.equals("/dic")== false){
                             if(firstime == true){
                                 palabras.PreInsertar(cadena);
                                 firstime = false;
                             }else{
-                                palabras.Insertar(cadena);
-                                       
+                                palabras.Insertar(cadena);         
                             }
                             
-                        }
-                         
+                        }else{
+                            break;
+                         }               
                     }
-                    else if(cadena.equals("tab")){
-                        boolean firstime = true;
-                        if(cadena.equals("/dic")== false){
-                            if(firstime == true){
-                                Letras.PreInsertar(cadena);
-                                firstime = false;
-                            }else{
-                                Letras.Insertar(cadena);
+                        
+                }
+                while ((cadena = lector.readLine())!= null){    
+                    if(cadena.equals("tab")){
+                        
+                        if(cadena.equals("/tab")== false){
+                            String[] aux = cadena.split(",");
+                            for (int i = 0; i < aux.length; i++) {
+                            
+                                if(firstime1 == true){
+                                    Letras.PreInsertar(aux[i]);
+                                    firstime1 = false;
+                                }else{
+                                    Letras.Insertar(aux[i]);
+                                }
                             }
+                        }else{
+                            break;
                         }
                     }
                 } 
@@ -154,13 +168,23 @@ public class Ventana1 extends javax.swing.JFrame {
      * @return 
      */
     public Lista get_palabras(){
-        
-        return palabras; 
+        Lista words = palabras;
+        return words; 
     }
-    public Lista get_letras(){
-        
-        return Letras; 
+
+    /**
+     *
+     * @return
+     */
+    public Lista get_letras(){    
+        Lista words = Letras;
+        return words; 
     }
+
+    /**
+     *
+     * @param args
+     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -202,4 +226,8 @@ public class Ventana1 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jText;
     // End of variables declaration//GEN-END:variables
+
+
 }
+
+
