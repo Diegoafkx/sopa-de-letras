@@ -168,8 +168,7 @@ public class Ventana1 extends javax.swing.JFrame {
      * @return 
      */
     public Lista get_palabras(){
-        Lista words = palabras;
-        return words; 
+        return palabras; 
     }
 
     /**
@@ -177,8 +176,7 @@ public class Ventana1 extends javax.swing.JFrame {
      * @return
      */
     public Lista get_letras(){    
-        Lista words = Letras;
-        return words; 
+        return Letras; 
     }
 
     /**

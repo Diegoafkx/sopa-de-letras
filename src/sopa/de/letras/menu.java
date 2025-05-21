@@ -9,12 +9,15 @@ package sopa.de.letras;
  * @author sl001
  */
 public class menu extends javax.swing.JFrame {
-
+    private Ventana1 v1;
     /**
      * Creates new form menu
      */
     public menu(Ventana1 v1) {
         initComponents();
+        this.setUndecorated(true);
+        this.v1 = v1;
+        
     }
 
     /**
@@ -27,47 +30,61 @@ public class menu extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jToggleButton1 = new javax.swing.JToggleButton();
-        jToggleButton2 = new javax.swing.JToggleButton();
-        jToggleButton3 = new javax.swing.JToggleButton();
+        new_word = new javax.swing.JToggleButton();
+        inicio = new javax.swing.JToggleButton();
+        ver_palabras = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jToggleButton1.setText("Agregar Palabra al Diccionario");
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+        new_word.setText("Agregar Palabra al Diccionario");
+        new_word.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
+                new_wordActionPerformed(evt);
             }
         });
-        jPanel1.add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 480, 490, 90));
+        jPanel1.add(new_word, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 370, 490, 90));
 
-        jToggleButton2.setText("Iniciar Sopa de Letras");
-        jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
+        inicio.setText("Iniciar Sopa de Letras");
+        inicio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton2ActionPerformed(evt);
+                inicioActionPerformed(evt);
             }
         });
-        jPanel1.add(jToggleButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 360, 490, 90));
+        jPanel1.add(inicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, 490, 90));
 
-        jToggleButton3.setText("Ver Diccionario");
-        jPanel1.add(jToggleButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 257, 490, 80));
+        ver_palabras.setText("Ver Diccionario");
+        ver_palabras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ver_palabrasActionPerformed(evt);
+            }
+        });
+        jPanel1.add(ver_palabras, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 80, 490, 80));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 1300, 740));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 1300, 730));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+    private void inicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inicioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
+        Ventana2 v2 = new Ventana2(v1);
+        
+    }//GEN-LAST:event_inicioActionPerformed
 
-    private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
+    private void new_wordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_new_wordActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton2ActionPerformed
+    }//GEN-LAST:event_new_wordActionPerformed
+
+    private void ver_palabrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ver_palabrasActionPerformed
+        // TODO add your handling code here:
+        lista_de_palabras p1 = new lista_de_palabras(v1.get_palabras());
+        
+    }//GEN-LAST:event_ver_palabrasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -100,9 +117,9 @@ public class menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JToggleButton inicio;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToggleButton jToggleButton2;
-    private javax.swing.JToggleButton jToggleButton3;
+    private javax.swing.JToggleButton new_word;
+    private javax.swing.JToggleButton ver_palabras;
     // End of variables declaration//GEN-END:variables
 }
