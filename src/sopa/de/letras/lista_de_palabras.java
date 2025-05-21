@@ -41,7 +41,7 @@ public class lista_de_palabras extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jList1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, 120, 230));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, 120, 230));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
