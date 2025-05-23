@@ -4,19 +4,24 @@
  */
 package sopa.de.letras;
 
+import sopa.de.letras.Ventana2;
+
 /**
  *
  * @author sl001
  */
 public class menu extends javax.swing.JFrame {
-    private Ventana1 v1;
+    private static Ventana1 v1;
     /**
      * Creates new form menu
      */
     public menu(Ventana1 v1) {
         initComponents();
-        this.setUndecorated(true);
         this.v1 = v1;
+        this.v1.setVisible(false);
+        this.setVisible(true);
+        this.setUndecorated(true);
+        this.setExtendedState(6);
         
     }
 
@@ -33,12 +38,14 @@ public class menu extends javax.swing.JFrame {
         new_word = new javax.swing.JToggleButton();
         inicio = new javax.swing.JToggleButton();
         ver_palabras = new javax.swing.JToggleButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1920, 1080));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         new_word.setText("Agregar Palabra al Diccionario");
@@ -65,6 +72,14 @@ public class menu extends javax.swing.JFrame {
         });
         jPanel1.add(ver_palabras, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 80, 490, 80));
 
+        jButton1.setText("x");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 0, -1, -1));
+
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 1300, 730));
 
         pack();
@@ -82,9 +97,15 @@ public class menu extends javax.swing.JFrame {
 
     private void ver_palabrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ver_palabrasActionPerformed
         // TODO add your handling code here:
-        lista_de_palabras p1 = new lista_de_palabras(v1.get_palabras());
+        diccionary p1 = new diccionary(v1.get_palabras());
         
     }//GEN-LAST:event_ver_palabrasActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        System.exit(0);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -114,10 +135,18 @@ public class menu extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                new menu(v1).setVisible(true);
+            }
+        });
     }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton inicio;
+    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JToggleButton new_word;
     private javax.swing.JToggleButton ver_palabras;
