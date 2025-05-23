@@ -4,7 +4,6 @@
  */
 package sopa.de.letras;
 
-import sopa.de.letras.Ventana2;
 
 /**
  *
@@ -18,13 +17,18 @@ public class menu extends javax.swing.JFrame {
     public menu(Ventana1 v1) {
         initComponents();
         this.v1 = v1;
-        this.v1.setVisible(false);
         this.setVisible(true);
         this.setUndecorated(true);
         this.setExtendedState(6);
         
     }
-
+    public Lista getlist(){
+        return this.v1.get_palabras();
+    }
+    
+    public void back(){
+        this.setVisible(true);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -87,6 +91,7 @@ public class menu extends javax.swing.JFrame {
 
     private void inicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inicioActionPerformed
         // TODO add your handling code here:
+        this.setVisible(false);
         Ventana2 v2 = new Ventana2(v1);
         
     }//GEN-LAST:event_inicioActionPerformed
@@ -97,7 +102,8 @@ public class menu extends javax.swing.JFrame {
 
     private void ver_palabrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ver_palabrasActionPerformed
         // TODO add your handling code here:
-        diccionary p1 = new diccionary(v1.get_palabras());
+        this.setVisible(false);
+        diccionary p1 = new diccionary(this);
         
     }//GEN-LAST:event_ver_palabrasActionPerformed
 

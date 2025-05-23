@@ -18,9 +18,7 @@ public class Ventana2 extends javax.swing.JFrame {
      */
     public Ventana2( Ventana1 v1) {
         initComponents();
-        this.setUndecorated(true);
         this.v1 = v1;
-        this.v1.setVisible(false);
         this.setVisible(true);
         this.setExtendedState(Ventana2.MAXIMIZED_BOTH);
         this.setLocationRelativeTo(null);

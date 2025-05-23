@@ -161,6 +161,7 @@ public class Ventana1 extends javax.swing.JFrame {
                 Logger.getLogger(Ventana1.class.getName()).log(Level.SEVERE, null, ex);
             } 
         }
+        this.setVisible(false);
         menu v2 = new menu(this);
     }//GEN-LAST:event_ContinueActionPerformed
 

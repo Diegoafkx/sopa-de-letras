@@ -47,18 +47,6 @@ public class Lista  {
         return pValor.data;
 
     }
-
-    /**
-     *
-     * @param pValor
-     * @return
-     */
-    public Nodo Proximo(Nodo pValor){
-        
-        pValor = pValor.pNext;
-        return pValor;
-        
-    }
         
         
     /**
@@ -100,23 +88,14 @@ public class Lista  {
      *
      * @return
      */
-    public String Datos(){
-        String aux;
-        if(pfirst != null){
-            aux = this.Leer(pfirst);
-            Nodo paux = this.Proximo(pfirst);
-            while(this.Proximo(paux)!= null){
-                aux =aux+"\n"+this.Leer(paux);
-                paux = this.Proximo(paux);
+    public String Datos(int posicion){
+        Nodo aux = pfirst;
+        if (posicion!= 0){ 
+            for (int i = 0; i < posicion; i++) {
+                aux = aux.pNext;
             }
-            aux =aux+"\n"+this.Leer(paux);
         }
-        else if(pfirst == null){
-            aux = this.Leer(pfirst);
-        }else{
-           aux = "La lista esta vacia";
-        }
-        return aux;
+        return aux.data;
     }
     
     /**
@@ -127,12 +106,12 @@ public class Lista  {
     public String Eliminar(String daux){
         
         if(daux.equals(this.Leer(pfirst))== false){
-            Nodo paux = this.Proximo(pfirst);
+            Nodo paux = pfirst.pNext;
             Nodo paux1 = paux;
             
             for (int i = 0; i < 10; i++) {
                 if(daux.equals(this.Leer(paux))== false){
-                    paux = this.Proximo(paux);
+                    paux = paux.pNext;
                     
                 }
                 else{
@@ -142,9 +121,9 @@ public class Lista  {
             }
         }
         else{
-            pfirst = this.Proximo(pfirst);
+            pfirst = pfirst.pNext;
             return "Se a eliminado con exito";
         }
-        return "Ha surrgido un error.\nNo se encuentro la palaabraa";
+        return "Ha surgido un error.\nNo se encuentro la palabra";
     }
 }
