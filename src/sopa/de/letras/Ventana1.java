@@ -29,6 +29,7 @@ public class Ventana1 extends javax.swing.JFrame {
      *
      */
     public Ventana1() {
+        this.setLocationRelativeTo(null);
         initComponents();
     }
 
@@ -50,8 +51,11 @@ public class Ventana1 extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        Search.setBackground(new java.awt.Color(255, 255, 255));
+        Search.setForeground(new java.awt.Color(0, 0, 0));
         Search.setText("Buscador");
         Search.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -60,13 +64,15 @@ public class Ventana1 extends javax.swing.JFrame {
         });
         jPanel1.add(Search, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 200, -1, -1));
 
+        Continue.setBackground(new java.awt.Color(255, 255, 255));
+        Continue.setForeground(new java.awt.Color(0, 0, 0));
         Continue.setText("Continuar");
         Continue.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ContinueActionPerformed(evt);
             }
         });
-        jPanel1.add(Continue, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 260, -1, -1));
+        jPanel1.add(Continue, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 270, -1, -1));
 
         jText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -75,12 +81,14 @@ public class Ventana1 extends javax.swing.JFrame {
         });
         jPanel1.add(jText, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 270, -1));
 
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Ingrese el archivo con el diccionario.");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 300, 50));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 410, 310));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 300));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void SearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchActionPerformed
