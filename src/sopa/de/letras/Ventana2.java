@@ -40,13 +40,9 @@ public class Ventana2 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jInternalFrame1 = new javax.swing.JInternalFrame();
-        jPanel3 = new javax.swing.JPanel();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
-        palabras_sopa = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        palabras_sopa = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         letra1 = new javax.swing.JTextField();
         letra2 = new javax.swing.JTextField();
@@ -71,19 +67,6 @@ public class Ventana2 extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
 
-        jInternalFrame1.setVisible(true);
-        jInternalFrame1.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jButton4.setText("jButton4");
-        jPanel3.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 240, 100, 30));
-
-        jButton5.setText("jButton5");
-        jPanel3.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, 100, 30));
-
-        jInternalFrame1.getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-2, -30, 390, 300));
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("sopa de letras");
         setAlwaysOnTop(true);
@@ -95,13 +78,9 @@ public class Ventana2 extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        palabras_sopa.setFont(new java.awt.Font("sansserif", 0, 24)); // NOI18N
-        palabras_sopa.setText("Palabras de la Sopa de Letras");
-        palabras_sopa.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        jPanel1.add(palabras_sopa, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 320, 30));
-
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("sansserif", 0, 36)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Sopa De Letras");
         jLabel2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jLabel2.setMaximumSize(new java.awt.Dimension(200, 150));
@@ -109,15 +88,25 @@ public class Ventana2 extends javax.swing.JFrame {
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 10, -1, -1));
         jLabel2.getAccessibleContext().setAccessibleDescription("");
 
+        palabras_sopa.setFont(new java.awt.Font("sansserif", 0, 24)); // NOI18N
+        palabras_sopa.setForeground(new java.awt.Color(0, 0, 0));
+        palabras_sopa.setText("Palabras de la Sopa de Letras");
+        palabras_sopa.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jPanel1.add(palabras_sopa, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 320, 30));
+
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        letra1.setBackground(new java.awt.Color(255, 255, 255));
         letra1.setFont(new java.awt.Font("sansserif", 0, 70)); // NOI18N
+        letra1.setForeground(new java.awt.Color(0, 0, 0));
         letra1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         letra1.setText("X");
         jPanel2.add(letra1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 110, 120));
 
+        letra2.setBackground(new java.awt.Color(255, 255, 255));
         letra2.setFont(new java.awt.Font("sansserif", 0, 70)); // NOI18N
+        letra2.setForeground(new java.awt.Color(0, 0, 0));
         letra2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         letra2.setText("X");
         letra2.addActionListener(new java.awt.event.ActionListener() {
@@ -127,7 +116,9 @@ public class Ventana2 extends javax.swing.JFrame {
         });
         jPanel2.add(letra2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 0, 110, 120));
 
+        letra3.setBackground(new java.awt.Color(255, 255, 255));
         letra3.setFont(new java.awt.Font("sansserif", 0, 70)); // NOI18N
+        letra3.setForeground(new java.awt.Color(0, 0, 0));
         letra3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         letra3.setText("X");
         letra3.addActionListener(new java.awt.event.ActionListener() {
@@ -137,7 +128,9 @@ public class Ventana2 extends javax.swing.JFrame {
         });
         jPanel2.add(letra3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 0, 110, 120));
 
+        letra4.setBackground(new java.awt.Color(255, 255, 255));
         letra4.setFont(new java.awt.Font("sansserif", 0, 70)); // NOI18N
+        letra4.setForeground(new java.awt.Color(0, 0, 0));
         letra4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         letra4.setText("X");
         letra4.addActionListener(new java.awt.event.ActionListener() {
@@ -147,7 +140,9 @@ public class Ventana2 extends javax.swing.JFrame {
         });
         jPanel2.add(letra4, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 0, 110, 120));
 
+        letra5.setBackground(new java.awt.Color(255, 255, 255));
         letra5.setFont(new java.awt.Font("sansserif", 0, 70)); // NOI18N
+        letra5.setForeground(new java.awt.Color(0, 0, 0));
         letra5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         letra5.setText("X");
         letra5.addActionListener(new java.awt.event.ActionListener() {
@@ -157,7 +152,9 @@ public class Ventana2 extends javax.swing.JFrame {
         });
         jPanel2.add(letra5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 110, 120));
 
+        letra6.setBackground(new java.awt.Color(255, 255, 255));
         letra6.setFont(new java.awt.Font("sansserif", 0, 70)); // NOI18N
+        letra6.setForeground(new java.awt.Color(0, 0, 0));
         letra6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         letra6.setText("X");
         letra6.addActionListener(new java.awt.event.ActionListener() {
@@ -167,7 +164,9 @@ public class Ventana2 extends javax.swing.JFrame {
         });
         jPanel2.add(letra6, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, 110, 120));
 
+        letra7.setBackground(new java.awt.Color(255, 255, 255));
         letra7.setFont(new java.awt.Font("sansserif", 0, 70)); // NOI18N
+        letra7.setForeground(new java.awt.Color(0, 0, 0));
         letra7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         letra7.setText("X");
         letra7.addActionListener(new java.awt.event.ActionListener() {
@@ -177,7 +176,9 @@ public class Ventana2 extends javax.swing.JFrame {
         });
         jPanel2.add(letra7, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 120, 110, 120));
 
+        letra8.setBackground(new java.awt.Color(255, 255, 255));
         letra8.setFont(new java.awt.Font("sansserif", 0, 70)); // NOI18N
+        letra8.setForeground(new java.awt.Color(0, 0, 0));
         letra8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         letra8.setText("X");
         letra8.addActionListener(new java.awt.event.ActionListener() {
@@ -187,12 +188,16 @@ public class Ventana2 extends javax.swing.JFrame {
         });
         jPanel2.add(letra8, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 120, 110, 120));
 
+        letra9.setBackground(new java.awt.Color(255, 255, 255));
         letra9.setFont(new java.awt.Font("sansserif", 0, 70)); // NOI18N
+        letra9.setForeground(new java.awt.Color(0, 0, 0));
         letra9.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         letra9.setText("X");
         jPanel2.add(letra9, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 240, 110, 120));
 
+        letra10.setBackground(new java.awt.Color(255, 255, 255));
         letra10.setFont(new java.awt.Font("sansserif", 0, 70)); // NOI18N
+        letra10.setForeground(new java.awt.Color(0, 0, 0));
         letra10.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         letra10.setText("X");
         letra10.addActionListener(new java.awt.event.ActionListener() {
@@ -202,7 +207,9 @@ public class Ventana2 extends javax.swing.JFrame {
         });
         jPanel2.add(letra10, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 240, 110, 120));
 
+        letra11.setBackground(new java.awt.Color(255, 255, 255));
         letra11.setFont(new java.awt.Font("sansserif", 0, 70)); // NOI18N
+        letra11.setForeground(new java.awt.Color(0, 0, 0));
         letra11.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         letra11.setText("X");
         letra11.addActionListener(new java.awt.event.ActionListener() {
@@ -212,7 +219,9 @@ public class Ventana2 extends javax.swing.JFrame {
         });
         jPanel2.add(letra11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 110, 120));
 
+        letra12.setBackground(new java.awt.Color(255, 255, 255));
         letra12.setFont(new java.awt.Font("sansserif", 0, 70)); // NOI18N
+        letra12.setForeground(new java.awt.Color(0, 0, 0));
         letra12.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         letra12.setText("X");
         letra12.addActionListener(new java.awt.event.ActionListener() {
@@ -222,7 +231,9 @@ public class Ventana2 extends javax.swing.JFrame {
         });
         jPanel2.add(letra12, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 240, 110, 120));
 
+        letra13.setBackground(new java.awt.Color(255, 255, 255));
         letra13.setFont(new java.awt.Font("sansserif", 0, 70)); // NOI18N
+        letra13.setForeground(new java.awt.Color(0, 0, 0));
         letra13.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         letra13.setText("X");
         letra13.addActionListener(new java.awt.event.ActionListener() {
@@ -232,7 +243,9 @@ public class Ventana2 extends javax.swing.JFrame {
         });
         jPanel2.add(letra13, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 360, 110, 120));
 
+        letra14.setBackground(new java.awt.Color(255, 255, 255));
         letra14.setFont(new java.awt.Font("sansserif", 0, 70)); // NOI18N
+        letra14.setForeground(new java.awt.Color(0, 0, 0));
         letra14.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         letra14.setText("X");
         letra14.addActionListener(new java.awt.event.ActionListener() {
@@ -242,7 +255,9 @@ public class Ventana2 extends javax.swing.JFrame {
         });
         jPanel2.add(letra14, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 360, 110, 120));
 
+        letra15.setBackground(new java.awt.Color(255, 255, 255));
         letra15.setFont(new java.awt.Font("sansserif", 0, 70)); // NOI18N
+        letra15.setForeground(new java.awt.Color(0, 0, 0));
         letra15.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         letra15.setText("X");
         letra15.addActionListener(new java.awt.event.ActionListener() {
@@ -252,7 +267,9 @@ public class Ventana2 extends javax.swing.JFrame {
         });
         jPanel2.add(letra15, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, 110, 120));
 
+        letra16.setBackground(new java.awt.Color(255, 255, 255));
         letra16.setFont(new java.awt.Font("sansserif", 0, 70)); // NOI18N
+        letra16.setForeground(new java.awt.Color(0, 0, 0));
         letra16.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         letra16.setText("X");
         letra16.addActionListener(new java.awt.event.ActionListener() {
@@ -264,6 +281,8 @@ public class Ventana2 extends javax.swing.JFrame {
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 70, 440, 480));
 
+        jList1.setBackground(new java.awt.Color(255, 255, 255));
+        jList1.setForeground(new java.awt.Color(0, 0, 0));
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
@@ -282,19 +301,30 @@ public class Ventana2 extends javax.swing.JFrame {
         });
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1220, 0, 60, -1));
 
+        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField1.setForeground(new java.awt.Color(0, 0, 0));
         jTextField1.setText("Escribe una palabra:");
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 580, -1, -1));
+        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 580, 200, -1));
 
+        jButton2.setBackground(new java.awt.Color(255, 255, 255));
+        jButton2.setForeground(new java.awt.Color(0, 0, 0));
         jButton2.setText("Buscar");
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 580, -1, -1));
 
-        jButton3.setText("jButton3");
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 620, 100, 30));
+        jButton3.setBackground(new java.awt.Color(255, 255, 255));
+        jButton3.setForeground(new java.awt.Color(0, 0, 0));
+        jButton3.setText("Iniciar");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 610, 100, 30));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
 
@@ -358,15 +388,21 @@ public class Ventana2 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_letra2ActionPerformed
 
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+        opciones op = new opciones();
+    }//GEN-LAST:event_jButton3ActionPerformed
+
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         dispose();
         System.exit(0);
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -408,14 +444,10 @@ public class Ventana2 extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JList<String> jList1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField letra1;

@@ -58,6 +58,8 @@ public class diccionary extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jList.setBackground(new java.awt.Color(255, 255, 255));
+        jList.setForeground(new java.awt.Color(0, 0, 0));
         jList.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
@@ -65,8 +67,10 @@ public class diccionary extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(jList);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 130, 250));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 130, 250));
 
+        Return.setBackground(new java.awt.Color(255, 255, 255));
+        Return.setForeground(new java.awt.Color(0, 0, 0));
         Return.setText("Regresar");
         Return.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
