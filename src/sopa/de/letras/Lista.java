@@ -98,6 +98,15 @@ public class Lista  {
         return aux.data;
     }
     
+    public Nodo Nodos(int posicion){
+        Nodo aux = pfirst;
+        if (posicion!= 0){ 
+            for (int i = 0; i < posicion; i++) {
+                aux = aux.pNext;
+            }
+        }
+        return aux;
+    }
     /**
      *
      * @param daux
