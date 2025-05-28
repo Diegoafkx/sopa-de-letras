@@ -46,18 +46,14 @@ public class Grafo {
             }
         }
         for (int i = 0; i < 16; i++) {
+            if(i != 0 || i != 4 || i!=8 || i!= 12){
+                    Vertices[i].crear_vecinos(Vertices[i+5],2);
+            }
             if(i != 3 || i!= 7 || i!= 11 || i!= 15){
-                if (i == 0){
-                    for (int j = 5; j <= 15; j = j+5) {
-                        Vertices[i].crear_vecinos(Vertices[j],2);
-                    }
-                }else{
-                    for (int j = 0; j <= 15; j = i+5) {   
-                       
-                    }     
-                }
+                    Vertices[i].crear_vecinos(Vertices[i+3],3);   
             }
             
         }   
-    }   
+    }
+
 }
