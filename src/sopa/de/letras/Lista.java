@@ -77,7 +77,7 @@ public class Lista  {
         if(pfinal == null){
             this.pfirst = this.pfinal =pNew;
             
-            }else{
+        }else{
             pNew.pPrevious = pfinal;
             pfinal.pNext = pNew;
             pfinal = pNew;

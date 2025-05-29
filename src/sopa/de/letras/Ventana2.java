@@ -3,10 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package sopa.de.letras;
-
-import java.awt.Color;
 import javax.swing.JFrame;
-
 /**
  *
  * @author Windows 10 Pro
@@ -15,6 +12,9 @@ public class Ventana2 extends javax.swing.JFrame {
     private static Ventana1 v1;
     private static Lista palabras;
     private static Lista letras;
+    private static Grafo s_l;
+    private static int[] tiempo;
+    private static String[] words;
     /**
      * Creates new form ventana2, jText.setText(words);
      * @param v1
@@ -28,9 +28,31 @@ public class Ventana2 extends javax.swing.JFrame {
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         this.setResizable(false);
         this.setUndecorated(true);
+        this.randomizar_sopa_de_letras();
         
     }
-
+    
+    private void randomizar_sopa_de_letras() {
+        double aleatorio = Math.random()*10;
+        while(aleatorio > 4){
+            aleatorio = Math.random()*10;
+        }
+        int aux = (int) aleatorio;
+        Lista y = new Lista();
+        for (int i = 0; i < aux; i++) {
+            double z = Math.random()*10;
+            while(z > palabras.Tamaño()){
+                z = Math.random()*10;
+            }
+           int x = (int)z;
+           words[i] = palabras.Datos(x);
+           y.Insertar(palabras.Datos(x));
+        }
+        s_l = new Grafo(letras,y);
+    }
+    
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -62,10 +84,22 @@ public class Ventana2 extends javax.swing.JFrame {
         letra16 = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jList2 = new javax.swing.JList<>();
         jButton1 = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jTextArea1 = new javax.swing.JTextArea();
+        jTextArea2 = new javax.swing.JTextArea();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("sopa de letras");
@@ -85,18 +119,19 @@ public class Ventana2 extends javax.swing.JFrame {
         jLabel2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jLabel2.setMaximumSize(new java.awt.Dimension(200, 150));
         jLabel2.setMinimumSize(new java.awt.Dimension(200, 150));
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 10, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 50, -1, -1));
         jLabel2.getAccessibleContext().setAccessibleDescription("");
 
         palabras_sopa.setFont(new java.awt.Font("sansserif", 0, 24)); // NOI18N
         palabras_sopa.setForeground(new java.awt.Color(0, 0, 0));
         palabras_sopa.setText("Palabras de la Sopa de Letras");
         palabras_sopa.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        jPanel1.add(palabras_sopa, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 320, 30));
+        jPanel1.add(palabras_sopa, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 340, 30));
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        letra1.setEditable(false);
         letra1.setBackground(new java.awt.Color(255, 255, 255));
         letra1.setFont(new java.awt.Font("sansserif", 0, 70)); // NOI18N
         letra1.setForeground(new java.awt.Color(0, 0, 0));
@@ -104,6 +139,7 @@ public class Ventana2 extends javax.swing.JFrame {
         letra1.setText("X");
         jPanel2.add(letra1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 110, 120));
 
+        letra2.setEditable(false);
         letra2.setBackground(new java.awt.Color(255, 255, 255));
         letra2.setFont(new java.awt.Font("sansserif", 0, 70)); // NOI18N
         letra2.setForeground(new java.awt.Color(0, 0, 0));
@@ -116,6 +152,7 @@ public class Ventana2 extends javax.swing.JFrame {
         });
         jPanel2.add(letra2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 0, 110, 120));
 
+        letra3.setEditable(false);
         letra3.setBackground(new java.awt.Color(255, 255, 255));
         letra3.setFont(new java.awt.Font("sansserif", 0, 70)); // NOI18N
         letra3.setForeground(new java.awt.Color(0, 0, 0));
@@ -128,6 +165,7 @@ public class Ventana2 extends javax.swing.JFrame {
         });
         jPanel2.add(letra3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 0, 110, 120));
 
+        letra4.setEditable(false);
         letra4.setBackground(new java.awt.Color(255, 255, 255));
         letra4.setFont(new java.awt.Font("sansserif", 0, 70)); // NOI18N
         letra4.setForeground(new java.awt.Color(0, 0, 0));
@@ -140,6 +178,7 @@ public class Ventana2 extends javax.swing.JFrame {
         });
         jPanel2.add(letra4, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 0, 110, 120));
 
+        letra5.setEditable(false);
         letra5.setBackground(new java.awt.Color(255, 255, 255));
         letra5.setFont(new java.awt.Font("sansserif", 0, 70)); // NOI18N
         letra5.setForeground(new java.awt.Color(0, 0, 0));
@@ -152,6 +191,7 @@ public class Ventana2 extends javax.swing.JFrame {
         });
         jPanel2.add(letra5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 110, 120));
 
+        letra6.setEditable(false);
         letra6.setBackground(new java.awt.Color(255, 255, 255));
         letra6.setFont(new java.awt.Font("sansserif", 0, 70)); // NOI18N
         letra6.setForeground(new java.awt.Color(0, 0, 0));
@@ -164,6 +204,7 @@ public class Ventana2 extends javax.swing.JFrame {
         });
         jPanel2.add(letra6, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, 110, 120));
 
+        letra7.setEditable(false);
         letra7.setBackground(new java.awt.Color(255, 255, 255));
         letra7.setFont(new java.awt.Font("sansserif", 0, 70)); // NOI18N
         letra7.setForeground(new java.awt.Color(0, 0, 0));
@@ -176,6 +217,7 @@ public class Ventana2 extends javax.swing.JFrame {
         });
         jPanel2.add(letra7, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 120, 110, 120));
 
+        letra8.setEditable(false);
         letra8.setBackground(new java.awt.Color(255, 255, 255));
         letra8.setFont(new java.awt.Font("sansserif", 0, 70)); // NOI18N
         letra8.setForeground(new java.awt.Color(0, 0, 0));
@@ -188,6 +230,7 @@ public class Ventana2 extends javax.swing.JFrame {
         });
         jPanel2.add(letra8, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 120, 110, 120));
 
+        letra9.setEditable(false);
         letra9.setBackground(new java.awt.Color(255, 255, 255));
         letra9.setFont(new java.awt.Font("sansserif", 0, 70)); // NOI18N
         letra9.setForeground(new java.awt.Color(0, 0, 0));
@@ -195,6 +238,7 @@ public class Ventana2 extends javax.swing.JFrame {
         letra9.setText("X");
         jPanel2.add(letra9, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 240, 110, 120));
 
+        letra10.setEditable(false);
         letra10.setBackground(new java.awt.Color(255, 255, 255));
         letra10.setFont(new java.awt.Font("sansserif", 0, 70)); // NOI18N
         letra10.setForeground(new java.awt.Color(0, 0, 0));
@@ -207,6 +251,7 @@ public class Ventana2 extends javax.swing.JFrame {
         });
         jPanel2.add(letra10, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 240, 110, 120));
 
+        letra11.setEditable(false);
         letra11.setBackground(new java.awt.Color(255, 255, 255));
         letra11.setFont(new java.awt.Font("sansserif", 0, 70)); // NOI18N
         letra11.setForeground(new java.awt.Color(0, 0, 0));
@@ -219,6 +264,7 @@ public class Ventana2 extends javax.swing.JFrame {
         });
         jPanel2.add(letra11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 110, 120));
 
+        letra12.setEditable(false);
         letra12.setBackground(new java.awt.Color(255, 255, 255));
         letra12.setFont(new java.awt.Font("sansserif", 0, 70)); // NOI18N
         letra12.setForeground(new java.awt.Color(0, 0, 0));
@@ -231,6 +277,7 @@ public class Ventana2 extends javax.swing.JFrame {
         });
         jPanel2.add(letra12, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 240, 110, 120));
 
+        letra13.setEditable(false);
         letra13.setBackground(new java.awt.Color(255, 255, 255));
         letra13.setFont(new java.awt.Font("sansserif", 0, 70)); // NOI18N
         letra13.setForeground(new java.awt.Color(0, 0, 0));
@@ -243,6 +290,7 @@ public class Ventana2 extends javax.swing.JFrame {
         });
         jPanel2.add(letra13, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 360, 110, 120));
 
+        letra14.setEditable(false);
         letra14.setBackground(new java.awt.Color(255, 255, 255));
         letra14.setFont(new java.awt.Font("sansserif", 0, 70)); // NOI18N
         letra14.setForeground(new java.awt.Color(0, 0, 0));
@@ -255,6 +303,7 @@ public class Ventana2 extends javax.swing.JFrame {
         });
         jPanel2.add(letra14, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 360, 110, 120));
 
+        letra15.setEditable(false);
         letra15.setBackground(new java.awt.Color(255, 255, 255));
         letra15.setFont(new java.awt.Font("sansserif", 0, 70)); // NOI18N
         letra15.setForeground(new java.awt.Color(0, 0, 0));
@@ -267,6 +316,7 @@ public class Ventana2 extends javax.swing.JFrame {
         });
         jPanel2.add(letra15, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, 110, 120));
 
+        letra16.setEditable(false);
         letra16.setBackground(new java.awt.Color(255, 255, 255));
         letra16.setFont(new java.awt.Font("sansserif", 0, 70)); // NOI18N
         letra16.setForeground(new java.awt.Color(0, 0, 0));
@@ -279,18 +329,19 @@ public class Ventana2 extends javax.swing.JFrame {
         });
         jPanel2.add(letra16, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 360, 110, 120));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 70, 440, 480));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 110, 440, 480));
 
         jList1.setBackground(new java.awt.Color(255, 255, 255));
         jList1.setForeground(new java.awt.Color(0, 0, 0));
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
         jScrollPane1.setViewportView(jList1);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 280, 450));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 80, 420));
+
+        jList2.setBackground(new java.awt.Color(255, 255, 255));
+        jList2.setForeground(new java.awt.Color(0, 0, 0));
+        jScrollPane2.setViewportView(jList2);
+
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 130, 80, 420));
 
         jButton1.setBackground(new java.awt.Color(204, 0, 0));
         jButton1.setText("X");
@@ -324,7 +375,63 @@ public class Ventana2 extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 610, 100, 30));
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 440, 100, 30));
+
+        jButton4.setBackground(new java.awt.Color(255, 255, 255));
+        jButton4.setForeground(new java.awt.Color(0, 0, 0));
+        jButton4.setText("DFS");
+        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 410, -1, -1));
+
+        jButton5.setBackground(new java.awt.Color(255, 255, 255));
+        jButton5.setForeground(new java.awt.Color(0, 0, 0));
+        jButton5.setText("BFS");
+        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 410, -1, -1));
+
+        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setText("Depth First Search");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 300, 110, 20));
+
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setText("Breadth First Search");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 260, 120, 20));
+
+        jLabel4.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setText("Elija el metodo de busqueda");
+        jLabel4.setToolTipText("");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 190, 240, -1));
+
+        jLabel5.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel5.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel5.setText("Tiempo");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 100, -1, 20));
+
+        jLabel6.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel6.setText("Palabras");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 80, -1));
+
+        jTextArea1.setBackground(new java.awt.Color(255, 255, 255));
+        jTextArea1.setColumns(20);
+        jTextArea1.setForeground(new java.awt.Color(0, 0, 0));
+        jTextArea1.setRows(5);
+        jTextArea1.setText("Este metodo se encarga de\nleer todas las letras que se \nencuentran junto a la primera \nde las mismas, para buscar \nuna combinacion que cree \nuna palabra y luego siga a la \nsiguiente letra.");
+        jTextArea1.setToolTipText("");
+        jPanel1.add(jTextArea1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 280, 180, 130));
+
+        jTextArea2.setEditable(false);
+        jTextArea2.setBackground(new java.awt.Color(255, 255, 255));
+        jTextArea2.setColumns(20);
+        jTextArea2.setForeground(new java.awt.Color(0, 0, 0));
+        jTextArea2.setRows(5);
+        jTextArea2.setText("Este metodo lee toda la\nrama de una de las letras, \ny luego las demas ramas, \nantes de ir a la siguiente\n letras.");
+        jPanel1.add(jTextArea2, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 320, 160, 90));
+
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel7.setText("Existe 2 metodos diferentes con el cual se puede resolver la sopa de letras.");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 230, 420, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
 
@@ -380,22 +487,13 @@ public class Ventana2 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_letra4ActionPerformed
 
-    private void letra3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_letra3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_letra3ActionPerformed
-
-    private void letra2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_letra2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_letra2ActionPerformed
-
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        this.setVisible(false);
-        opciones op = new opciones();
+            
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -403,6 +501,14 @@ public class Ventana2 extends javax.swing.JFrame {
         dispose();
         System.exit(0);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void letra3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_letra3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_letra3ActionPerformed
+
+    private void letra2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_letra2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_letra2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -444,11 +550,23 @@ public class Ventana2 extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JList<String> jList1;
+    private javax.swing.JList<String> jList2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField letra1;
     private javax.swing.JTextField letra10;
@@ -468,4 +586,5 @@ public class Ventana2 extends javax.swing.JFrame {
     private javax.swing.JTextField letra9;
     private javax.swing.JLabel palabras_sopa;
     // End of variables declaration//GEN-END:variables
+
 }
