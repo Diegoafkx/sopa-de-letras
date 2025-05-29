@@ -135,4 +135,18 @@ public class Lista  {
         }
         return "Ha surgido un error.\nNo se encuentro la palabra";
     }
+
+    public void Desorganizar(int i, int y){
+        String a = this.Datos(i);
+        String b = this.Datos(y);
+        Nodo aux = pfirst;
+            for (int j = 0; j < this.Tamaño(); j++) {
+                if(j == i){
+                    aux.data = b;
+                }else if (i==y){
+                    aux.data = a;
+                }
+                aux = aux.pNext;
+            }
+    } 
 }
