@@ -22,7 +22,6 @@ public class diccionary extends javax.swing.JFrame {
         this.menu = menu;
         Lista lista = menu.getlist();
         this.setVisible(true);
-        String[] palabras = null;
         for (int i = 0; i < lista.Tamaño(); i++) {
             model.addElement(lista.Datos(i));   
         }

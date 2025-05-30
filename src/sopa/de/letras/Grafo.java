@@ -11,33 +11,33 @@ package sopa.de.letras;
 public class Grafo {
     
     private Vertice[] Vertices = new Vertice[16];
-    private Lista letras;
 
     
     public Grafo(Lista letras){
-        this.letras = letras;
+        for (int i = 0; i < 16; i++) {
+            Vertice x = new Vertice(letras.Nodos(i));
+            Vertices[i] = x;
+        }
         for (int i = 0; i < 16; i++) {
             double aleatorio1 = Math.random()*100;
             double aleatorio2 = Math.random()*100;
-            while(aleatorio1 > this.letras.Tamaño()){
+            while(aleatorio1 > letras.Tamaño()){
                 aleatorio1 = Math.random()*100;
             }
-            while(aleatorio2 > this.letras.Tamaño()){
+            while(aleatorio2 > letras.Tamaño()){
                 aleatorio2 = Math.random()*100;
             }
             int a1= (int) aleatorio1;
             int b1 = (int) aleatorio2;
-            this.letras.Desorganizar(a1, b1);
-        }
-        
-        this.Crear_Vertices();
-    }
-    
-    private void Crear_Vertices(){
-        Vertice x;
-        for (int i = 0; i < 16; i++) {
-            x = new Vertice(letras.Nodos(i)); 
-            Vertices[i] = x;
+            if(a1 != b1){
+                Vertice x1 = Vertices[a1];
+                Vertice x2 = Vertices[b1];
+                Vertices[a1] = x2;
+                Vertices[b1] = x1;
+                
+            }else{
+                i--;
+            }
         }
         this.Crear_Aristas();
     }
@@ -46,11 +46,10 @@ public class Grafo {
 
         for (int i = 0; i < 16; i++) {
 
-            if (i!=3 ||i!= 7 ||i!=11){
-
+            if (i!=3 && i!= 7 && i!=11 && i!=15){
                 Vertices[i].crear_vecinos(Vertices[i+1],0);
             }
-            if(i!=0 || i!= 4 ||i!=8){  
+            if(i != 0 && i != 4 && i!=8 && i!= 12){  
                 Vertices[i].crear_vecinos(Vertices[i-1],0);
             }  
 
@@ -58,29 +57,22 @@ public class Grafo {
 
         for (int i = 0; i < 16; i++) {
 
-            if(i<=3){
+            if(i!=3 && i!= 7 && i<11){
                 Vertices[i].crear_vecinos(Vertices[i+4],1);
             }
-            if(i<=12){
+            if(i > 4 && i!=8 && i!= 12){
                 Vertices[i].crear_vecinos(Vertices[i-4],1);
             }
         }
 
         for (int i = 0; i < 16; i++) {
 
-            if(i != 0 || i != 4 || i!=8 || i!= 12){
-                    Vertices[i].crear_vecinos(Vertices[i+5],2);
+            if(i != 3 && i!= 7 && i<11){
+                Vertices[i].crear_vecinos(Vertices[i+5],2);
             }
-            if(i != 3 || i!= 7 || i!= 11 || i!= 15){
-                if (i == 0){
-                    for (int j = 5; j <= 15; j = j+5) {
-                        Vertices[i].crear_vecinos(Vertices[j],2);
-                    }
-                }else{
-                    for (int j = 0; j <= 15; j = i+5) {    
-                    }   
-                }
-                    Vertices[i].crear_vecinos(Vertices[i+3],3);
+            if(i != 0 && i != 4 && i!=8 && i<13){
+                
+                Vertices[i].crear_vecinos(Vertices[i+3],3);
             }
         }   
     }   

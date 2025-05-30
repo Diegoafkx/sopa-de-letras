@@ -145,7 +145,7 @@ public class Ventana1 extends javax.swing.JFrame {
                         
                 }
                 while ((cadena = lector.readLine())!= null){    
-                    if(cadena.equals("tab")){
+                    if(cadena.equals("tab")== false){
                         
                         if(cadena.equals("/tab")== false){
                             String[] aux = cadena.split(",");
