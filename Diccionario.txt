@@ -6,5 +6,5 @@ ORO
 RATA
 /dic
 tab
-C,H,A,O,X,A,T,M,P,R,R,A,A,O,R,O
+C,H,A,O,X,A,T,M,P,R,R,A,A,O,R,O,
 /tab

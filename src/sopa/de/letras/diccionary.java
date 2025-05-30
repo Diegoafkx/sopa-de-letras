@@ -20,7 +20,7 @@ public class diccionary extends javax.swing.JFrame {
     public diccionary(menu menu) {
         initComponents();
         this.menu = menu;
-        Lista lista = menu.getlist();
+        Lista lista = menu.getlist_p();
         this.setVisible(true);
         for (int i = 0; i < lista.Tamaño(); i++) {
             model.addElement(lista.Datos(i));   

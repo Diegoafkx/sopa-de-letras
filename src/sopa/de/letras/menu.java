@@ -22,8 +22,16 @@ public class menu extends javax.swing.JFrame {
         this.setExtendedState(6);
         
     }
-    public Lista getlist(){
-        return this.v1.get_palabras();
+    public Lista getlist_p(){
+        return v1.get_palabras();
+    }
+    
+    public Lista getlist_l(){
+        return v1.get_letras();
+    }
+    
+    public void ag(){
+        v1.Agregar_palabra_diccionario();
     }
     
     public void back(){
@@ -43,6 +51,7 @@ public class menu extends javax.swing.JFrame {
         inicio = new javax.swing.JToggleButton();
         ver_palabras = new javax.swing.JToggleButton();
         jButton1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -60,7 +69,7 @@ public class menu extends javax.swing.JFrame {
                 new_wordActionPerformed(evt);
             }
         });
-        jPanel1.add(new_word, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 370, 490, 90));
+        jPanel1.add(new_word, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 400, 490, 90));
 
         inicio.setBackground(new java.awt.Color(255, 255, 255));
         inicio.setForeground(new java.awt.Color(0, 0, 0));
@@ -70,7 +79,7 @@ public class menu extends javax.swing.JFrame {
                 inicioActionPerformed(evt);
             }
         });
-        jPanel1.add(inicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, 490, 90));
+        jPanel1.add(inicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 250, 490, 90));
 
         ver_palabras.setBackground(new java.awt.Color(255, 255, 255));
         ver_palabras.setForeground(new java.awt.Color(0, 0, 0));
@@ -80,7 +89,7 @@ public class menu extends javax.swing.JFrame {
                 ver_palabrasActionPerformed(evt);
             }
         });
-        jPanel1.add(ver_palabras, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 80, 490, 80));
+        jPanel1.add(ver_palabras, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, 490, 80));
 
         jButton1.setBackground(new java.awt.Color(204, 0, 51));
         jButton1.setText("X");
@@ -91,6 +100,11 @@ public class menu extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 0, 60, -1));
+
+        jLabel1.setFont(new java.awt.Font("sansserif", 0, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setText("MENU");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 40, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 860, 540));
 
@@ -107,6 +121,8 @@ public class menu extends javax.swing.JFrame {
 
     private void new_wordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_new_wordActionPerformed
         // TODO add your handling code here:
+        this.setVisible(false);
+        Agregar_palabra a_p = new Agregar_palabra(this);
     }//GEN-LAST:event_new_wordActionPerformed
 
     private void ver_palabrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ver_palabrasActionPerformed
@@ -162,6 +178,7 @@ public class menu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton inicio;
     private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JToggleButton new_word;
     private javax.swing.JToggleButton ver_palabras;

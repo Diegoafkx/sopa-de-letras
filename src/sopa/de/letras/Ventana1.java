@@ -45,8 +45,11 @@ public class Ventana1 extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         Search = new javax.swing.JButton();
         Continue = new javax.swing.JButton();
-        jText = new javax.swing.JTextField();
+        buscador = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jTextArea1 = new javax.swing.JTextArea();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -62,7 +65,7 @@ public class Ventana1 extends javax.swing.JFrame {
                 SearchActionPerformed(evt);
             }
         });
-        jPanel1.add(Search, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 200, -1, -1));
+        jPanel1.add(Search, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 220, -1, -1));
 
         Continue.setBackground(new java.awt.Color(255, 255, 255));
         Continue.setForeground(new java.awt.Color(0, 0, 0));
@@ -74,16 +77,33 @@ public class Ventana1 extends javax.swing.JFrame {
         });
         jPanel1.add(Continue, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 270, -1, -1));
 
-        jText.addActionListener(new java.awt.event.ActionListener() {
+        buscador.setBackground(new java.awt.Color(255, 255, 255));
+        buscador.setForeground(new java.awt.Color(0, 0, 0));
+        buscador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextActionPerformed(evt);
+                buscadorActionPerformed(evt);
             }
         });
-        jPanel1.add(jText, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 270, -1));
+        jPanel1.add(buscador, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 270, -1));
 
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Ingrese el archivo con el diccionario.");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 300, 50));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 300, 30));
+
+        jLabel2.setFont(new java.awt.Font("sansserif", 0, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setText("Buscador de Diccionario");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 280, 30));
+
+        jTextArea1.setBackground(new java.awt.Color(255, 255, 255));
+        jTextArea1.setColumns(20);
+        jTextArea1.setForeground(new java.awt.Color(0, 0, 0));
+        jTextArea1.setRows(5);
+        jTextArea1.setText("\nBienvenido porfavor ingrese el archivo con el diccionario.\nEste se encuentra dentro de la capeta de la aplicacion \ntiene de nombre el archivo \"Diccionario.txt\"");
+        jPanel1.add(jTextArea1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 340, 90));
+
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 340, 30));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 300));
 
@@ -104,19 +124,21 @@ public class Ventana1 extends javax.swing.JFrame {
         
         if (retorno == JFileChooser.APPROVE_OPTION){
             Archivo = Buscador.getSelectedFile();
-            jText.setText(Archivo.getPath());
+            buscador.setText(Archivo.getPath());
             this.setVisible(true);  
         }
     }//GEN-LAST:event_SearchActionPerformed
 
-    private void jTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextActionPerformed
+    private void buscadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscadorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextActionPerformed
+    }//GEN-LAST:event_buscadorActionPerformed
 
     private void ContinueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContinueActionPerformed
         // TODO add your handling code here:
-         
-        if (retorno == JFileChooser.APPROVE_OPTION){
+        if (buscador.getText().equals("")){
+            jLabel3.setText("Error. No se a seleccionado el archivo diccionario");
+        }else{
+            if (retorno == JFileChooser.APPROVE_OPTION){
             try {
                 // TODO add your handling code here:
                 String Direccion = Archivo.getPath();
@@ -168,9 +190,10 @@ public class Ventana1 extends javax.swing.JFrame {
             } catch (IOException ex) {
                 Logger.getLogger(Ventana1.class.getName()).log(Level.SEVERE, null, ex);
             } 
+            }
+            this.setVisible(false);
+            menu v2 = new menu(this);
         }
-        this.setVisible(false);
-        menu v2 = new menu(this);
     }//GEN-LAST:event_ContinueActionPerformed
 
     /**
@@ -179,7 +202,25 @@ public class Ventana1 extends javax.swing.JFrame {
     public Lista get_palabras(){
         return palabras; 
     }
-
+    
+    public void Agregar_palabra_diccionario(){
+        try (FileWriter escritor = new FileWriter(Archivo, false)) {
+            escritor.write("dic\n");
+            for (int i = 0; i < palabras.Tamaño(); i++) {
+                escritor.write(palabras.Datos(i));
+                escritor.write("\n");
+            }
+            escritor.write("/dic\ntab\n");
+            String x = "";
+            for (int i = 0; i < Letras.Tamaño(); i++) {
+                x = x+Letras.Datos(i)+",";
+            }
+            escritor.write(x+"\n/tab");
+        } catch (IOException ex) {
+            Logger.getLogger(Ventana1.class.getName()).log(Level.SEVERE, null, ex);
+        } 
+    }
+    
     /**
      *
      * @return
@@ -229,9 +270,12 @@ public class Ventana1 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Continue;
     private javax.swing.JButton Search;
+    private javax.swing.JTextField buscador;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jText;
+    private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 
 
