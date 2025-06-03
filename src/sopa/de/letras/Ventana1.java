@@ -143,36 +143,43 @@ public class Ventana1 extends javax.swing.JFrame {
                 // TODO add your handling code here:
                 String Direccion = Archivo.getPath();
                 Texto = new FileReader(Direccion);
-                
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(Ventana1.class.getName()).log(Level.SEVERE, null, ex);
+            }    
                     
-                lector = new BufferedReader(Texto);
-                String cadena;
-                boolean firstime = true;
-                boolean firstime1 = true;
+            lector = new BufferedReader(Texto);
+            String cadena;
+            boolean firstime = true;
+            boolean firstime1 = true;
+            try {
                 while ((cadena = lector.readLine())!= null){
                     if ((cadena.equals("dic"))== false){
-                        
+
                         if(cadena.equals("/dic")== false){
                             if(firstime == true){
                                 palabras.PreInsertar(cadena);
                                 firstime = false;
                             }else{
-                                palabras.Insertar(cadena);         
+                                palabras.Insertar(cadena);
                             }
-                            
+
                         }else{
-                            break;
-                         }               
+                            break;         
+                        }
                     }
-                        
+
                 }
-                while ((cadena = lector.readLine())!= null){    
+            } catch (IOException ex) {
+                System.getLogger(Ventana1.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
+            }
+            try {
+                while ((cadena = lector.readLine())!= null){
                     if(cadena.equals("tab")== false){
-                        
+
                         if(cadena.equals("/tab")== false){
                             String[] aux = cadena.split(",");
                             for (int i = 0; i < aux.length; i++) {
-                            
+
                                 if(firstime1 == true){
                                     Letras.PreInsertar(aux[i]);
                                     firstime1 = false;
@@ -184,12 +191,11 @@ public class Ventana1 extends javax.swing.JFrame {
                             break;
                         }
                     }
-                } 
-            } catch (FileNotFoundException ex) {
-                Logger.getLogger(Ventana1.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (IOException ex) {
-                Logger.getLogger(Ventana1.class.getName()).log(Level.SEVERE, null, ex);
-            } 
+                }
+            } catch (IOException ex) { 
+                System.getLogger(Ventana1.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
+            }
+            
             }
             this.setVisible(false);
             menu v2 = new menu(this);

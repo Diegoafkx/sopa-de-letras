@@ -19,12 +19,12 @@ public class Arista {
         direccion = ub;
     }
     
-    public String get_N1(){
-        return N1.get_dato();
+    public Vertice get_N1(){
+        return N1;
     }
     
-    public String get_N2(){
-        return N2.get_dato();
+    public Vertice get_N2(){
+        return N2;
     }
     
     public int get_ub(){
