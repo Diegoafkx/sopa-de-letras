@@ -12,8 +12,6 @@ import javax.swing.JTextField;
 public class Ventana2 extends javax.swing.JFrame {
     private static Ventana1 v1;
     private static Grafo s_l;
-    private static int[] tiempo;
-    private DefaultListModel<String> words = new DefaultListModel<>();
     private String metodo = "";
     /**
      * Creates new form ventana2, jText.setText(words);
@@ -23,7 +21,6 @@ public class Ventana2 extends javax.swing.JFrame {
         initComponents();
         this.v1 = v1;
         this.Crear_sopa_de_letras();
-        this.mostrar_lista_word();
         this.setVisible(true);
     }
     
@@ -35,14 +32,23 @@ public class Ventana2 extends javax.swing.JFrame {
         }
     }
     
-    private void mostrar_lista_word(){
+    private void mostrar_palabras(String[] p){
+        DefaultListModel<String> words = new DefaultListModel<>();
         words.clear();
-        for (int i = 0; i < v1.get_palabras().Tamaño(); i++) {
-            words.addElement(v1.get_palabras().Datos(i));   
+        for (int i = 0; i < p.length; i++) {
+            words.addElement(p[i]);   
         }
         jList1.setModel(words);
     }
     
+    private void mostrar_tiempo(double[] t){
+        DefaultListModel<String> tiempo = new DefaultListModel<>();
+        tiempo.clear();
+        for (int i = 0; i < t.length; i++) {
+            tiempo.addElement(Double.toString(t[i]));   
+        }
+        jList2.setModel(tiempo);
+    }
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -549,7 +555,11 @@ public class Ventana2 extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         if(metodo.equals("DFS") ){
-            
+            DFS buscador = new DFS(s_l,v1.get_palabras());
+            String[] palabras = buscador.get_palabras();
+            double[] time = buscador.get_time();
+            this.mostrar_tiempo(time);
+            this.mostrar_palabras(palabras);
         }else if(metodo.equals("BFS")){
             
         }else{
@@ -595,7 +605,6 @@ public class Ventana2 extends javax.swing.JFrame {
             }
         }
         this.New_palabra.setText("");
-        this.mostrar_lista_word();
     }//GEN-LAST:event_BuscrActionPerformed
 
     private void DFSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DFSActionPerformed

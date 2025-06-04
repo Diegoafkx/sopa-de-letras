@@ -30,4 +30,11 @@ public class Arista {
     public int get_ub(){
         return direccion;
     }
+    
+    public boolean igual(Vertice n){
+        if(n == N1 || n == N2){
+            return true;
+        }
+        return false;
+    }
 }  

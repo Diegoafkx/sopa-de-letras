@@ -14,13 +14,13 @@ public class Vertice {
     private boolean visited;
 
     public Vertice(Nodo n1){
-        vecinos = new Arista[9]; 
+        vecinos = new Arista[9];
         letra = n1.data;
         visited = false;
     } 
     
-    public Vertice dar_vecino(int p){
-        return vecinos[p].get_N2();
+    public Arista dar_vecino(int p){
+        return vecinos[p];
     }
     
     public void crear_vecinos(Vertice n2, int ub){
