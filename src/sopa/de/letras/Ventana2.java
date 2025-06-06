@@ -5,6 +5,7 @@
 package sopa.de.letras;
 import javax.swing.DefaultListModel;
 import javax.swing.JTextField;
+
 /**
  *
  * @author Windows 10 Pro
@@ -13,6 +14,8 @@ public class Ventana2 extends javax.swing.JFrame {
     private static Ventana1 v1;
     private static Grafo s_l;
     private String metodo = "";
+    private DefaultListModel<String> words;
+    private DefaultListModel<String> tiempo;
     /**
      * Creates new form ventana2, jText.setText(words);
      * @param v1
@@ -33,19 +36,23 @@ public class Ventana2 extends javax.swing.JFrame {
     }
     
     private void mostrar_palabras(String[] p){
-        DefaultListModel<String> words = new DefaultListModel<>();
+        words = new DefaultListModel<>();
         words.clear();
-        for (int i = 0; i < p.length; i++) {
-            words.addElement(p[i]);   
+        for (String p1 : p) {
+            if (p1 != null) {
+                words.addElement(p1);   
+            }
         }
         jList1.setModel(words);
     }
     
     private void mostrar_tiempo(double[] t){
-        DefaultListModel<String> tiempo = new DefaultListModel<>();
+        tiempo = new DefaultListModel<>();
         tiempo.clear();
         for (int i = 0; i < t.length; i++) {
-            tiempo.addElement(Double.toString(t[i]));   
+            if(t[i] != 0.0){
+                tiempo.addElement(Double.toString(t[i]));   
+            }
         }
         jList2.setModel(tiempo);
     }
@@ -91,13 +98,9 @@ public class Ventana2 extends javax.swing.JFrame {
         BFS = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jTextArea1 = new javax.swing.JTextArea();
         jTextArea2 = new javax.swing.JTextArea();
-        jLabel7 = new javax.swing.JLabel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jList3 = new javax.swing.JList<>();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -105,6 +108,9 @@ public class Ventana2 extends javax.swing.JFrame {
         Aviso = new javax.swing.JLabel();
         m_b = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        next = new javax.swing.JButton();
+        Alertaa = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("sopa de letras");
@@ -115,6 +121,8 @@ public class Ventana2 extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBorder(null);
+        jPanel1.setMinimumSize(new java.awt.Dimension(1280, 720));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
@@ -131,7 +139,7 @@ public class Ventana2 extends javax.swing.JFrame {
         palabras_sopa.setForeground(new java.awt.Color(0, 0, 0));
         palabras_sopa.setText("Palabras de la Sopa de Letras");
         palabras_sopa.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        jPanel1.add(palabras_sopa, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 340, 30));
+        jPanel1.add(palabras_sopa, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 340, 30));
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
         jPanel2.setForeground(new java.awt.Color(0, 0, 0));
@@ -343,7 +351,7 @@ public class Ventana2 extends javax.swing.JFrame {
         jList1.setForeground(new java.awt.Color(0, 0, 0));
         jScrollPane1.setViewportView(jList1);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, 80, 420));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, 110, 230));
 
         jScrollPane2.setForeground(new java.awt.Color(0, 0, 0));
 
@@ -351,7 +359,7 @@ public class Ventana2 extends javax.swing.JFrame {
         jList2.setForeground(new java.awt.Color(0, 0, 0));
         jScrollPane2.setViewportView(jList2);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, 80, 420));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, 110, 230));
 
         jButton1.setBackground(new java.awt.Color(204, 0, 0));
         jButton1.setText("X");
@@ -408,7 +416,7 @@ public class Ventana2 extends javax.swing.JFrame {
                 BFSActionPerformed(evt);
             }
         });
-        jPanel1.add(BFS, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 330, -1, -1));
+        jPanel1.add(BFS, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 340, -1, -1));
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
@@ -417,27 +425,21 @@ public class Ventana2 extends javax.swing.JFrame {
 
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Breadth First Search");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 180, 120, 20));
-
-        jLabel5.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel5.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel5.setText("Estado");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 170, -1, 20));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 210, 120, 20));
 
         jLabel6.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Palabras");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 80, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, 80, -1));
 
         jTextArea1.setEditable(false);
         jTextArea1.setBackground(new java.awt.Color(255, 255, 255));
         jTextArea1.setColumns(20);
         jTextArea1.setForeground(new java.awt.Color(0, 0, 0));
         jTextArea1.setRows(5);
-        jTextArea1.setText("Este metodo se encarga de\nleer todas las letras que se \nencuentran junto a la primera \nde las mismas, para buscar \nuna combinacion que cree \nuna palabra y luego siga a la \nsiguiente letra.");
+        jTextArea1.setText("Este metodo se encarga de leer\ntodas las letras que se encuentran \njunto a la primera  de las mismas, \npara buscar una combinacion \nque cree una palabra y luego siga \na la siguiente letra.");
         jTextArea1.setToolTipText("");
-        jPanel1.add(jTextArea1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 200, 180, 130));
+        jPanel1.add(jTextArea1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 230, 210, 110));
 
         jTextArea2.setEditable(false);
         jTextArea2.setBackground(new java.awt.Color(255, 255, 255));
@@ -447,21 +449,11 @@ public class Ventana2 extends javax.swing.JFrame {
         jTextArea2.setText("Puedes escribir una palabra que no se encuentre en el diccionario \npara que el programa lo busque, y a su vez, lo agregara al mismo. \nRECUERDA \nUna palabra valida tiene minimo 3 y maximo 4 letras");
         jPanel1.add(jTextArea2, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 470, -1, 90));
 
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel7.setText("Existe 2 metodos diferentes con el cual se puede resolver la sopa de letras.");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 150, 420, -1));
-
-        jList3.setBackground(new java.awt.Color(255, 255, 255));
-        jList3.setForeground(new java.awt.Color(0, 0, 0));
-        jScrollPane3.setViewportView(jList3);
-
-        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 200, 80, 420));
-
         jLabel8.setBackground(new java.awt.Color(0, 0, 0));
         jLabel8.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("Tiempo");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 170, -1, 20));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 170, -1, 20));
 
         jLabel9.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(0, 0, 0));
@@ -472,7 +464,7 @@ public class Ventana2 extends javax.swing.JFrame {
         jLabel10.setForeground(new java.awt.Color(0, 0, 0));
         jLabel10.setText("Elija el metodo de busqueda");
         jLabel10.setToolTipText("");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 110, 320, -1));
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 170, 320, -1));
 
         jTextArea3.setEditable(false);
         jTextArea3.setBackground(new java.awt.Color(255, 255, 255));
@@ -493,6 +485,25 @@ public class Ventana2 extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Metodo Selecionado:");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 370, 130, 30));
+
+        next.setBackground(new java.awt.Color(255, 255, 255));
+        next.setForeground(new java.awt.Color(0, 0, 0));
+        next.setText("siguiente");
+        next.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nextActionPerformed(evt);
+            }
+        });
+        jPanel1.add(next, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 680, -1, -1));
+
+        Alertaa.setFont(new java.awt.Font("sansserif", 0, 24)); // NOI18N
+        Alertaa.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(Alertaa, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 660, 1050, 40));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/x.png"))); // NOI18N
+        jLabel5.setText("jLabel5");
+        jLabel5.setToolTipText("");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
 
@@ -554,18 +565,32 @@ public class Ventana2 extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        if(metodo.equals("DFS") ){
-            DFS buscador = new DFS(s_l,v1.get_palabras());
-            String[] palabras = buscador.get_palabras();
-            double[] time = buscador.get_time();
-            this.mostrar_tiempo(time);
-            this.mostrar_palabras(palabras);
-        }else if(metodo.equals("BFS")){
-            
-        }else{
+        String[] palabras = new String[7];
+        double[] time = null ;
+        if(metodo.equals("DFS") || metodo.equals("BFS")){
+            if(metodo.equals("DFS") ){
+                DFS buscador = new DFS(s_l,v1.get_palabras());
+                palabras = buscador.get_palabras();
+                time = buscador.get_time();
+            }else if(metodo.equals("BFS")){
+
+            }
+            }else{
             this.m_b.setText("ERROR. No se selecciono ningun metodo");
-        }
-            
+            }
+            boolean x = false;
+            for (int i = 0; i < 7; i++) {
+                if(palabras[i]!=null){
+                    x = true;
+                }
+            }
+            if(x == true){
+                this.mostrar_tiempo(time);
+                this.mostrar_palabras(palabras);
+            }else{
+                Alertaa.setText("No se encontraron palabras en esta sopa de letras, haga click en siguiente para hacer uno nuevo");
+            }
+        
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -619,6 +644,19 @@ public class Ventana2 extends javax.swing.JFrame {
         m_b.setText("Breath First Search");  
     }//GEN-LAST:event_BFSActionPerformed
 
+    private void nextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextActionPerformed
+        // TODO add your handling code here:
+        Alertaa.setText("");
+        tiempo.clear();
+        metodo = "";
+        words.clear();
+        jList1.setModel(words);
+        jList2.setModel(tiempo);
+        m_b.setText("");
+        this.Crear_sopa_de_letras();
+        
+    }//GEN-LAST:event_nextActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -656,6 +694,7 @@ public class Ventana2 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Alertaa;
     private javax.swing.JLabel Aviso;
     private javax.swing.JButton BFS;
     private javax.swing.JButton Buscr;
@@ -670,17 +709,14 @@ public class Ventana2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JList<String> jList1;
     private javax.swing.JList<String> jList2;
-    private javax.swing.JList<String> jList3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextArea jTextArea3;
@@ -701,6 +737,7 @@ public class Ventana2 extends javax.swing.JFrame {
     private javax.swing.JTextField letra8;
     private javax.swing.JTextField letra9;
     private javax.swing.JLabel m_b;
+    private javax.swing.JButton next;
     private javax.swing.JLabel palabras_sopa;
     // End of variables declaration//GEN-END:variables
 

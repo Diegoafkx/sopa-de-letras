@@ -43,4 +43,5 @@ public class Vertice {
     public void visit(){
         visited = true;
     }
+    
 }
