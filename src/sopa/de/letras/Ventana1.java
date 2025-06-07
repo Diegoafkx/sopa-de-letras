@@ -150,20 +150,12 @@ public class Ventana1 extends javax.swing.JFrame {
                     
             lector = new BufferedReader(Texto);
             String cadena;
-            boolean firstime = true;
-            boolean firstime1 = true;
             try {
                 while ((cadena = lector.readLine())!= null){
                     if ((cadena.equals("dic"))== false){
 
                         if(cadena.equals("/dic")== false){
-                            if(firstime == true){
-                                palabras.PreInsertar(cadena);
-                                firstime = false;
-                            }else{
                                 palabras.Insertar(cadena);
-                            }
-
                         }else{
                             break;         
                         }
@@ -180,12 +172,7 @@ public class Ventana1 extends javax.swing.JFrame {
                         if(cadena.equals("/tab")== false){
                             String[] aux = cadena.split(",");
                             for (String aux1 : aux) {
-                                if (firstime1 == true) {
-                                    Letras.PreInsertar(aux1);
-                                    firstime1 = false;
-                                } else {
                                     Letras.Insertar(aux1);
-                                }
                             }
                         }else{
                             break;
