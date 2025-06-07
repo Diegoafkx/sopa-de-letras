@@ -13,13 +13,14 @@ import javax.swing.DefaultListModel;
  */
 public class diccionary extends javax.swing.JFrame {
     private static menu menu;
-    private DefaultListModel<String> model = new DefaultListModel<>();
+    private final DefaultListModel<String> model = new DefaultListModel<>();
     /**
      * Creates new form diccionary
+     * @param menu
      */
     public diccionary(menu menu) {
         initComponents();
-        this.menu = menu;
+        diccionary.menu = menu;
         Lista lista = menu.getlist_p();
         this.setVisible(true);
         for (int i = 0; i < lista.Tamaño(); i++) {
@@ -118,10 +119,8 @@ public class diccionary extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new diccionary(menu).setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new diccionary(menu).setVisible(true);
         });
     }
 

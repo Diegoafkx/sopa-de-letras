@@ -10,7 +10,7 @@ package sopa.de.letras;
  */
 public class Grafo {
     
-    private Vertice[] Vertices = new Vertice[16];
+    private final Vertice[] Vertices = new Vertice[16];
 
     
     public Grafo(Lista letras){
@@ -57,10 +57,10 @@ public class Grafo {
 
         for (int i = 0; i < 16; i++) {
 
-            if(i!=3 && i!= 7 && i<11){
+            if(i<=11){
                 Vertices[i].crear_vecinos(Vertices[i+4],1);
             }
-            if(i > 4 && i!=8 && i!= 12){
+            if(i >= 4){
                 Vertices[i].crear_vecinos(Vertices[i-4],1);
             }
         }
@@ -70,11 +70,22 @@ public class Grafo {
             if(i != 3 && i!= 7 && i<11){
                 Vertices[i].crear_vecinos(Vertices[i+5],2);
             }
-            if(i != 0 && i != 4 && i!=8 && i<13){
+            if(i != 0 && i != 4 && i!=8 && i<12){
                 
                 Vertices[i].crear_vecinos(Vertices[i+3],3);
             }
-        }   
+        }
+        
+        for (int i = 0; i < 16; i++) {
+
+            if(i>= 5 && i!=8 && i !=12){
+                Vertices[i].crear_vecinos(Vertices[i-5],2);
+            }
+            if(i> 3&& i!= 7 && i !=11 && i!= 15){
+                
+                Vertices[i].crear_vecinos(Vertices[i-3],3);
+            }
+        }
     }   
     /**
      *

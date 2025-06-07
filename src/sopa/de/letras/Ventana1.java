@@ -22,8 +22,8 @@ public class Ventana1 extends javax.swing.JFrame {
     private File Archivo;
     private FileReader Texto;
     private BufferedReader lector;
-    private Lista palabras = new Lista ();
-    private Lista Letras = new Lista();
+    private final Lista palabras = new Lista ();
+    private final Lista Letras = new Lista();
     
     /**
      *
@@ -179,13 +179,12 @@ public class Ventana1 extends javax.swing.JFrame {
 
                         if(cadena.equals("/tab")== false){
                             String[] aux = cadena.split(",");
-                            for (int i = 0; i < aux.length; i++) {
-
-                                if(firstime1 == true){
-                                    Letras.PreInsertar(aux[i]);
+                            for (String aux1 : aux) {
+                                if (firstime1 == true) {
+                                    Letras.PreInsertar(aux1);
                                     firstime1 = false;
-                                }else{
-                                    Letras.Insertar(aux[i]);
+                                } else {
+                                    Letras.Insertar(aux1);
                                 }
                             }
                         }else{
@@ -266,11 +265,8 @@ public class Ventana1 extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                new Ventana1().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new Ventana1().setVisible(true);
         });
     }
 

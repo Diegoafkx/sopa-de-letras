@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package sopa.de.letras;
+import java.awt.Color;
 import javax.swing.DefaultListModel;
 import javax.swing.JTextField;
 
@@ -22,10 +23,20 @@ public class Ventana2 extends javax.swing.JFrame {
      */
     public Ventana2( Ventana1 v1) {
         initComponents();
-        this.v1 = v1;
+        Ventana2.v1 = v1;
         this.Crear_sopa_de_letras();
         this.setVisible(true);
     }
+    
+    private void colores(){
+        JTextField[] aux = {this.letra1, this.letra2, this.letra3, this.letra4, this.letra5, this.letra6,this.letra7, this.letra8, this.letra9, this.letra10, this.letra11, this.letra12, this.letra13, this.letra14, this.letra15, this.letra16};
+        for (int i = 0; i < 16; i++) {
+            if (s_l.get_vertice(i).get_status()==true) {
+                aux[i].setBackground(Color.GREEN);
+            }
+        }
+    }
+    
     
     private void Crear_sopa_de_letras(){
         s_l = new Grafo(v1.get_letras());
@@ -250,7 +261,7 @@ public class Ventana2 extends javax.swing.JFrame {
         letra9.setForeground(new java.awt.Color(0, 0, 0));
         letra9.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         letra9.setText("X");
-        jPanel2.add(letra9, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 240, 110, 120));
+        jPanel2.add(letra9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 110, 120));
 
         letra10.setEditable(false);
         letra10.setBackground(new java.awt.Color(255, 255, 255));
@@ -263,7 +274,7 @@ public class Ventana2 extends javax.swing.JFrame {
                 letra10ActionPerformed(evt);
             }
         });
-        jPanel2.add(letra10, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 240, 110, 120));
+        jPanel2.add(letra10, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 240, 110, 120));
 
         letra11.setEditable(false);
         letra11.setBackground(new java.awt.Color(255, 255, 255));
@@ -276,7 +287,7 @@ public class Ventana2 extends javax.swing.JFrame {
                 letra11ActionPerformed(evt);
             }
         });
-        jPanel2.add(letra11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 110, 120));
+        jPanel2.add(letra11, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 240, 110, 120));
 
         letra12.setEditable(false);
         letra12.setBackground(new java.awt.Color(255, 255, 255));
@@ -302,7 +313,7 @@ public class Ventana2 extends javax.swing.JFrame {
                 letra13ActionPerformed(evt);
             }
         });
-        jPanel2.add(letra13, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 360, 110, 120));
+        jPanel2.add(letra13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, 110, 120));
 
         letra14.setEditable(false);
         letra14.setBackground(new java.awt.Color(255, 255, 255));
@@ -315,7 +326,7 @@ public class Ventana2 extends javax.swing.JFrame {
                 letra14ActionPerformed(evt);
             }
         });
-        jPanel2.add(letra14, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 360, 110, 120));
+        jPanel2.add(letra14, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 360, 110, 120));
 
         letra15.setEditable(false);
         letra15.setBackground(new java.awt.Color(255, 255, 255));
@@ -328,7 +339,7 @@ public class Ventana2 extends javax.swing.JFrame {
                 letra15ActionPerformed(evt);
             }
         });
-        jPanel2.add(letra15, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, 110, 120));
+        jPanel2.add(letra15, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 360, 110, 120));
 
         letra16.setEditable(false);
         letra16.setBackground(new java.awt.Color(255, 255, 255));
@@ -572,6 +583,7 @@ public class Ventana2 extends javax.swing.JFrame {
                 DFS buscador = new DFS(s_l,v1.get_palabras());
                 palabras = buscador.get_palabras();
                 time = buscador.get_time();
+                this.colores();
             }else if(metodo.equals("BFS")){
 
             }
@@ -646,6 +658,12 @@ public class Ventana2 extends javax.swing.JFrame {
 
     private void nextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextActionPerformed
         // TODO add your handling code here:
+        JTextField[] aux = {this.letra1, this.letra2, this.letra3, this.letra4, this.letra5, this.letra6,this.letra7, this.letra8, this.letra9, this.letra10, this.letra11, this.letra12, this.letra13, this.letra14, this.letra15, this.letra16};
+        for (int i = 0; i < 16; i++) {
+            if (s_l.get_vertice(i).get_status()==true) {
+                aux[i].setBackground(Color.WHITE);
+            }
+        }
         Alertaa.setText("");
         tiempo.clear();
         metodo = "";
@@ -686,10 +704,8 @@ public class Ventana2 extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Ventana2(v1).setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new Ventana2(v1).setVisible(true);
         });
     }
 

@@ -12,10 +12,11 @@ public class Agregar_palabra extends javax.swing.JFrame {
     private static menu menu;
     /**
      * Creates new form Agregar_palabra
+     * @param menu
      */
     public Agregar_palabra(menu menu) {
         initComponents();
-        this.menu = menu;
+        Agregar_palabra.menu = menu;
         this.setVisible(true);
     }
 
@@ -150,10 +151,8 @@ public class Agregar_palabra extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Agregar_palabra(menu).setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new Agregar_palabra(menu).setVisible(true);
         });
     }
 

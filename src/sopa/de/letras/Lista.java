@@ -107,32 +107,4 @@ public class Lista  {
         }
         return aux;
     }
-    /**
-     *
-     * @param daux
-     * @return
-     */
-    public String Eliminar(String daux){
-        
-        if(daux.equals(this.Leer(pfirst))== false){
-            Nodo paux = pfirst.pNext;
-            Nodo paux1 = paux;
-            
-            for (int i = 0; i < 10; i++) {
-                if(daux.equals(this.Leer(paux))== false){
-                    paux = paux.pNext;
-                    
-                }
-                else{
-                    paux1.pNext = paux.pNext;
-                    return "Se a eliminado con exito";
-                }    
-            }
-        }
-        else{
-            pfirst = pfirst.pNext;
-            return "Se a eliminado con exito";
-        }
-        return "Ha surgido un error.\nNo se encuentro la palabra";
-    }
 }

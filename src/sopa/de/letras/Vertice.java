@@ -9,8 +9,8 @@ package sopa.de.letras;
  * @author Windows 10 Pro
  */
 public class Vertice {
-    private Arista[] vecinos;
-    private String letra;
+    private final Arista[] vecinos;
+    private final String letra;
     private boolean visited;
 
     public Vertice(Nodo n1){
@@ -43,5 +43,7 @@ public class Vertice {
     public void visit(){
         visited = true;
     }
-    
+    public void desvisitar(){
+        visited = false;
+    }
 }

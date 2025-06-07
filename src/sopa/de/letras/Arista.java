@@ -9,9 +9,9 @@ package sopa.de.letras;
  * @author Windows 10 Pro
  */
 public class Arista {
-    private int direccion;
-    private Vertice N1;
-    private Vertice N2;
+    private final int direccion;
+    private final Vertice N1;
+    private final Vertice N2;
     
         public Arista(Vertice n1, Vertice n2, int ub){
         N1 = n1;
@@ -31,10 +31,4 @@ public class Arista {
         return direccion;
     }
     
-    public boolean igual(Vertice n){
-        if(n == N1 || n == N2){
-            return true;
-        }
-        return false;
-    }
 }  

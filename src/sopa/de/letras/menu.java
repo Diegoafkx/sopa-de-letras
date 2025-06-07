@@ -13,10 +13,11 @@ public class menu extends javax.swing.JFrame {
     private static Ventana1 v1;
     /**
      * Creates new form menu
+     * @param v1
      */
     public menu(Ventana1 v1) {
         initComponents();
-        this.v1 = v1;
+        menu.v1 = v1;
         this.setVisible(true);
         this.setUndecorated(true);
         this.setExtendedState(6);
@@ -166,11 +167,8 @@ public class menu extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                new menu(v1).setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new menu(v1).setVisible(true);
         });
     }
     
