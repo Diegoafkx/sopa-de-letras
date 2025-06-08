@@ -583,25 +583,28 @@ public class Ventana2 extends javax.swing.JFrame {
                 DFS buscador = new DFS(s_l,v1.get_palabras());
                 palabras = buscador.get_palabras();
                 time = buscador.get_time();
-                this.colores();
             }else if(metodo.equals("BFS")){
-
+                BFS buscador = new BFS(s_l,v1.get_palabras());
+                palabras = buscador.get_palabras();
+                time = buscador.get_time();
             }
-            }else{
+            
+        }else{
             this.m_b.setText("ERROR. No se selecciono ningun metodo");
+        }
+        boolean x = false;
+        for (int i = 0; i < 7; i++) {
+            if(palabras[i]!=null){
+                x = true;
             }
-            boolean x = false;
-            for (int i = 0; i < 7; i++) {
-                if(palabras[i]!=null){
-                    x = true;
-                }
-            }
-            if(x == true){
-                this.mostrar_tiempo(time);
-                this.mostrar_palabras(palabras);
-            }else{
-                Alertaa.setText("No se encontraron palabras en esta sopa de letras, haga click en siguiente para hacer uno nuevo");
-            }
+        }
+        if(x == true){
+            this.mostrar_tiempo(time);
+            this.mostrar_palabras(palabras);
+            this.colores();
+        }else{
+            Alertaa.setText("No se encontraron palabras en esta sopa de letras, haga click en siguiente para hacer uno nuevo");
+        }
         
     }//GEN-LAST:event_jButton3ActionPerformed
 

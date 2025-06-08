@@ -24,6 +24,9 @@ public class Vertice {
     } 
     
     public Vertice dar_vecino(int p){
+        if (vecinos[p]==null) {
+            return null;
+        }
         return vecinos[p].get_N2();
     }
     
