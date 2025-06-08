@@ -16,7 +16,8 @@ public class BFS {
     private String palabra;
     public BFS(Grafo g, Lista p){
         gf = g;
-        Agregar_p( p);
+        this.Agregar_p( p);
+        this.Solucion();
     }
     
     public BFS(Grafo g, String p){
@@ -30,6 +31,11 @@ public class BFS {
     }
     
     private void Solucion(){
-        
+        for (int i = 0; i < 16; i++) {
+            Vertice v1 = gf.get_vertice(i);
+            if(v1.get_status()==false){
+                int[] ubicaciones = {0,1,2,3,4,5,6,7,8};
+            }
+        }
     }
 }

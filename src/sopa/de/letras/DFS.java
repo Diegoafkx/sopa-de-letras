@@ -3,7 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package sopa.de.letras;
-import java.lang.System;
 /**
  *
  * @author diego
