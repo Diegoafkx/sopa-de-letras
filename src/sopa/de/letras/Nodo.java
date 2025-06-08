@@ -21,9 +21,9 @@ public class Nodo {
     protected Nodo  pNext;
     
     protected Nodo pPrevious;
-    Nodo(String elem){
+    
+    public Nodo(String elem){
         data=elem;
         pNext=null;
-        pPrevious = null;
     }
 }

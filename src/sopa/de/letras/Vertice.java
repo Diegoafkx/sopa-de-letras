@@ -12,15 +12,19 @@ public class Vertice {
     private final Arista[] vecinos;
     private final String letra;
     private boolean visited;
+    protected Vertice pNext;
+    private Nodo Nod;
 
     public Vertice(Nodo n1){
         vecinos = new Arista[8];
+        Nod = n1;
         letra = n1.data;
         visited = false;
+        pNext = null;
     } 
     
-    public Arista dar_vecino(int p){
-        return vecinos[p];
+    public Vertice dar_vecino(int p){
+        return vecinos[p].get_N2();
     }
     
     public void crear_vecinos(Vertice n2, int ub){
@@ -45,5 +49,9 @@ public class Vertice {
     }
     public void desvisitar(){
         visited = false;
+    }
+    
+    public Nodo get_Nodo(){
+        return Nod;
     }
 }

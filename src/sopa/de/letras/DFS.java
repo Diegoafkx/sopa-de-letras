@@ -39,51 +39,44 @@ public class DFS {
     }
     
     private void searching(){
-        for (int i = 0; i < 16; i++) {
-            startTime = System.nanoTime();
-            Vertice v1 = mG.get_vertice(i);
-            boolean x = false;
-            for (int j = 0; j < 9; j++) {
-                if(v1.get_status() == false){
-                    if(v1.dar_vecino(j)!= null){
-                        aris1 = v1.dar_vecino(j);
-                        Vertice  v2 = aris1.get_N2();
-                        if (v2.get_status()== false){
-                            for (int k = 0; k < palabras.length; k++) {
-                                palabra = palabras[k];
-                                boolean aux = false;
-                                int u = 0;
-                                while(this.ps[u]!=null){
-                                    if (ps[u].equals(palabra)) {
-                                        aux = true;
-                                        break;
-                                    }
-                                    u++;
-                                }
-                                if(aux == false){
-                                    String p = Character.toString(palabra.charAt(0))+Character.toString(palabra.charAt(1));
-                                    String p2 = v1.get_dato()+v2.get_dato();
-                                    if(p.equals(p2)){
-                                        v1.visit();
-                                        v2.visit();
-                                        x = this.search(v2,2);
-                                        if(x == true){
-                                            endTime = System.nanoTime();
-                                            u = 0;
-                                            while(this.ps[u]!=null){
-                                                u++;
-                                            }
-                                            this.ps[u] = palabra;
-                                            long elapsedTimeNanos = endTime - startTime;
-                                            this.tiempo[u] = (double) elapsedTimeNanos / 1000000000.0;
+        for (int k = 0; k < palabras.length; k++) {
+            palabra = palabras[k];
+            for (int i = 0; i < 16; i++) {
+                startTime = System.nanoTime();
+                Vertice v1 = mG.get_vertice(i);
+                boolean x = false;
+                for (int j = 0; j < 8; j++) {
+                    if(v1.get_status() == false){
+                        if(v1.dar_vecino(j)!= null){
+                            Vertice  v2 = v1.dar_vecino(j);
+                            if (v2.get_status()== false){
+                                    boolean aux = false;
+                                    int u = 0;
+                                    if(aux == false){
+                                        String p = Character.toString(palabra.charAt(0))+Character.toString(palabra.charAt(1));
+                                        String p2 = v1.get_dato()+v2.get_dato();
+                                        if(p.equals(p2)){
                                             v1.visit();
                                             v2.visit();
-                                            break;
-                                        }else{
-                                            v1.desvisitar();
-                                            v2.desvisitar();
+                                            x = this.search(v2,2);
+                                            if(x == true){
+                                                endTime = System.nanoTime();
+                                                u = 0;
+                                                while(this.ps[u]!=null){
+                                                    u++;
+                                                }
+                                                this.ps[u] = palabra;
+                                                long elapsedTimeNanos = endTime - startTime;
+                                                this.tiempo[u] = (double) elapsedTimeNanos / 1000000000.0;
+                                                v1.visit();
+                                                v2.visit();
+                                                break;
+                                            }else{
+                                                v1.desvisitar();
+                                                v2.desvisitar();
+                                            }
                                         }
-                                    } 
+                                    }
                                 }               
                             }
                         } 
@@ -91,16 +84,15 @@ public class DFS {
                 }
             }
         } 
-    }
+    
          
     
     private boolean search(Vertice v1,int v){
         if(v < palabra.length()){
-                for (int i = 0; i < 9; i++) {
+                for (int i = 0; i < 8; i++) {
                 String y = Character.toString(palabra.charAt(v));
                 if(v1.dar_vecino(i)!= null){
-                    Arista aris2 = v1.dar_vecino(i);
-                        Vertice  v2 = aris2.get_N2();
+                        Vertice  v2 = v1.dar_vecino(i);
                         if(v2.get_status()== false){
                                 if(v2.get_dato().equals(y)){
                                     if(v == palabra.length()-1){
