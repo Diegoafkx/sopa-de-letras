@@ -9,38 +9,35 @@ package sopa.de.letras;
  * @author diego
  */
 public class Cola {
-    private int in;
-    private Vertice pFirst;
-    private Vertice pFinal;
+    private int in = 0;
+    private Nodo pFirst;
+    private Nodo pFinal;
     public Cola() {
         pFirst = null;
         pFinal = null;
-        in =0;
     }
     
-    private void insertar(Vertice v){
+    public void encolar(Nodo n){
         if (pFinal == null) {
-            pFinal = v;
-            pFirst = v;
+            pFinal = n;
+            pFirst = n;
         }else{
-            pFinal.pNext= v;
-            pFinal = v;
+            pFinal.pNext= n;
+            pFinal = n;
         }   
-        in = in+1;
+        in++;
     }
     
     public int Tamaño(){
      return in;   
     }
     
-    public Vertice desencolar(){
-        Vertice ptemp = pFirst;
+    public Nodo desencolar(){
+        Nodo ptemp = pFirst;
         pFirst = pFirst.pNext;
+        ptemp.pNext = null;
+        in--;
         return ptemp;
-    }
-    
-    public void encolar(Vertice v){
-        this.insertar(v);
     }
     
 }

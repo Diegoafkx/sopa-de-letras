@@ -9,7 +9,7 @@ package sopa.de.letras;
  * @author Windows 10 Pro
  */
 public class Nodo {
-    
+    protected Vertice v;
     /**
      *
      */

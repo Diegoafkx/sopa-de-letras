@@ -13,12 +13,12 @@ public class Vertice {
     private final String letra;
     private boolean visited;
     protected Vertice pNext;
-    private Nodo Nod;
+    private Nodo nod;
 
     public Vertice(Nodo n1){
         vecinos = new Arista[8];
-        Nod = n1;
         letra = n1.data;
+        nod = new Nodo(letra);
         visited = false;
         pNext = null;
     } 
@@ -50,11 +50,16 @@ public class Vertice {
     public void visit(){
         visited = true;
     }
+    
     public void desvisitar(){
         visited = false;
     }
     
-    public Nodo get_Nodo(){
-        return Nod;
+    public void Poner_Nod(){
+        nod.v = this;
+    }
+    
+    public Nodo Dar_Nodo(){
+        return nod;
     }
 }
