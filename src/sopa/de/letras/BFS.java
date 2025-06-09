@@ -47,13 +47,12 @@ public class BFS {
                     break;
                 }
                 v1 = gf.get_vertice(i);
-                v1.Poner_Nod();
                 if(v1.get_status()==false && s.equals(v1.get_dato())){
                     Cola v2s= new Cola();
                     String[] inc = new String[8];
                     for (int j = 0;j<8; j++) {
                         if (v1.dar_vecino(j)!=null && v1.dar_vecino(j).get_status() ==false ) {
-                            v2s.encolar(v1.dar_vecino(j).Dar_Nodo()); 
+                            v2s.encolar(v1.dar_vecino(j)); 
                             int o = 0;
                             while(inc[o]!=null){
                             o++;
@@ -62,17 +61,17 @@ public class BFS {
                             
                         }
                     }
-                    for (int j = 0; j < v2s.Tamaño(); j++) {
+                    int t2 = v2s.Tamaño();
+                    for (int j = 0; j < t2; j++) {
                         if(aux.equals(palabra)){
                             break;
                         }
-                        v2 = v2s.desencolar().v;
-                        v2.Poner_Nod();
+                        v2 = v2s.desencolar();
                         String[] inx = new String[8];
                         Cola v3s= new Cola();
                         for (int k = 0; k<8; k++) {
                             if (v1!=v2.dar_vecino(k) && v2.dar_vecino(k)!=null && v2.dar_vecino(k).get_status()== false) {
-                                v3s.encolar(v2.dar_vecino(k).Dar_Nodo());
+                                v3s.encolar(v2.dar_vecino(k));
                                 int o = 0;
                                 while(inx[o]!=null){
                                 o++;
@@ -80,19 +79,19 @@ public class BFS {
                                 inx[o] = Integer.toString(k);
                             }
                         }
-                        for (int k = 0; k < v3s.Tamaño(); k++) {
+                        int t3 = v3s.Tamaño();
+                        for (int k = 0; k < t3; k++) {
                             if(aux.equals(palabra)){
                                 break;
                             }   
-                            v3 = v3s.desencolar().v;
-                            v3.Poner_Nod();
+                            v3 = v3s.desencolar();
                             aux =v1.get_dato() +v2.get_dato()+v3.get_dato();
                             if(palabra.length()==4){
                                 Cola v4s= new Cola();
                                 String[] inv = new String[8];
                                 for (int l = 0; l<8; l++) {
                                     if (v2!=v3.dar_vecino(l)&&v1!=v3.dar_vecino(l) && v3.dar_vecino(l)!=null && v3.dar_vecino(l).get_status()== false) {
-                                        v4s.encolar(v3.dar_vecino(l).Dar_Nodo());   
+                                        v4s.encolar(v3.dar_vecino(l));   
                                         int o = 0;
                                         while(inv[o]!=null){
                                         o++;
@@ -100,9 +99,9 @@ public class BFS {
                                         inv[o] = Integer.toString(l);
                                     }
                                 }
-                                for (int l = 0; l < v4s.Tamaño(); l++) {
-                                    v4 = v4s.desencolar().v;
-                                    v4.Poner_Nod();
+                                int t4 = v4s.Tamaño();
+                                for (int l = 0; l < t4; l++) {
+                                    v4 = v4s.desencolar();
                                     aux =v1.get_dato() +v2.get_dato()+v3.get_dato()+v4.get_dato();
                                     if(aux.equals(palabra)){
                                         long endTime = System.nanoTime();

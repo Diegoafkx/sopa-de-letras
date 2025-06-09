@@ -17,7 +17,8 @@ public class Cola {
         pFinal = null;
     }
     
-    public void encolar(Nodo n){
+    public void encolar(Vertice v){
+        Nodo n = new Nodo(v);
         if (pFinal == null) {
             pFinal = n;
             pFirst = n;
@@ -32,12 +33,12 @@ public class Cola {
      return in;   
     }
     
-    public Nodo desencolar(){
+    public Vertice desencolar(){
         Nodo ptemp = pFirst;
         pFirst = pFirst.pNext;
         ptemp.pNext = null;
         in--;
-        return ptemp;
+        return ptemp.v;
     }
     
 }

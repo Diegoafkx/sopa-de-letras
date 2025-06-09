@@ -26,4 +26,8 @@ public class Nodo {
         data=elem;
         pNext=null;
     }
+    
+    public Nodo (Vertice v){
+        this.v = v;
+    }
 }
