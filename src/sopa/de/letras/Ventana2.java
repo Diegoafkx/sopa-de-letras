@@ -28,11 +28,16 @@ public class Ventana2 extends javax.swing.JFrame {
         this.setVisible(true);
     }
     
-    private void colores(){
+    private void colores(boolean x){
         JTextField[] aux = {this.letra1, this.letra2, this.letra3, this.letra4, this.letra5, this.letra6,this.letra7, this.letra8, this.letra9, this.letra10, this.letra11, this.letra12, this.letra13, this.letra14, this.letra15, this.letra16};
         for (int i = 0; i < 16; i++) {
             if (s_l.get_vertice(i).get_status()==true) {
-                aux[i].setBackground(Color.GREEN);
+                if (x== true) {
+                    aux[i].setBackground(Color.YELLOW);
+                }else{
+                    aux[i].setBackground(Color.GREEN);
+                }
+                
             }
         }
     }
@@ -47,6 +52,7 @@ public class Ventana2 extends javax.swing.JFrame {
     }
     
     private void mostrar_palabras(String[] p){
+        
         words = new DefaultListModel<>();
         words.clear();
         for (String p1 : p) {
@@ -116,7 +122,6 @@ public class Ventana2 extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jTextArea3 = new javax.swing.JTextArea();
-        Aviso = new javax.swing.JLabel();
         m_b = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         next = new javax.swing.JButton();
@@ -485,9 +490,6 @@ public class Ventana2 extends javax.swing.JFrame {
         jTextArea3.setText("Este metodo lee toda la\nrama de una de las letras, \ny luego las demas ramas, \nantes de ir a la siguiente\n letras.");
         jPanel1.add(jTextArea3, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 240, 160, 90));
 
-        Aviso.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(Aviso, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 630, 310, 30));
-
         m_b.setForeground(new java.awt.Color(0, 0, 0));
         m_b.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         m_b.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -576,7 +578,7 @@ public class Ventana2 extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        String[] palabras = new String[7];
+        String[] palabras = null;
         double[] time = null ;
         if(metodo.equals("DFS") || metodo.equals("BFS")){
             if(metodo.equals("DFS") ){
@@ -601,7 +603,9 @@ public class Ventana2 extends javax.swing.JFrame {
         if(x == true){
             this.mostrar_tiempo(time);
             this.mostrar_palabras(palabras);
-            this.colores();
+            this.colores(false);
+            m_b.setText("");
+            metodo = "";
         }else{
             Alertaa.setText("No se encontraron palabras en esta sopa de letras, haga click en siguiente para hacer uno nuevo");
         }
@@ -628,20 +632,53 @@ public class Ventana2 extends javax.swing.JFrame {
         boolean aux = true;
         for (int i = 0; i < v1.get_palabras().Tamaño(); i++) {
             if(v1.get_palabras().Datos(i).equals(x)){
-                this.Aviso.setText("Ya se encuentra en el diccionario la palabra.");
+                this.Alertaa.setText("Ya se encuentra en el diccionario la palabra.");
                 aux = false;
             }
         }
         if(aux == true ){
             if(x.length() < 3 || x.length() >4){
                 if (x.equals("")){
-                    this.Aviso.setText("Error. No se ha escribio ninguna palabra");
+                    this.Alertaa.setText("Error. No se ha escribio ninguna palabra");
                 }else{
-                    this.Aviso.setText("Error. Tamaño de la palabra es invalida");
+                    this.Alertaa.setText("Error. Tamaño de la palabra es invalida");
                 }
             }else{
-                v1.get_palabras().Insertar(x);
-                v1.Agregar_palabra_diccionario();
+                String[] palabras = null;
+                double[] time = null ;
+                if (metodo.equals("")) {
+                    this.Alertaa.setText("Error. porfavor elija el metodo de busqueda y vuelva a escribir la palabra");
+                }else{
+                    if (metodo.equals("DFS")) {
+                        DFS buscador = new DFS(s_l,x);
+                        palabras = buscador.get_palabras();
+                        time = buscador.get_time();
+                        this.colores(true);
+                        buscador.Visitar();
+                        
+                    }else if (metodo.equals("BFS")) {
+                        BFS buscador = new BFS(s_l,x);
+                        palabras = buscador.get_palabras();
+                        time = buscador.get_time();
+                        this.colores(true);
+                        buscador.Visitar();
+                    }
+                    
+                    boolean y = false;
+                    for (int i = 0; i < 7; i++) {
+                        if(palabras[i]!=null){
+                            y = true;
+                        }
+                    }
+                    if(y == true){
+                        this.mostrar_tiempo(time);
+                        Alertaa.setText("Se encontro la palabra");
+                        m_b.setText("");
+                        metodo = "";
+                    }else{
+                        Alertaa.setText("No se encontro la palabra");
+                    }
+                }
             }
         }
         this.New_palabra.setText("");
@@ -714,7 +751,6 @@ public class Ventana2 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Alertaa;
-    private javax.swing.JLabel Aviso;
     private javax.swing.JButton BFS;
     private javax.swing.JButton Buscr;
     private javax.swing.JButton DFS;

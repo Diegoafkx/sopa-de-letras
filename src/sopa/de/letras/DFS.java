@@ -14,9 +14,9 @@ public class DFS {
     private String palabra;
     private double[] tiempo;
     private String[] ps;
-    private Arista aris1;
     private long startTime;
     private long endTime;
+    private int[] posiciones;
     
     public DFS(Grafo G, Lista p){
         mG =G;
@@ -24,12 +24,38 @@ public class DFS {
         tiempo = new double[7];
         ps = new String[7];
         this.Agregar_p(p);
-        this.searching();
+        for (String palabra1 : palabras) {
+            palabra = palabra1;
+            this.searching();
+        }
     }
     
     public DFS(Grafo G, String p){
         palabra = p;
         mG = G;
+        posiciones = new int[7];
+        this.Desvisitar();
+        this.searching();
+    }
+    
+    public void Visitar(){
+        for (int j = 0; j < 7; j++) {
+            if (j>0 && posiciones[j] == 0) {
+                break;
+            }
+            mG.get_vertice(posiciones[j]).visit();
+        }
+    }
+    
+    private void Desvisitar(){
+        int aux = 0;
+            for (int i = 0; i < 16; i++) {
+                if (mG.get_vertice(i).get_status() == true) {
+                    mG.get_vertice(i).desvisitar();
+                    posiciones[aux] = i;
+                    aux++;
+                }
+            }
     }
     
     private void Agregar_p(Lista p){
@@ -38,46 +64,39 @@ public class DFS {
         }
     }
     
+    
     private void searching(){
-        for (String palabra1 : palabras) {
-            palabra = palabra1;
-            for (int i = 0; i < 16; i++) {
-                startTime = System.nanoTime();
-                Vertice v1 = mG.get_vertice(i);
-                boolean x = false;
-                for (int j = 0; j < 8; j++) {
-                    if(v1.dar_vecino(j)!= null && v1.get_status() == false){
-                        Vertice  v2 = v1.dar_vecino(j);
-                        if (v2.get_status()== false){
-                            boolean aux = false;
-                            if(aux == false){
-                                String p = Character.toString(palabra.charAt(0))+Character.toString(palabra.charAt(1));
-                                String p2 = v1.get_dato()+v2.get_dato();
-                                if(p.equals(p2)){
-                                    v1.visit();
-                                    v2.visit();
-                                    x = this.search(v2,2);
-                                    if(x == true){
-                                        endTime = System.nanoTime();
-                                        int u = 0;
-                                        while(this.ps[u]!=null){
-                                            u++;
-                                        }
-                                        this.ps[u] = palabra;
-                                        long elapsedTimeNanos = endTime - startTime;
-                                        this.tiempo[u] = (double) elapsedTimeNanos / 1000000000.0;
-                                        v1.visit();
-                                        v2.visit();
-                                        break;
-                                    }else{
-                                        v1.desvisitar();
-                                        v2.desvisitar();
-                                        
-                                    }
-                                }               
-                            }
-                        } 
-                    }
+        for (int i = 0; i < 16; i++) {
+            startTime = System.nanoTime();
+            Vertice v1 = mG.get_vertice(i);
+            boolean x = false;
+            for (int j = 0; j < 8; j++) {
+                if(v1.dar_vecino(j)!= null && v1.get_status() == false && v1.get_dato().equals(Character.toString(palabra.charAt(0)))){
+                    Vertice  v2 = v1.dar_vecino(j);
+                    if (v2.get_status()== false && v2.get_dato().equals(Character.toString(palabra.charAt(1)))){
+                        boolean aux = false;
+                        if(aux == false){
+                            v1.visit();
+                            v2.visit();
+                            x = this.search(v2,2);
+                            if(x == true){
+                                endTime = System.nanoTime();
+                                int u = 0;
+                                while(this.ps[u]!=null){
+                                    u++;
+                                }
+                                this.ps[u] = palabra;
+                                long elapsedTimeNanos = endTime - startTime;
+                                this.tiempo[u] = (double) elapsedTimeNanos / 1000000000.0;
+                                v1.visit();
+                                v2.visit();
+                                break;
+                            }else{
+                                v1.desvisitar();
+                                v2.desvisitar();
+                            }               
+                        }
+                    } 
                 }
             }
         }
