@@ -30,6 +30,8 @@ public class DFS {
     
     public DFS(Grafo G, String p){
         palabra = p;
+        tiempo = new double[1];
+        ps = new String[1];
         mG = G;
         posiciones = new int[7];
         this.Desvisitar();

@@ -15,8 +15,8 @@ public class Ventana2 extends javax.swing.JFrame {
     private static Ventana1 v1;
     private static Grafo s_l;
     private String metodo = "";
-    private DefaultListModel<String> words;
-    private DefaultListModel<String> tiempo;
+    private DefaultListModel<String> words = new DefaultListModel<>();
+    private DefaultListModel<String> tiempo = new DefaultListModel<>();
     /**
      * Creates new form ventana2, jText.setText(words);
      * @param v1
@@ -52,9 +52,6 @@ public class Ventana2 extends javax.swing.JFrame {
     }
     
     private void mostrar_palabras(String[] p){
-        
-        words = new DefaultListModel<>();
-        words.clear();
         for (String p1 : p) {
             if (p1 != null) {
                 words.addElement(p1);   
@@ -64,8 +61,7 @@ public class Ventana2 extends javax.swing.JFrame {
     }
     
     private void mostrar_tiempo(double[] t){
-        tiempo = new DefaultListModel<>();
-        tiempo.clear();
+        
         for (int i = 0; i < t.length; i++) {
             if(t[i] != 0.0){
                 tiempo.addElement(Double.toString(t[i]));   

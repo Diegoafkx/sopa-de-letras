@@ -33,6 +33,8 @@ public class BFS {
     public BFS(Grafo g, String p){
         gf = g;
         palabra = p;
+        time = new double[1];
+        ps = new String[1];
         posiciones = new int[7];
         this.Desvisitar();
         this.Search();
