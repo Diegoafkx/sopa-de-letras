@@ -14,8 +14,6 @@ public class DFS {
     private String palabra;
     private double[] tiempo;
     private String[] ps;
-    private long startTime;
-    private long endTime;
     private int[] posiciones;
     
     public DFS(Grafo G, Lista p){
@@ -67,7 +65,7 @@ public class DFS {
     
     private void searching(){
         for (int i = 0; i < 16; i++) {
-            startTime = System.nanoTime();
+            long startTime = System.nanoTime();
             Vertice v1 = mG.get_vertice(i);
             boolean x = false;
             for (int j = 0; j < 8; j++) {
@@ -80,7 +78,7 @@ public class DFS {
                             v2.visit();
                             x = this.search(v2,2);
                             if(x == true){
-                                endTime = System.nanoTime();
+                                long endTime = System.nanoTime();
                                 int u = 0;
                                 while(this.ps[u]!=null){
                                     u++;

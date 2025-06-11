@@ -42,7 +42,7 @@ public class Grafo {
         this.Crear_Aristas();
     }
     
-        private void Crear_Aristas(){
+    private void Crear_Aristas(){
 
         for (int i = 0; i < 16; i++) {
 

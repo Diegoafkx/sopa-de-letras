@@ -16,7 +16,6 @@ public class BFS {
     private Grafo gf;
     private String palabra;
     private Vertice v1,v2,v3,v4 = null;
-    private long StartTime;
     private int[] posiciones;
     
     public BFS(Grafo g, Lista p){
@@ -69,7 +68,7 @@ public class BFS {
     private void Search(){
         String aux = "";
         String s = Character.toString(palabra.charAt(0));
-        StartTime = System.nanoTime();
+        long StartTime = System.nanoTime();
         for (int i = 0; i < 16; i++) {
             if(aux.equals(palabra)){
                 break;
@@ -77,15 +76,9 @@ public class BFS {
             v1 = gf.get_vertice(i);
             if(v1.get_status()==false && s.equals(v1.get_dato())){
                 Cola v2s= new Cola();
-                String[] inc = new String[8];
                 for (int j = 0;j<8; j++) {
                     if (v1.dar_vecino(j)!=null && v1.dar_vecino(j).get_status() ==false ) {
                         v2s.encolar(v1.dar_vecino(j)); 
-                        int o = 0;
-                        while(inc[o]!=null){
-                        o++;
-                        }
-                        inc[o] = Integer.toString(j);
 
                     }
                 }
@@ -95,16 +88,10 @@ public class BFS {
                         break;
                     }
                     v2 = v2s.desencolar();
-                    String[] inx = new String[8];
                     Cola v3s= new Cola();
                     for (int k = 0; k<8; k++) {
                         if (v1!=v2.dar_vecino(k) && v2.dar_vecino(k)!=null && v2.dar_vecino(k).get_status()== false) {
                             v3s.encolar(v2.dar_vecino(k));
-                            int o = 0;
-                            while(inx[o]!=null){
-                            o++;
-                            }
-                            inx[o] = Integer.toString(k);
                         }
                     }
                     int t3 = v3s.Tamaño();
@@ -116,15 +103,9 @@ public class BFS {
                         aux =v1.get_dato() +v2.get_dato()+v3.get_dato();
                         if(palabra.length()==4){
                             Cola v4s= new Cola();
-                            String[] inv = new String[8];
                             for (int l = 0; l<8; l++) {
                                 if (v2!=v3.dar_vecino(l)&&v1!=v3.dar_vecino(l) && v3.dar_vecino(l)!=null && v3.dar_vecino(l).get_status()== false) {
                                     v4s.encolar(v3.dar_vecino(l));   
-                                    int o = 0;
-                                    while(inv[o]!=null){
-                                    o++;
-                                    }
-                                    inv[o] = Integer.toString(l);
                                 }
                             }
                             int t4 = v4s.Tamaño();

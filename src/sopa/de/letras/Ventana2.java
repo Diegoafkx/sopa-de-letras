@@ -107,10 +107,10 @@ public class Ventana2 extends javax.swing.JFrame {
         jList1 = new javax.swing.JList<>();
         jScrollPane2 = new javax.swing.JScrollPane();
         jList2 = new javax.swing.JList<>();
-        jButton1 = new javax.swing.JButton();
+        Exit = new javax.swing.JButton();
         New_palabra = new javax.swing.JTextField();
-        Buscr = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        Buscar = new javax.swing.JButton();
+        iniciar = new javax.swing.JButton();
         DFS = new javax.swing.JButton();
         BFS = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -125,7 +125,7 @@ public class Ventana2 extends javax.swing.JFrame {
         m_b = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         next = new javax.swing.JButton();
-        Alertaa = new javax.swing.JLabel();
+        Alerta = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -377,14 +377,14 @@ public class Ventana2 extends javax.swing.JFrame {
 
         jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, 110, 230));
 
-        jButton1.setBackground(new java.awt.Color(204, 0, 0));
-        jButton1.setText("X");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        Exit.setBackground(new java.awt.Color(204, 0, 0));
+        Exit.setText("X");
+        Exit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                ExitActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1220, 0, 60, -1));
+        jPanel1.add(Exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(1220, 0, 60, -1));
 
         New_palabra.setForeground(new java.awt.Color(0, 0, 0));
         New_palabra.addActionListener(new java.awt.event.ActionListener() {
@@ -394,25 +394,25 @@ public class Ventana2 extends javax.swing.JFrame {
         });
         jPanel1.add(New_palabra, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 590, 200, -1));
 
-        Buscr.setBackground(new java.awt.Color(255, 255, 255));
-        Buscr.setForeground(new java.awt.Color(0, 0, 0));
-        Buscr.setText("Buscar");
-        Buscr.addActionListener(new java.awt.event.ActionListener() {
+        Buscar.setBackground(new java.awt.Color(255, 255, 255));
+        Buscar.setForeground(new java.awt.Color(0, 0, 0));
+        Buscar.setText("Buscar");
+        Buscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BuscrActionPerformed(evt);
+                BuscarActionPerformed(evt);
             }
         });
-        jPanel1.add(Buscr, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 590, -1, -1));
+        jPanel1.add(Buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 590, -1, -1));
 
-        jButton3.setBackground(new java.awt.Color(255, 255, 255));
-        jButton3.setForeground(new java.awt.Color(0, 0, 0));
-        jButton3.setText("Iniciar");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        iniciar.setBackground(new java.awt.Color(255, 255, 255));
+        iniciar.setForeground(new java.awt.Color(0, 0, 0));
+        iniciar.setText("Iniciar");
+        iniciar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                iniciarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 410, 100, 30));
+        jPanel1.add(iniciar, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 410, 100, 30));
 
         DFS.setBackground(new java.awt.Color(255, 255, 255));
         DFS.setForeground(new java.awt.Color(0, 0, 0));
@@ -509,9 +509,9 @@ public class Ventana2 extends javax.swing.JFrame {
         });
         jPanel1.add(next, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 680, -1, -1));
 
-        Alertaa.setFont(new java.awt.Font("sansserif", 0, 24)); // NOI18N
-        Alertaa.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(Alertaa, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 660, 1050, 40));
+        Alerta.setFont(new java.awt.Font("sansserif", 0, 24)); // NOI18N
+        Alerta.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(Alerta, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 660, 1050, 40));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/x.png"))); // NOI18N
         jLabel5.setText("jLabel5");
@@ -576,7 +576,7 @@ public class Ventana2 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_New_palabraActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void iniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iniciarActionPerformed
         // TODO add your handling code here:
         String[] palabras = null;
         double[] time = null ;
@@ -607,16 +607,16 @@ public class Ventana2 extends javax.swing.JFrame {
             m_b.setText("");
             metodo = "";
         }else{
-            Alertaa.setText("No se encontraron palabras en esta sopa de letras, haga click en siguiente para hacer uno nuevo");
+            Alerta.setText("No se encontraron palabras en esta sopa de letras, haga click en siguiente para hacer uno nuevo");
         }
         
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_iniciarActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitActionPerformed
         // TODO add your handling code here:
         dispose();
         System.exit(0);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_ExitActionPerformed
 
     private void letra3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_letra3ActionPerformed
         // TODO add your handling code here:
@@ -626,28 +626,28 @@ public class Ventana2 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_letra2ActionPerformed
 
-    private void BuscrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscrActionPerformed
+    private void BuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarActionPerformed
         // TODO add your handling code here:
         String x = this.New_palabra.getText().toUpperCase();
         boolean aux = true;
         for (int i = 0; i < v1.get_palabras().Tamaño(); i++) {
             if(v1.get_palabras().Datos(i).equals(x)){
-                this.Alertaa.setText("Ya se encuentra en el diccionario la palabra.");
+                this.Alerta.setText("Ya se encuentra en el diccionario la palabra.");
                 aux = false;
             }
         }
         if(aux == true ){
             if(x.length() < 3 || x.length() >4){
                 if (x.equals("")){
-                    this.Alertaa.setText("Error. No se ha escribio ninguna palabra");
+                    this.Alerta.setText("Error. No se ha escribio ninguna palabra");
                 }else{
-                    this.Alertaa.setText("Error. Tamaño de la palabra es invalida");
+                    this.Alerta.setText("Error. Tamaño de la palabra es invalida");
                 }
             }else{
                 String[] palabras = null;
                 double[] time = null ;
                 if (metodo.equals("")) {
-                    this.Alertaa.setText("Error. porfavor elija el metodo de busqueda y vuelva a escribir la palabra");
+                    this.Alerta.setText("Error. porfavor elija el metodo de busqueda y vuelva a escribir la palabra");
                 }else{
                     if (metodo.equals("DFS")) {
                         DFS buscador = new DFS(s_l,x);
@@ -672,17 +672,17 @@ public class Ventana2 extends javax.swing.JFrame {
                     }
                     if(y == true){
                         this.mostrar_tiempo(time);
-                        Alertaa.setText("Se encontro la palabra");
+                        Alerta.setText("Se encontro la palabra");
                         m_b.setText("");
                         metodo = "";
                     }else{
-                        Alertaa.setText("No se encontro la palabra");
+                        Alerta.setText("No se encontro la palabra");
                     }
                 }
             }
         }
         this.New_palabra.setText("");
-    }//GEN-LAST:event_BuscrActionPerformed
+    }//GEN-LAST:event_BuscarActionPerformed
 
     private void DFSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DFSActionPerformed
         // TODO add your handling code here:
@@ -704,7 +704,7 @@ public class Ventana2 extends javax.swing.JFrame {
                 aux[i].setBackground(Color.WHITE);
             }
         }
-        Alertaa.setText("");
+        Alerta.setText("");
         tiempo.clear();
         metodo = "";
         words.clear();
@@ -750,13 +750,13 @@ public class Ventana2 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel Alertaa;
+    private javax.swing.JLabel Alerta;
     private javax.swing.JButton BFS;
-    private javax.swing.JButton Buscr;
+    private javax.swing.JButton Buscar;
     private javax.swing.JButton DFS;
+    private javax.swing.JButton Exit;
     private javax.swing.JTextField New_palabra;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton iniciar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
