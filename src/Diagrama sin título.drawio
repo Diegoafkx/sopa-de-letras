@@ -1,11 +1,11 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 OPR/119.0.0.0" version="27.1.4">
   <diagram name="Página-1" id="ceeLPhI60hB81FL-jqfW">
-    <mxGraphModel dx="881" dy="1004" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2498" dy="1163" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="t98PURUELWhxp64p16nT-1" value="Ventana1&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="700" y="215" width="260" height="370" as="geometry" />
+          <mxGeometry x="1200" y="190" width="260" height="370" as="geometry" />
         </mxCell>
         <mxCell id="t98PURUELWhxp64p16nT-2" value="- Archivo: File&lt;div&gt;-Continue: JButton&lt;/div&gt;&lt;div&gt;-Letras: Lista&lt;/div&gt;&lt;div&gt;-Seacrh: JButton&lt;/div&gt;&lt;div&gt;-Texto:FileReader&lt;/div&gt;&lt;div&gt;-buscador: JTextField&lt;/div&gt;&lt;div&gt;-jLabel1:JLabel&lt;/div&gt;&lt;div&gt;-jLabel2: JLabel&lt;/div&gt;&lt;div&gt;-jLabel3: JLabel&lt;/div&gt;&lt;div&gt;-jPanel1: JPanle&lt;/div&gt;&lt;div&gt;-jTexteArea1: JTextArea&lt;/div&gt;&lt;div&gt;-lector: BufferedReader&lt;/div&gt;&lt;div&gt;-palabras: Lista&lt;/div&gt;&lt;div&gt;-retorno: int&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="t98PURUELWhxp64p16nT-1">
           <mxGeometry y="26" width="260" height="214" as="geometry" />
@@ -17,7 +17,7 @@
           <mxGeometry y="248" width="260" height="122" as="geometry" />
         </mxCell>
         <mxCell id="t98PURUELWhxp64p16nT-5" value="menu&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="695" y="680" width="270" height="320" as="geometry" />
+          <mxGeometry x="860" y="690" width="270" height="320" as="geometry" />
         </mxCell>
         <mxCell id="t98PURUELWhxp64p16nT-6" value="-inicio: JToggleButton&lt;div&gt;-jButton1: JButton&lt;/div&gt;&lt;div&gt;-jLabel1: JLabel&lt;/div&gt;&lt;div&gt;-jPanel1: JPanel&lt;/div&gt;&lt;div&gt;-new_word: JToggleButton&lt;/div&gt;&lt;div&gt;-v1: Ventana1&lt;/div&gt;&lt;div&gt;-ver_palabras: JToggleButton&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="t98PURUELWhxp64p16nT-5">
           <mxGeometry y="26" width="270" height="114" as="geometry" />
@@ -29,7 +29,7 @@
           <mxGeometry y="148" width="270" height="172" as="geometry" />
         </mxCell>
         <mxCell id="t98PURUELWhxp64p16nT-9" value="diccionary" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="180" y="830" width="230" height="210" as="geometry" />
+          <mxGeometry x="470" y="830" width="230" height="210" as="geometry" />
         </mxCell>
         <mxCell id="t98PURUELWhxp64p16nT-10" value="-Return: JButton&lt;div&gt;-jList: JList&amp;lt;String&amp;gt;&lt;br&gt;&lt;div&gt;-jList1: JList&amp;lt;String&amp;gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;-jPanel1: JPanel&lt;/div&gt;&lt;div&gt;-jScrollPane1: JScrollPane&lt;/div&gt;&lt;div&gt;-jScrollPane2: JScrollPane&lt;/div&gt;&lt;div&gt;-menu: menu&lt;/div&gt;&lt;div&gt;-model: DefaultListModel&amp;lt;String&amp;gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="t98PURUELWhxp64p16nT-9">
           <mxGeometry y="26" width="230" height="134" as="geometry" />
@@ -41,7 +41,7 @@
           <mxGeometry y="168" width="230" height="42" as="geometry" />
         </mxCell>
         <mxCell id="t98PURUELWhxp64p16nT-13" value="Agregar_palabra" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="1050" y="750" width="240" height="240" as="geometry" />
+          <mxGeometry x="1230" y="770" width="240" height="240" as="geometry" />
         </mxCell>
         <mxCell id="t98PURUELWhxp64p16nT-14" value="-Aviso: JLabel&lt;div&gt;-New_palabras: JTextPane&lt;/div&gt;&lt;div&gt;-jButton1: JButton&lt;/div&gt;&lt;div&gt;-jButton2: JButton&lt;/div&gt;&lt;div&gt;-jLabel1: JLabel&lt;/div&gt;&lt;div&gt;-jPanel1: JPanel&lt;/div&gt;&lt;div&gt;-jScrollPane1: JScrollPane&lt;/div&gt;&lt;div&gt;-jTextArea1: JTextArea&lt;/div&gt;&lt;div&gt;-menu: menu&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="t98PURUELWhxp64p16nT-13">
           <mxGeometry y="26" width="240" height="144" as="geometry" />
@@ -53,7 +53,7 @@
           <mxGeometry y="178" width="240" height="62" as="geometry" />
         </mxCell>
         <mxCell id="t98PURUELWhxp64p16nT-17" value="Ventana2" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="660" y="1110" width="340" height="1180" as="geometry" />
+          <mxGeometry x="1020" y="1110" width="340" height="1180" as="geometry" />
         </mxCell>
         <mxCell id="t98PURUELWhxp64p16nT-18" value="-Alerta: JLabel&lt;div&gt;-BFS: JButton&lt;/div&gt;&lt;div&gt;-DFS: JButton&lt;/div&gt;&lt;div&gt;-New_palabra: JTextField&lt;/div&gt;&lt;div&gt;-Exit: JButton&lt;/div&gt;&lt;div&gt;-inicar: JButton&lt;/div&gt;&lt;div&gt;-jLabel1: JLabel&lt;/div&gt;&lt;div&gt;-jLabel2: JLabel&lt;/div&gt;&lt;div&gt;-jLabel3: JLabel&lt;/div&gt;&lt;div&gt;-jLabel4: JLabel&lt;/div&gt;&lt;div&gt;-jLabel5: JLabel&lt;/div&gt;&lt;div&gt;-jLabel6: JLabel&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;-jLabel7: JLabel&lt;/span&gt;&lt;/div&gt;&lt;div&gt;-jLabel8: JLabel&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;-jLabel9: JLabel&lt;/div&gt;&lt;div&gt;-jLabel10: JLabel&lt;/div&gt;&lt;div&gt;-jList1: JList&amp;lt;String&amp;gt;&lt;/div&gt;&lt;div&gt;-jList2: JList&amp;lt;String&amp;gt;&lt;/div&gt;&lt;div&gt;-jPanel1: JPanel&lt;/div&gt;&lt;div&gt;-jPanel2: JPanel&lt;/div&gt;&lt;div&gt;-jScrollPane1: JScrollPane&lt;/div&gt;&lt;div&gt;-jScrollPane2: JScrollPane&lt;/div&gt;&lt;div&gt;-jTextArea1: JTextArea&lt;/div&gt;&lt;div&gt;-jTextArea2: JTextArea&lt;/div&gt;&lt;div&gt;-jTextArea3: JTextArea&lt;/div&gt;&lt;div&gt;-letra1: JTextField&lt;/div&gt;&lt;div&gt;-letra2: JTextField&lt;/div&gt;&lt;div&gt;-letra3: JTextField&lt;/div&gt;&lt;div&gt;-letra4: JTextField&lt;/div&gt;&lt;div&gt;-letra5: JTextField&lt;/div&gt;&lt;div&gt;-letra6: JTextField&lt;/div&gt;&lt;div&gt;-letra7: JTextField&lt;/div&gt;&lt;div&gt;-letra8: JTextField&lt;/div&gt;&lt;div&gt;-letra9: JTextField&lt;/div&gt;&lt;div&gt;-letra10: JTextField&lt;/div&gt;&lt;div&gt;-letra11: JTextField&lt;/div&gt;&lt;div&gt;-letra12: JTextField&lt;/div&gt;&lt;div&gt;-letra13: JTextField&lt;/div&gt;&lt;div&gt;-letra14: JTextField&lt;/div&gt;&lt;div&gt;-letra15: JTextField&lt;/div&gt;&lt;div&gt;-letra16: JTextField&lt;/div&gt;&lt;div&gt;-m_b: JLabel&lt;/div&gt;&lt;div&gt;-metodo: String&lt;/div&gt;&lt;div&gt;-next: JButton&lt;/div&gt;&lt;div&gt;-palabras_sopa: JLabel&lt;/div&gt;&lt;div&gt;-s_l: Grafo&lt;/div&gt;&lt;div&gt;-tiempo: DefaultListModel&amp;lt;String&amp;gt;&lt;/div&gt;&lt;div&gt;-v1: Ventana1&lt;/div&gt;&lt;div&gt;-words:&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;DefaultListModel&amp;lt;String&amp;gt;&lt;/span&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="t98PURUELWhxp64p16nT-17">
           <mxGeometry y="26" width="340" height="724" as="geometry" />
@@ -65,7 +65,7 @@
           <mxGeometry y="758" width="340" height="422" as="geometry" />
         </mxCell>
         <mxCell id="t98PURUELWhxp64p16nT-21" value="Lista" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="1081" y="70" width="160" height="220" as="geometry" />
+          <mxGeometry x="450" y="340" width="160" height="220" as="geometry" />
         </mxCell>
         <mxCell id="t98PURUELWhxp64p16nT-22" value="-iN: int&lt;div&gt;-pNew: Nodo&lt;/div&gt;&lt;div&gt;-pfinal: Nodo&lt;/div&gt;&lt;div&gt;-pfirst: Nodo&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="t98PURUELWhxp64p16nT-21">
           <mxGeometry y="26" width="160" height="74" as="geometry" />
@@ -77,13 +77,13 @@
           <mxGeometry y="108" width="160" height="112" as="geometry" />
         </mxCell>
         <mxCell id="t98PURUELWhxp64p16nT-25" value="Nodo" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="1340" y="110" width="160" height="100" as="geometry" />
+          <mxGeometry x="160" y="440" width="160" height="100" as="geometry" />
         </mxCell>
         <mxCell id="t98PURUELWhxp64p16nT-26" value="#v: Vertice&lt;div&gt;#data: String&lt;/div&gt;&lt;div&gt;#pNext: Nodo&lt;/div&gt;&lt;div&gt;#pPreviousÑ Nodo&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="t98PURUELWhxp64p16nT-25">
           <mxGeometry y="26" width="160" height="74" as="geometry" />
         </mxCell>
         <mxCell id="t98PURUELWhxp64p16nT-29" value="Grafo" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="1090" y="1110" width="160" height="100" as="geometry" />
+          <mxGeometry x="350" y="1480" width="160" height="100" as="geometry" />
         </mxCell>
         <mxCell id="t98PURUELWhxp64p16nT-30" value="-Vertices: Vertice[16]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="t98PURUELWhxp64p16nT-29">
           <mxGeometry y="26" width="160" height="26" as="geometry" />
@@ -95,7 +95,7 @@
           <mxGeometry y="60" width="160" height="40" as="geometry" />
         </mxCell>
         <mxCell id="t98PURUELWhxp64p16nT-33" value="Vertice" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="1390" y="960" width="160" height="200" as="geometry" />
+          <mxGeometry x="90" y="1310" width="160" height="200" as="geometry" />
         </mxCell>
         <mxCell id="t98PURUELWhxp64p16nT-34" value="-letra: String&lt;div&gt;#pNext: Vertice&lt;/div&gt;&lt;div&gt;-vecinos: Arista[8]&lt;/div&gt;&lt;div&gt;visited: boolean&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="t98PURUELWhxp64p16nT-33">
           <mxGeometry y="26" width="160" height="64" as="geometry" />
@@ -107,7 +107,7 @@
           <mxGeometry y="98" width="160" height="102" as="geometry" />
         </mxCell>
         <mxCell id="t98PURUELWhxp64p16nT-37" value="Arista" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="1390" y="1240" width="160" height="150" as="geometry" />
+          <mxGeometry x="160" y="1670" width="160" height="150" as="geometry" />
         </mxCell>
         <mxCell id="t98PURUELWhxp64p16nT-38" value="-N1: Vertice&lt;div&gt;-N2: Vertice&lt;/div&gt;&lt;div&gt;-direccion: int&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="t98PURUELWhxp64p16nT-37">
           <mxGeometry y="26" width="160" height="54" as="geometry" />
@@ -119,7 +119,7 @@
           <mxGeometry y="88" width="160" height="62" as="geometry" />
         </mxCell>
         <mxCell id="t98PURUELWhxp64p16nT-41" value="BFS" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="370" y="1520" width="160" height="290" as="geometry" />
+          <mxGeometry x="650" y="1490" width="160" height="290" as="geometry" />
         </mxCell>
         <mxCell id="t98PURUELWhxp64p16nT-42" value="&lt;div&gt;-gf: Grafo&lt;/div&gt;&lt;div&gt;-palabra: String&lt;/div&gt;&lt;div&gt;-palabras: Sting[1..*]&lt;br&gt;&lt;/div&gt;&lt;div&gt;-posiciones: int[7]&lt;/div&gt;&lt;div&gt;-ps: String[7]&lt;/div&gt;&lt;div&gt;-time: double[7]&lt;/div&gt;&lt;div&gt;-v1: Vertice&lt;/div&gt;&lt;div&gt;-v2: Vertice&lt;/div&gt;&lt;div&gt;-v3: Vertice&lt;/div&gt;&lt;div&gt;-v4: Vertice&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="t98PURUELWhxp64p16nT-41">
           <mxGeometry y="26" width="160" height="154" as="geometry" />
@@ -127,11 +127,11 @@
         <mxCell id="t98PURUELWhxp64p16nT-43" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="t98PURUELWhxp64p16nT-41">
           <mxGeometry y="180" width="160" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="t98PURUELWhxp64p16nT-44" value="-Agregar_p(Lista)&lt;div&gt;-Desvivir()&lt;/div&gt;&lt;div&gt;-Search()&lt;/div&gt;&lt;div&gt;+Visitar()&lt;/div&gt;&lt;div&gt;+get_palabras(): String[7]&lt;/div&gt;&lt;div&gt;+get_time(): double[7]&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="t98PURUELWhxp64p16nT-41">
+        <mxCell id="t98PURUELWhxp64p16nT-44" value="-Agregar_p(Lista)&lt;div&gt;-Desvivir()&lt;/div&gt;&lt;div&gt;-Search()&lt;/div&gt;&lt;div&gt;+Visitar()&lt;/div&gt;&lt;div&gt;+get_palabras(): String[7]&lt;/div&gt;&lt;div&gt;+get_time(): double&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="t98PURUELWhxp64p16nT-41">
           <mxGeometry y="188" width="160" height="102" as="geometry" />
         </mxCell>
         <mxCell id="t98PURUELWhxp64p16nT-45" value="DFS" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="1120" y="1520" width="170" height="260" as="geometry" />
+          <mxGeometry x="657" y="1860" width="170" height="260" as="geometry" />
         </mxCell>
         <mxCell id="t98PURUELWhxp64p16nT-46" value="&lt;div&gt;-mG: Grafo&lt;/div&gt;&lt;div&gt;-palabra: String&lt;/div&gt;&lt;div&gt;-palabras: Sting[1...*]&lt;br&gt;&lt;/div&gt;&lt;div&gt;-posiciones: int[7]&lt;/div&gt;&lt;div&gt;-ps: String[7]&lt;/div&gt;&lt;div&gt;-time: double[7]&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="t98PURUELWhxp64p16nT-45">
           <mxGeometry y="26" width="170" height="104" as="geometry" />
@@ -139,11 +139,11 @@
         <mxCell id="t98PURUELWhxp64p16nT-47" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="t98PURUELWhxp64p16nT-45">
           <mxGeometry y="130" width="170" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="t98PURUELWhxp64p16nT-48" value="-Agregar_p(Lista)&lt;div&gt;-Desvivir()&lt;/div&gt;&lt;div&gt;+Visitar()&lt;/div&gt;&lt;div&gt;+get_palabras(): String[7]&lt;/div&gt;&lt;div&gt;+get_time(): double[7]&lt;/div&gt;&lt;div&gt;-search(Vertice, int): boolean&lt;/div&gt;&lt;div&gt;-searching()&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="t98PURUELWhxp64p16nT-45">
+        <mxCell id="t98PURUELWhxp64p16nT-48" value="-Agregar_p(Lista)&lt;div&gt;-Desvivir()&lt;/div&gt;&lt;div&gt;+Visitar()&lt;/div&gt;&lt;div&gt;+get_palabras(): String[7]&lt;/div&gt;&lt;div&gt;+get_time(): double&lt;/div&gt;&lt;div&gt;-search(Vertice, int): boolean&lt;/div&gt;&lt;div&gt;-searching()&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="t98PURUELWhxp64p16nT-45">
           <mxGeometry y="138" width="170" height="122" as="geometry" />
         </mxCell>
         <mxCell id="t98PURUELWhxp64p16nT-49" value="Cola" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="70" y="1561" width="160" height="170" as="geometry" />
+          <mxGeometry x="350" y="1090" width="160" height="170" as="geometry" />
         </mxCell>
         <mxCell id="t98PURUELWhxp64p16nT-50" value="-in: int&lt;div&gt;-pFinal: Nodo&lt;/div&gt;&lt;div&gt;-pFirst: Nodo&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="t98PURUELWhxp64p16nT-49">
           <mxGeometry y="26" width="160" height="54" as="geometry" />
@@ -155,19 +155,19 @@
           <mxGeometry y="88" width="160" height="82" as="geometry" />
         </mxCell>
         <mxCell id="t98PURUELWhxp64p16nT-53" value="«interface»&lt;br&gt;&lt;b&gt;Ventana2&lt;/b&gt;" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
-          <mxGeometry x="510" y="1150" width="110" height="50" as="geometry" />
+          <mxGeometry x="775" y="1130" width="110" height="50" as="geometry" />
         </mxCell>
         <mxCell id="t98PURUELWhxp64p16nT-54" value="«interface»&lt;br&gt;&lt;b&gt;menu&lt;/b&gt;" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
-          <mxGeometry x="550" y="690" width="110" height="50" as="geometry" />
+          <mxGeometry x="700" y="690" width="110" height="50" as="geometry" />
         </mxCell>
         <mxCell id="t98PURUELWhxp64p16nT-55" value="«interface»&lt;br&gt;&lt;b&gt;diccionary&lt;/b&gt;" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
-          <mxGeometry x="240" y="710" width="110" height="50" as="geometry" />
+          <mxGeometry x="530" y="710" width="110" height="50" as="geometry" />
         </mxCell>
         <mxCell id="t98PURUELWhxp64p16nT-56" value="«interface»&lt;br&gt;&lt;b&gt;Agregar_palabra&lt;/b&gt;" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
-          <mxGeometry x="1320" y="760" width="110" height="50" as="geometry" />
+          <mxGeometry x="1500" y="750" width="110" height="50" as="geometry" />
         </mxCell>
         <mxCell id="t98PURUELWhxp64p16nT-57" value="«interface»&lt;br&gt;&lt;b&gt;Ventana1&lt;/b&gt;" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
-          <mxGeometry x="775" y="100" width="110" height="50" as="geometry" />
+          <mxGeometry x="1275" y="50" width="110" height="50" as="geometry" />
         </mxCell>
         <mxCell id="t98PURUELWhxp64p16nT-58" value="Use" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="t98PURUELWhxp64p16nT-55" target="t98PURUELWhxp64p16nT-9">
           <mxGeometry width="160" relative="1" as="geometry">
@@ -180,7 +180,7 @@
             <mxPoint x="480" y="770" as="sourcePoint" />
             <mxPoint x="640" y="770" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="605" y="763" />
+              <mxPoint x="755" y="773" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -189,7 +189,7 @@
             <mxPoint x="1280" y="700" as="sourcePoint" />
             <mxPoint x="1440" y="700" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="1375" y="848" />
+              <mxPoint x="1555" y="870" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -198,7 +198,7 @@
             <mxPoint x="940" y="1060" as="sourcePoint" />
             <mxPoint x="1100" y="1060" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="565" y="1291" />
+              <mxPoint x="830" y="1291" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -206,6 +206,103 @@
           <mxGeometry width="160" relative="1" as="geometry">
             <mxPoint x="530" y="180" as="sourcePoint" />
             <mxPoint x="690" y="180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="t98PURUELWhxp64p16nT-67" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="t98PURUELWhxp64p16nT-26" target="t98PURUELWhxp64p16nT-24">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="390" y="630" as="sourcePoint" />
+            <mxPoint x="550" y="630" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="t98PURUELWhxp64p16nT-73" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="t98PURUELWhxp64p16nT-8" target="t98PURUELWhxp64p16nT-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t98PURUELWhxp64p16nT-74" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=-0.004;entryY=0.896;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="t98PURUELWhxp64p16nT-8" target="t98PURUELWhxp64p16nT-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t98PURUELWhxp64p16nT-75" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="t98PURUELWhxp64p16nT-8" target="t98PURUELWhxp64p16nT-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t98PURUELWhxp64p16nT-77" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="t98PURUELWhxp64p16nT-26" target="t98PURUELWhxp64p16nT-50">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="270" y="1180" as="sourcePoint" />
+            <mxPoint x="430" y="1180" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="110" y="503" />
+              <mxPoint x="110" y="1143" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="t98PURUELWhxp64p16nT-78" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="t98PURUELWhxp64p16nT-4" target="t98PURUELWhxp64p16nT-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t98PURUELWhxp64p16nT-79" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.488;entryY=1.002;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="t98PURUELWhxp64p16nT-40" target="t98PURUELWhxp64p16nT-32">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="380" y="1720" as="sourcePoint" />
+            <mxPoint x="540" y="1720" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="428" y="1789" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="t98PURUELWhxp64p16nT-80" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="t98PURUELWhxp64p16nT-36" target="t98PURUELWhxp64p16nT-40">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="30" y="1600" as="sourcePoint" />
+            <mxPoint x="110" y="1610" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="60" y="1459" />
+              <mxPoint x="60" y="1789" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="t98PURUELWhxp64p16nT-81" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="t98PURUELWhxp64p16nT-36" target="t98PURUELWhxp64p16nT-32">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="170" y="1610" as="sourcePoint" />
+            <mxPoint x="330" y="1610" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="290" y="1459" />
+              <mxPoint x="290" y="1560" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="t98PURUELWhxp64p16nT-83" value="" style="endArrow=diamondThin;endFill=0;endSize=24;html=1;rounded=0;entryX=0.001;entryY=0.329;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="t98PURUELWhxp64p16nT-29" target="t98PURUELWhxp64p16nT-18">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="590" y="1370" as="sourcePoint" />
+            <mxPoint x="750" y="1370" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="430" y="1380" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="t98PURUELWhxp64p16nT-84" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="t98PURUELWhxp64p16nT-33" target="t98PURUELWhxp64p16nT-52">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="180" y="1260" as="sourcePoint" />
+            <mxPoint x="340" y="1260" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="170" y="1220" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="t98PURUELWhxp64p16nT-85" value="" style="endArrow=diamondThin;endFill=0;endSize=24;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="t98PURUELWhxp64p16nT-24" target="t98PURUELWhxp64p16nT-2">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="700" y="390" as="sourcePoint" />
+            <mxPoint x="860" y="390" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="730" y="504" />
+              <mxPoint x="730" y="323" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="t98PURUELWhxp64p16nT-87" value="" style="endArrow=diamondThin;endFill=0;endSize=24;html=1;rounded=0;exitX=-0.003;exitY=0.632;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitPerimeter=0;" edge="1" parent="1" source="t98PURUELWhxp64p16nT-18" target="t98PURUELWhxp64p16nT-42">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="910" y="1640" as="sourcePoint" />
+            <mxPoint x="1070" y="1640" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="t98PURUELWhxp64p16nT-88" value="" style="endArrow=diamondThin;endFill=0;endSize=24;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=-0.008;exitY=0.171;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="t98PURUELWhxp64p16nT-20" target="t98PURUELWhxp64p16nT-46">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="850" y="2000" as="sourcePoint" />
+            <mxPoint x="1010" y="2000" as="targetPoint" />
           </mxGeometry>
         </mxCell>
       </root>
