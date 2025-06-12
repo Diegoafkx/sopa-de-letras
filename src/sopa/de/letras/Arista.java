@@ -5,24 +5,44 @@
 package sopa.de.letras;
 
 /**
- *
- * @author Windows 10 Pro
+ * clase que se encarga de ser el puente entre dos vertices en un grafo
+ * @author Diego
  */
 public class Arista {
+    /**
+     * Atriutos de la clase
+     * direccion contendra un entero que indicara la orientacion del ppuente entre el N1 y el N2
+     * N1 es el vertice inicial de la arista
+     * N2 es el vertice final de la arista
+     */
     private final int direccion;
     private final Vertice N1;
     private final Vertice N2;
     
-        public Arista(Vertice n1, Vertice n2, int ub){
+    /**
+     * 
+     * @param n1 Vertice inicial
+     * @param n2 Vertice final
+     * @param ub orientacion
+     */
+    public Arista(Vertice n1, Vertice n2, int ub){
         N1 = n1;
         N2 = n2;
         direccion = ub;
     }
     
+    /**
+     * Se retorna el primer vertice de la Arista
+     * @return N1 primer Vertice 
+     */
     public Vertice get_N1(){
         return N1;
     }
     
+    /**
+     * Se retorna el segundo Vertice de la Arista
+     * @return N2 segundo Vertice
+     */
     public Vertice get_N2(){
         return N2;
     }

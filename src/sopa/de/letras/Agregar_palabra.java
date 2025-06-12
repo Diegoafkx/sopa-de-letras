@@ -5,14 +5,18 @@
 package sopa.de.letras;
 
 /**
- *
- * @author Windows 10 Pro
+ * Clase que se encarga de mostrar las palabras del diccionario
+ * @author Diego Arreaza
  */
 public class Agregar_palabra extends javax.swing.JFrame {
+    /**
+     * Atributos de la clase
+     * menu contiene a la clase de la ventana anterior
+     */
     private static menu menu;
     /**
      * Creates new form Agregar_palabra
-     * @param menu
+     * @param menu clase de la ventana anterior
      */
     public Agregar_palabra(menu menu) {
         initComponents();
@@ -91,7 +95,12 @@ public class Agregar_palabra extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    /**
+     * metodo que se llama despues de hacer click en el boton jButton1
+     * Este metodo se encara de leer la palabra escrita por el usuario hacer verificaciones y meterla en el diccionario.
+     * @param evt 
+     */
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         String x = this.New_palabras.getText().toUpperCase(); 
@@ -116,7 +125,12 @@ public class Agregar_palabra extends javax.swing.JFrame {
         }
         this.New_palabras.setText(""); 
     }//GEN-LAST:event_jButton1ActionPerformed
-
+    
+    /**
+     * metodo que se llama cuando se hace click en el boton jButton2
+     * Hace invisible la interface  llama al metodo back() de obj menu
+     * @param evt 
+     */
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);

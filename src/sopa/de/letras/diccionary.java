@@ -12,8 +12,14 @@ import javax.swing.DefaultListModel;
  * @author diego
  */
 public class diccionary extends javax.swing.JFrame {
+    
+    /**
+     * atributos de la clase
+     * menu contra la clase menu de la ventana anterior
+     * model contendra la palabras del la Lista palabras 
+     */
     private static menu menu;
-    private final DefaultListModel<String> model = new DefaultListModel<>();
+    private final DefaultListModel<String> model;
     /**
      * Creates new form diccionary
      * @param menu
@@ -23,6 +29,7 @@ public class diccionary extends javax.swing.JFrame {
         diccionary.menu = menu;
         Lista lista = menu.getlist_p();
         this.setVisible(true);
+        model = new DefaultListModel<>();
         for (int i = 0; i < lista.Tamaño(); i++) {
             model.addElement(lista.Datos(i));   
         }
@@ -84,7 +91,11 @@ public class diccionary extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
+    /**
+     * metodo que se activa al hacer click en el boton Return
+     * hace invisible la interface y llama la interface ack de menu 
+     * @param evt 
+     */
     private void ReturnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReturnActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);

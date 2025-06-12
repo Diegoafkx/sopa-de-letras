@@ -9,13 +9,17 @@ import java.io.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 /**
- *
- * @author Windows 10 Pro
+ *Codigo que genera la ventana inicial del programa, que a su vez, lee y analiza los datos diccionario.txt
+ * @author Diego
  */
 public class Ventana1 extends javax.swing.JFrame {
 
     /**
-     * Creates new form Elegir_Diccionario
+     * Atributos de la clase
+     * retorno contiene un entero el cual es el que verifica si es posible leer/aceder al archivo diccionario.txt 
+     * Archivo contiene el Archivo de diccionario.txt cuando el usuario lo seleccione
+     * Texto lee el archivo de diccioanrio.txr
+     * lector almacena el contenido de Texto para ser legible
      */
     
     private int retorno;
@@ -26,7 +30,8 @@ public class Ventana1 extends javax.swing.JFrame {
     private final Lista Letras = new Lista();
     
     /**
-     *
+     *Constructor de la ventana
+     * Evita que el usuario pueda mover de posicion la interace
      */
     public Ventana1() {
         this.setLocationRelativeTo(null);
@@ -111,7 +116,14 @@ public class Ventana1 extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    /**
+     *metodo que se activa al hacer click en el boton Search/Buscar
+     *Este se encarga de relizar la busqueda del archivo diccionario.txt y guardar la dirrecion en la variable Archivo
+     * Se Asina retorno verificador que permite saer si el archivo es acessible
+     * Se Asigna Archivo el arechivo diccionar.txt
+     * @param evt
+     */
     private void SearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
@@ -129,11 +141,21 @@ public class Ventana1 extends javax.swing.JFrame {
             this.setVisible(true);  
         }
     }//GEN-LAST:event_SearchActionPerformed
-
+    
     private void buscadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscadorActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_buscadorActionPerformed
 
+    
+    /**
+     *metodo que se activa al hacer click al boton Continue/Siguiente
+     *Este es el que se encarga de leer el contenido del archivo y generar las listas palabras y letras con el mismo
+     * Se asigna Texto bufer con el contenido del archivo
+     * Se asigna lector contenido legile del archivo Texto
+     * Este el puente a la siguiente ventana
+     * Se asigna palabras Lista con las palaras del diccionario.txt
+     * Se asigna letras Lista con las 16 letras del diccionario.txt que conforaran la sopa de letras 
+     */
     private void ContinueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContinueActionPerformed
         // TODO add your handling code here:
         if (buscador.getText().equals("")){
@@ -190,12 +212,16 @@ public class Ventana1 extends javax.swing.JFrame {
     }//GEN-LAST:event_ContinueActionPerformed
 
     /**
-     * @return 
+     * retorna la lista con las palabras del diccionario
+     * @return la lista de palabras del diccionario
      */
     public Lista get_palabras(){
         return palabras; 
     }
     
+    /**
+     *Este metodo se encarga de agregar las nuevas letras escritas por el usuario al diccionario.txt 
+     */
     public void Agregar_palabra_diccionario(){
         try (FileWriter escritor = new FileWriter(Archivo, false)) {
             escritor.write("dic\n");
@@ -215,8 +241,8 @@ public class Ventana1 extends javax.swing.JFrame {
     }
     
     /**
-     *
-     * @return
+     * Retorna la lista con las letras del diccionario
+     * @return la lista de letras del diccionario
      */
     public Lista get_letras(){    
         return Letras; 

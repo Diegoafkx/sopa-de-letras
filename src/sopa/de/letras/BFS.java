@@ -5,11 +5,24 @@
 package sopa.de.letras;
 
 /**
- *
+ * Clase que se encarga de realizar la busqueda Breadth First Search mediante el uso de colas 
  * @author diego
  */
 public class BFS {
     
+    /**
+     * Atributos de clase
+     * ps contiene las palabras encontradas de la sopa de letras
+     * palabras contiene las palabras del diccionario.txt
+     * time contiene el tepo en milisegundos en la que cada palabra se encontro
+     * gf contiene el grafo de la sopa de letras
+     * palabra contiene la palabra ue se esta buscando
+     * v1 es el primer vertice con el que se esta intenado formar la palabra
+     * v2 es el segundo vertice con el que se esta intenado formar la palabra
+     * v3 es el tercer vertice con el que se esta intenado formar la palabra
+     * v4 es el cuarto vertice con el que se esta intenado formar la palabra
+     * posiciones contiene la posicion de los vertices que orman las letras para auxiliar al momento de uscar una palara escrita por el usuario
+     */
     private String[] ps;
     private String[] palabras;
     private double[] time;
@@ -18,6 +31,12 @@ public class BFS {
     private Vertice v1,v2,v3,v4 = null;
     private int[] posiciones;
     
+    /**
+     * constructor de la clase cuando se le entrega el parametro tipo garfo y tipo Lista
+     * llama al metodo Search para iniciar la busqueda
+     * @param g es el grafo que se le va a asignar a gf
+     * @param p  es la Lista con las palabras dl diccionario.txt
+     */
     public BFS(Grafo g, Lista p){
         gf = g;
         palabras = new String[p.Tamaño()];
@@ -30,6 +49,12 @@ public class BFS {
         }
     }
     
+    /**
+     * constructor de la clase cuando se le entrega el parametro grafo y p
+     * llama al metodo Search para iniciar la busqueda
+     * @param g es el grafo que se le va a asignar a gf
+     * @param p  es la Lista con las palabras dl diccionario.txt
+     */
     public BFS(Grafo g, String p){
         gf = g;
         palabra = p;
@@ -37,10 +62,12 @@ public class BFS {
         ps = new String[1];
         posiciones = new int[7];
         this.Desvisitar();
-        this.Search();
-        
+        this.Search();    
     }
     
+    /**
+     * Este metodo se encarga de re-marcar como visitado los vectores de la ubicaciones de la matriz posiciones
+     */
     public void Visitar(){
         for (int j = 0; j < 7; j++) {
             if (j>0 && posiciones[j] == 0) {
@@ -50,6 +77,10 @@ public class BFS {
         }
     }
     
+    /**
+     * Este metodo se encarga de asignar la ubicacion de los vertices que han sido visitados en la matriz posiciones
+     * luego los desmarca, esto para haer mas visual la busueda de la palabra que el usuario ingreso
+     */
     private void Desvisitar(){
         int aux = 0;
             for (int i = 0; i < 16; i++) {
@@ -61,11 +92,16 @@ public class BFS {
             }
     }
     
+    /**
+     * Este emtodo agrega las palabras a un arrau para facilitar el metodo Seacrh 
+     * @param p Lista de las palabras
+     */
     private void Agregar_p(Lista p){
         for (int i = 0; i < p.Tamaño(); i++) {
             palabras[i] = p.Datos(i);
         }
     }
+    
     
     private void Search(){
         String aux = "";

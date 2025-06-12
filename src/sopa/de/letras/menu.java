@@ -6,15 +6,24 @@ package sopa.de.letras;
 
 
 /**
- *
- * @author sl001
+ *Este es la segunda ventana que se genera despues de seleccionar el archivo diccionario.txt
+ * Esta es la ventana que conecta todas las demas ventanas entre si
+ * Esta da pie a la Ventana2, diccionary y Agregar_palabra
+ * @author Diego
  */
+
 public class menu extends javax.swing.JFrame {
+    /**
+     *el atributo v1 contiene el contenido de la Ventana1
+     */
+    
     private static Ventana1 v1;
     /**
-     * Creates new form menu
-     * @param v1
+     * Constructor de la clase
+     * Pone restriccione a la interface
+     * @param v1 es la Ventana1
      */
+    
     public menu(Ventana1 v1) {
         initComponents();
         menu.v1 = v1;
@@ -23,18 +32,33 @@ public class menu extends javax.swing.JFrame {
         this.setExtendedState(6);
         
     }
+    
+    /**
+     *Retorna la Lista que contiene las palabra de diccionary.txt que creo la Ventana1
+     * @return Lista que contiene palaras 
+     */
     public Lista getlist_p(){
         return v1.get_palabras();
     }
     
+    /**
+     * Retorna la Lista que contiene las letras de diccionary.txt que creo la Ventana1
+     * @return Lista que contiene letras 
+     */
     public Lista getlist_l(){
         return v1.get_letras();
     }
     
+    /**
+     * metodo que llama al metodo de Agregar_palabra_diccionario de la v1
+     */
     public void ag(){
         v1.Agregar_palabra_diccionario();
     }
     
+    /**
+     * metodo que vuelve a hacer visible a esta ventana
+     */
     public void back(){
         this.setVisible(true);
     }
@@ -112,27 +136,40 @@ public class menu extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
+    /**
+     * metodo que da pie a Ventana2
+     * @param evt
+     */
     private void inicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inicioActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
         Ventana2 v2 = new Ventana2(v1);
         
     }//GEN-LAST:event_inicioActionPerformed
-
+    /**
+        * metodo que da pie a Agregar_palabra
+        *@param evt
+     */
     private void new_wordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_new_wordActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
         Agregar_palabra a_p = new Agregar_palabra(this);
     }//GEN-LAST:event_new_wordActionPerformed
-
+    /**
+     * metodo que da pie a diccionary
+     * @param evt
+     */
     private void ver_palabrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ver_palabrasActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
         diccionary p1 = new diccionary(this);
         
     }//GEN-LAST:event_ver_palabrasActionPerformed
-
+    /**
+     *  metodo que se activa al dar clic al boton jBurron1
+     * metodo que cierra el programa
+     * @param evt
+     */
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         dispose();
