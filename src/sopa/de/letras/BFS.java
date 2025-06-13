@@ -102,7 +102,9 @@ public class BFS {
         }
     }
     
-    
+    /**
+     * Metodo se encarga de busqueda 
+     */
     private void Search(){
         String aux = "";
         String s = Character.toString(palabra.charAt(0));
@@ -115,7 +117,7 @@ public class BFS {
             if(v1.get_status()==false && s.equals(v1.get_dato())){
                 Cola v2s= new Cola();
                 for (int j = 0;j<8; j++) {
-                    if (v1.dar_vecino(j)!=null && v1.dar_vecino(j).get_status() ==false ) {
+                    if (v1.dar_vecino(j)!=null) {
                         v2s.encolar(v1.dar_vecino(j)); 
 
                     }
@@ -128,7 +130,7 @@ public class BFS {
                     v2 = v2s.desencolar();
                     Cola v3s= new Cola();
                     for (int k = 0; k<8; k++) {
-                        if (v1!=v2.dar_vecino(k) && v2.dar_vecino(k)!=null && v2.dar_vecino(k).get_status()== false) {
+                        if (v1!=v2.dar_vecino(k) && v2.dar_vecino(k)!=null) {
                             v3s.encolar(v2.dar_vecino(k));
                         }
                     }
@@ -142,7 +144,7 @@ public class BFS {
                         if(palabra.length()==4){
                             Cola v4s= new Cola();
                             for (int l = 0; l<8; l++) {
-                                if (v2!=v3.dar_vecino(l)&&v1!=v3.dar_vecino(l) && v3.dar_vecino(l)!=null && v3.dar_vecino(l).get_status()== false) {
+                                if (v2!=v3.dar_vecino(l)&&v1!=v3.dar_vecino(l) && v3.dar_vecino(l)!=null) {
                                     v4s.encolar(v3.dar_vecino(l));   
                                 }
                             }
@@ -194,10 +196,18 @@ public class BFS {
         }
     }
     
+    /**
+     * 
+     * @return 
+     */
     public double[] get_time(){
         return time;
     }
     
+    /**
+     * 
+     * @return 
+     */
     public String[] get_palabras(){
         return ps;
     }

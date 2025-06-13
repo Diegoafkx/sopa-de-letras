@@ -15,6 +15,7 @@ public class DFS {
     private double[] tiempo;
     private String[] ps;
     private int[] posiciones;
+    private Vertice v1, v2;
     
     public DFS(Grafo G, Lista p){
         mG =G;
@@ -66,18 +67,19 @@ public class DFS {
     
     
     private void searching(){
+        boolean x = false;
         for (int i = 0; i < 16; i++) {
+            if(x == true){
+                break;
+            }
             long startTime = System.nanoTime();
-            Vertice v1 = mG.get_vertice(i);
-            boolean x = false;
+            v1 = mG.get_vertice(i);
             for (int j = 0; j < 8; j++) {
                 if(v1.dar_vecino(j)!= null && v1.get_status() == false && v1.get_dato().equals(Character.toString(palabra.charAt(0)))){
-                    Vertice  v2 = v1.dar_vecino(j);
+                    v2 = v1.dar_vecino(j);
                     if (v2.get_status()== false && v2.get_dato().equals(Character.toString(palabra.charAt(1)))){
                         boolean aux = false;
                         if(aux == false){
-                            v1.visit();
-                            v2.visit();
                             x = this.search(v2,2);
                             if(x == true){
                                 long endTime = System.nanoTime();
@@ -91,16 +93,13 @@ public class DFS {
                                 v1.visit();
                                 v2.visit();
                                 break;
-                            }else{
-                                v1.desvisitar();
-                                v2.desvisitar();
-                            }               
+                            }      
                         }
                     } 
                 }
             }
         }
-        } 
+    } 
     
          
     
@@ -108,22 +107,17 @@ public class DFS {
         if(v < palabra.length()){
             for (int i = 0; i < 8; i++) {
             String y = Character.toString(palabra.charAt(v));
-            if(v1.dar_vecino(i)!= null){
-                    Vertice  v2 = v1.dar_vecino(i);
-                    if(v2.get_status()== false && v2.get_dato().equals(y)){
+            if(v1.dar_vecino(i)!= null ){
+                    Vertice  v3 = v1.dar_vecino(i);
+                    if(v3.get_dato().equals(y) && v3 != this.v1 && v3 != this.v2 ){
                         if(v == palabra.length()-1){
-                            v2.visit();
+                            v1.visit();
+                            v3.visit();
                             return true;
                         }else{
-                            v1.visit();
-                            v2.visit();
-                            boolean x = this.search(v2, v+1);
+                            boolean x = this.search(v3, v+1);
                             if(x == true){
                                 return true; 
-                            }else{
-
-                                v2.desvisitar();
-
                             }
                         }
                     }
