@@ -9,7 +9,7 @@ package sopa.de.letras;
  *Este es la segunda ventana que se genera despues de seleccionar el archivo diccionario.txt
  * Esta es la ventana que conecta todas las demas ventanas entre si
  * Esta da pie a la Ventana2, diccionary y Agregar_palabra
- * @author Diego
+ * @author Diego Arreaza
  */
 
 public class menu extends javax.swing.JFrame {
@@ -126,6 +126,7 @@ public class menu extends javax.swing.JFrame {
         });
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 0, 60, -1));
 
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("sansserif", 0, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("MENU");

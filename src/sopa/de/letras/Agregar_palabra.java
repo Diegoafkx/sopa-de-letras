@@ -49,8 +49,6 @@ public class Agregar_palabra extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        New_palabras.setBackground(new java.awt.Color(255, 255, 255));
-        New_palabras.setForeground(new java.awt.Color(0, 0, 0));
         jScrollPane1.setViewportView(New_palabras);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 210, -1));

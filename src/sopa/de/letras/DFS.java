@@ -4,11 +4,21 @@
  */
 package sopa.de.letras;
 /**
- *
- * @author diego
+ * Clase que se encarga del metodo de busqueda DFS
+ * @author Diego Arreaza
  */
 public class DFS {
-    
+    /**
+     * Atributos de clase
+     * ps contiene las palabras encontradas de la sopa de letras
+     * palabras contiene las palabras del diccionario.txt
+     * tiempo contiene el tepo en milisegundos en la que cada palabra se encontro
+     * mG contiene el grafo de la sopa de letras
+     * palabra contiene la palabra ue se esta buscando
+     * v1 es el primer vertice con el que se esta intenado formar la palabra
+     * v2 es el segundo vertice con el que se esta intenado formar la palabra
+     * posiciones contiene la posicion de los vertices que orman las letras para auxiliar al momento de uscar una palara escrita por el usuario
+     */
     private Grafo mG;
     private String[] palabras;
     private String palabra;
@@ -17,6 +27,12 @@ public class DFS {
     private int[] posiciones;
     private Vertice v1, v2;
     
+    /**
+     * constructor de la clase cuando se le entrega el parametro tipo garfo y tipo Lista
+     * llama al metodo Search para iniciar la busqueda
+     * @param G es el grafo que se le va a asignar a gf
+     * @param p  es la Lista con las palabras dl diccionario.txt
+     */
     public DFS(Grafo G, Lista p){
         mG =G;
         palabras = new String[p.Tamaño()];
@@ -29,6 +45,12 @@ public class DFS {
         }
     }
     
+    /**
+     * constructor de la clase cuando se le entrega el parametro grafo y p
+     * llama al metodo Search para iniciar la busqueda
+     * @param G es el grafo que se le va a asignar a gf
+     * @param p  es la Lista con las palabras dl diccionario.txt
+     */
     public DFS(Grafo G, String p){
         palabra = p;
         tiempo = new double[1];
@@ -39,6 +61,9 @@ public class DFS {
         this.searching();
     }
     
+    /**
+     * Este metodo se encarga de re-marcar como visitado los vectores de la ubicaciones de la matriz posiciones
+     */
     public void Visitar(){
         for (int j = 0; j < 7; j++) {
             if (j>0 && posiciones[j] == 0) {
@@ -48,6 +73,10 @@ public class DFS {
         }
     }
     
+    /**
+     * Este metodo se encarga de asignar la ubicacion de los vertices que han sido visitados en la matriz posiciones
+     * luego los desmarca, esto para haer mas visual la busueda de la palabra que el usuario ingreso
+     */
     private void Desvisitar(){
         int aux = 0;
             for (int i = 0; i < 16; i++) {
@@ -59,13 +88,19 @@ public class DFS {
             }
     }
     
+    /**
+     * Este emtodo agrega las palabras a un arrau para facilitar el metodo Seacrh 
+     * @param p Lista de las palabras
+     */
     private void Agregar_p(Lista p){
         for (int i = 0; i < p.Tamaño(); i++) {
             palabras[i] = p.Datos(i);
         }
     }
     
-    
+    /**
+     * Metodo se encarga de realizar  la  busqueda de los 2 primeros vertices
+     */
     private void searching(){
         boolean x = false;
         for (int i = 0; i < 16; i++) {
@@ -101,8 +136,9 @@ public class DFS {
         }
     } 
     
-         
-    
+    /**
+     * Metodo se encarga de finaalizar la busqueda de los ultimos vertices
+     */
     private boolean search(Vertice v1,int v){
         if(v < palabra.length()){
             for (int i = 0; i < 8; i++) {
@@ -125,14 +161,19 @@ public class DFS {
             }   
         }return false;
     }
-        
-        
       
-
+    /**
+     * Este metodo se  encarga  de retornar la matriz con las palabras que se encontraron en la sopa de letras
+     * @return ps[] las palabras que se encontraron en la sopa de letras
+     */
     public String[] get_palabras(){
         return ps;
     }
     
+    /**
+     * Este metodo se  encarga  de retornar la matriz con el tiempo en el que se encontro cada palabra
+     * @return tiempo[] tiempo en el que se encontro la palabra
+     */ 
     public double[] get_time(){
         return tiempo;
     }

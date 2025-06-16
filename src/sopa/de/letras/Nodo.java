@@ -5,28 +5,36 @@
 package sopa.de.letras;
 
 /**
- *
- * @author Windows 10 Pro
+ * Clase que crea los Nodos para las Clases Lista y Cola
+ * @author Diego Arreaza
  */
 public class Nodo {
-    protected Vertice v;
-    /**
-     *
-     */
-    protected String data;
-
-    /**
-     *
-     */
-    protected Nodo  pNext;
     
+    /**
+     * Atributos de la clase
+     * v es Vertice que contiene cuando se usa la Estructura de Datos Cola
+     * data es el dato que guarda el Nodo
+     * pNext es el Nodo que le sigue en la estructuras de datos Lista
+     * pPrevious es el Nodo que le antecede en la estructuras de datos Lista
+     */
+    protected Vertice v;
+    protected String data;
+    protected Nodo  pNext;
     protected Nodo pPrevious;
     
+    /**
+     * Constructor de la clase cuando se usar para la estructura de datos Lista
+     * @param elem es el dato que guarda el Nodo
+     */
     public Nodo(String elem){
         data=elem;
         pNext=null;
     }
     
+    /**
+     * Constructor de la clase cuando se usar para la estructura de datos Cola
+     * @param v es el Vertice que guarda el Nodo
+     */
     public Nodo (Vertice v){
         this.v = v;
     }

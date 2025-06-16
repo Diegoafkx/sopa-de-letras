@@ -5,70 +5,53 @@
 package sopa.de.letras;
 
 /**
- *
- * @author Windows 10 Pro
+ * Clase que se encarga de crear la Estructura de Datos Lista
+ * @author Diego Arreaza
  */
 public class Lista  {
+    
+    /**
+     * Atributos de la Lista
+     * pfirst es el primer Nodo de la Lista
+     * pfinal es el ultimo Nodo de la Lista
+     * pNew es el nuevo Nodo que se crea cuando se inserta un nuevo integrante a la Lista
+     * iN es el tamaño de la Lista
+     */
     private Nodo pfirst;
     private Nodo pfinal;
     private Nodo pNew; 
     private int iN;
 
-
+    /**
+     * Constructor de la clase 
+     */
     Lista (){
+        
         iN = 0;
         pfirst = null; 
-        pfinal = null;
+        pfinal = null; 
 
     }
 
     /**
-     *
-     * @return
+     * Este metodo se encarga de retornar el tamaño de la lista
+     * @return iN tamaño de la Lista
      */
     public int Tamaño( ){
-        return this.iN;
+        return iN;
     }
 
     /**
-     *
-     * @return
+     * Este metodo retorna el primero de la lista
+     * @return pfirst primer Nodo de la Lista
      */
     public  Nodo Primero(){
-    return this.pfirst;
-    }
-
-    /**
-     *
-     * @param pValor
-     * @return
-     */
-    public String Leer(Nodo pValor){
-        return pValor.data;
-
-    }
-        
-        
-    /**
-     *
-     * @param x
-     */
-    public void PreInsertar(String x){
-        pNew = new Nodo(x);
-        iN++;
-        if(pfinal == null){
-            this.pfirst = this.pfinal = pNew ;
-            
-            }else{
-            pNew.pNext = pfirst;
-            pfirst.pPrevious = pNew; 
-            pfirst = pNew;
-            }
-        }
+        return pfirst;
+    } 
     
     /**
-     *
-     * @param x
+     * Este metodo se encarga de agregar a la Lista al primer o los siguiwntwa Nodos de la Lista
+     * @param x es el dato que pertenece al nuevo Nodo de la Lista
      */
     public void Insertar(String x){
         
@@ -85,9 +68,9 @@ public class Lista  {
         }   
         
     /**
-     *
-     * @param posicion
-     * @return
+     *Este metodo se encarga de retornar el dato del Nodo de la posicion del parametro posicion
+     * @param posicion es la posicion del dato que se requiere 
+     * @return aux.data el dato que se requiere
      */
     public String Datos(int posicion){
         Nodo aux = pfirst;
@@ -99,6 +82,11 @@ public class Lista  {
         return aux.data;
     }
     
+    /**
+     * Este metodo se encarga de retornar al Nodo del parametro posicion que se requiere
+     * @param posicion la ubicacion del Nodo que se requiere
+     * @return aux el Nodo que se requiere
+     */
     public Nodo Nodos(int posicion){
         Nodo aux = pfirst;
         if (posicion!= 0){ 

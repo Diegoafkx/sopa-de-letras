@@ -8,8 +8,8 @@ import javax.swing.DefaultListModel;
 
 
 /**
- *
- * @author diego
+ * Clase que se encarga de crear la ventana que muestra las palabras del diccionario
+ * @author Diego Arreaza
  */
 public class diccionary extends javax.swing.JFrame {
     
@@ -65,6 +65,9 @@ public class diccionary extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jScrollPane2.setBackground(new java.awt.Color(255, 255, 255));
+        jScrollPane2.setForeground(new java.awt.Color(0, 0, 0));
+
         jList.setBackground(new java.awt.Color(255, 255, 255));
         jList.setForeground(new java.awt.Color(0, 0, 0));
         jList.setModel(new javax.swing.AbstractListModel<String>() {
@@ -91,6 +94,7 @@ public class diccionary extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
     /**
      * metodo que se activa al hacer click en el boton Return
      * hace invisible la interface y llama la interface ack de menu 

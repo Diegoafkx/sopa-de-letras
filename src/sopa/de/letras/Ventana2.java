@@ -8,15 +8,25 @@ import javax.swing.DefaultListModel;
 import javax.swing.JTextField;
 
 /**
- *
- * @author Windows 10 Pro
+ * clase de la Ventana principal deel programa el que muestra la sopa de letras y la que la resuelve
+ * @author Diego Arreaza
  */
 public class Ventana2 extends javax.swing.JFrame {
+    
+    /**
+     * Atributos de la clase
+     * v1 contiene a la clase que muestra a la primera ventana del proyecto
+     * s_l es el grafo de la sopa de letras
+     * metodo es el metodo de busqueda de la sopa de letras
+     * words es la lista que contiene las palabras encontradas de la sopa de letra
+     * tiempo es la lista que contiene el tiempo en que se tardo en buscar cada palabra de la sopa de letras
+     */
     private static Ventana1 v1;
     private static Grafo s_l;
     private String metodo = "";
     private DefaultListModel<String> words = new DefaultListModel<>();
     private DefaultListModel<String> tiempo = new DefaultListModel<>();
+    
     /**
      * Creates new form ventana2, jText.setText(words);
      * @param v1
@@ -28,6 +38,10 @@ public class Ventana2 extends javax.swing.JFrame {
         this.setVisible(true);
     }
     
+    /**
+     * Este metodo que se encarga de colocar los colores a las letras que forman las palabras de la sopa de letras
+     * @param x es un verificador para marcar de distinto color la palabra que el usuario haya escrito
+     */
     private void colores(boolean x){
         JTextField[] aux = {this.letra1, this.letra2, this.letra3, this.letra4, this.letra5, this.letra6,this.letra7, this.letra8, this.letra9, this.letra10, this.letra11, this.letra12, this.letra13, this.letra14, this.letra15, this.letra16};
         for (int i = 0; i < 16; i++) {
@@ -42,7 +56,9 @@ public class Ventana2 extends javax.swing.JFrame {
         }
     }
     
-    
+    /**
+     * Este metodo se encarga de crear la sopa
+     */
     private void Crear_sopa_de_letras(){
         s_l = new Grafo(v1.get_letras());
         JTextField[] aux = {this.letra1, this.letra2, this.letra3, this.letra4, this.letra5, this.letra6,this.letra7, this.letra8, this.letra9, this.letra10, this.letra11, this.letra12, this.letra13, this.letra14, this.letra15, this.letra16};
@@ -51,6 +67,10 @@ public class Ventana2 extends javax.swing.JFrame {
         }
     }
     
+    /**
+     * Este metodo se encarga de mostrar las palabras encontradas en la sopa de letras
+     * @param p es la matriz con las palabras encontradas en la sopa de letras
+     */
     private void mostrar_palabras(String[] p){
         for (String p1 : p) {
             if (p1 != null) {
@@ -60,6 +80,10 @@ public class Ventana2 extends javax.swing.JFrame {
         jList1.setModel(words);
     }
     
+    /**
+     * Este metodo se encarga de mostrar el tiempo en que se tardo en encontrar las palabras de la sopa de letras
+     * @param t es la matriz con el tiempo que se encontro las palabras encontradas en la sopa de letras
+     */
     private void mostrar_tiempo(double[] t){
         
         for (int i = 0; i < t.length; i++) {
@@ -133,7 +157,6 @@ public class Ventana2 extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setBorder(null);
         jPanel1.setMinimumSize(new java.awt.Dimension(1280, 720));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -382,6 +405,7 @@ public class Ventana2 extends javax.swing.JFrame {
         });
         jPanel1.add(Exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(1220, 0, 60, -1));
 
+        New_palabra.setBackground(new java.awt.Color(255, 255, 255));
         New_palabra.setForeground(new java.awt.Color(0, 0, 0));
         New_palabra.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -509,6 +533,7 @@ public class Ventana2 extends javax.swing.JFrame {
         Alerta.setForeground(new java.awt.Color(0, 0, 0));
         jPanel1.add(Alerta, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 660, 1050, 40));
 
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/x.png"))); // NOI18N
         jLabel5.setText("jLabel5");
         jLabel5.setToolTipText("");
@@ -571,7 +596,12 @@ public class Ventana2 extends javax.swing.JFrame {
     private void New_palabraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_New_palabraActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_New_palabraActionPerformed
-
+    
+    /**
+     * Este metodo se activa al precionar el boton inciar
+     * Este metodo se encarga de llamar a las clases DFS o BFs para hacer la busqueda de las palabras 
+     * @param evt 
+     */
     private void iniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iniciarActionPerformed
         // TODO add your handling code here:
         String[] palabras = null;
@@ -607,7 +637,12 @@ public class Ventana2 extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_iniciarActionPerformed
-
+    
+    /**
+     * metodo que se activa al precionar el boton Exit
+     * Este metodo se encarga de cerrar el programa
+     * @param evt 
+     */
     private void ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitActionPerformed
         // TODO add your handling code here:
         dispose();
@@ -621,7 +656,12 @@ public class Ventana2 extends javax.swing.JFrame {
     private void letra2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_letra2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_letra2ActionPerformed
-
+    
+    /**
+     * Este metodo se activar al precionar el boton Buscar
+     * Este metodo se encarga de buscar la palabra escrita por el usuario
+     * @param evt 
+     */
     private void BuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarActionPerformed
         // TODO add your handling code here:
         String x = this.New_palabra.getText().toUpperCase();
@@ -679,19 +719,34 @@ public class Ventana2 extends javax.swing.JFrame {
         }
         this.New_palabra.setText("");
     }//GEN-LAST:event_BuscarActionPerformed
-
+    
+    /**
+     * Este metodo se activa cuando el usario preciona el boton DFS
+     * Este metodo se encarga de seleccionar el metodo de  busqueda DFS de las palabras
+     * @param evt 
+     */
     private void DFSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DFSActionPerformed
         // TODO add your handling code here:
         metodo = "DFS";
         m_b.setText("Depth First Search");        
     }//GEN-LAST:event_DFSActionPerformed
-
+    
+    /**
+     * Este metodo se activa cuando el usario preciona el boton BFS
+     * Este metodo se encarga de seleccionar el metodo de  busqueda BFS de las palabras
+     * @param evt 
+     */
     private void BFSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BFSActionPerformed
         // TODO add your handling code here:
         metodo = "BFS";
         m_b.setText("Breath First Search");  
     }//GEN-LAST:event_BFSActionPerformed
-
+    
+    /**
+     * Este metodo se activa al precionar el boton next
+     * Este metodo se encarga de crear una nueva sopa de letras
+     * @param evt 
+     */
     private void nextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextActionPerformed
         // TODO add your handling code here:
         JTextField[] aux = {this.letra1, this.letra2, this.letra3, this.letra4, this.letra5, this.letra6,this.letra7, this.letra8, this.letra9, this.letra10, this.letra11, this.letra12, this.letra13, this.letra14, this.letra15, this.letra16};

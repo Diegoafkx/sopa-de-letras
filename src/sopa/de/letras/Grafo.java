@@ -5,14 +5,20 @@
 package sopa.de.letras;
 
 /**
- *
- * @author Windows 10 Pro
+ * Clase que se  encarga de crear el grafo para la sopa de letras
+ * @author Diego Arreaza
  */
 public class Grafo {
-    
+    /**
+     * Atributos de la clase
+     * Vertices es una matriz que contiene todos los Vertices de l sopaa de letras 
+     */
     private final Vertice[] Vertices = new Vertice[16];
 
-    
+    /**
+     * Constructor de la sopa de letras y que aleatoriza el orden de la sopa de letras
+     * @param letras Lista de las 16 letras que estaran en la sopa de letras
+     */
     public Grafo(Lista letras){
         for (int i = 0; i < 16; i++) {
             Vertice x = new Vertice(letras.Nodos(i));
@@ -42,6 +48,9 @@ public class Grafo {
         this.Crear_Aristas();
     }
     
+    /**
+     * Este metodo se encarga de crear las aristas de cada vertice de la matriz Vertices
+     */
     private void Crear_Aristas(){
 
         for (int i = 0; i < 16; i++) {
@@ -87,10 +96,11 @@ public class Grafo {
             }
         }
     }   
+    
     /**
-     *
-     * @param i
-     * @return
+     * Este metodo retorna el vertice que se encuentra en la ubicacion i de la matriz Vertices
+     * @param i indice de la ubicacion del vertice del que se requiere 
+     * @return el vertice de la ubicacion i
      */
     public Vertice get_vertice(int i){
         return Vertices[i];

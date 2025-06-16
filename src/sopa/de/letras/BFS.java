@@ -6,7 +6,7 @@ package sopa.de.letras;
 
 /**
  * Clase que se encarga de realizar la busqueda Breadth First Search mediante el uso de colas 
- * @author diego
+ * @author Diego Arreaza
  */
 public class BFS {
     
@@ -103,7 +103,7 @@ public class BFS {
     }
     
     /**
-     * Metodo se encarga de busqueda 
+     * Metodo se encarga de realizar  la  busqueda 
      */
     private void Search(){
         String aux = "";
@@ -197,16 +197,16 @@ public class BFS {
     }
     
     /**
-     * 
-     * @return 
+     * Este metodo se  encarga  de retornar la matriz con el tiempo en el que se encontro cada palabra
+     * @return time[] tiempo en el que se encontro la palabra
      */
     public double[] get_time(){
         return time;
     }
     
     /**
-     * 
-     * @return 
+     * Este metodo se  encarga  de retornar la matriz con las palabras que se encontraron en la sopa de letras
+     * @return ps[] las palabras que se encontraron en la sopa de letras
      */
     public String[] get_palabras(){
         return ps;

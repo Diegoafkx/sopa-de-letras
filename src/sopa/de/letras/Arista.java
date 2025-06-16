@@ -6,7 +6,7 @@ package sopa.de.letras;
 
 /**
  * clase que se encarga de ser el puente entre dos vertices en un grafo
- * @author Diego
+ * @author Diego Arreaza
  */
 public class Arista {
     /**
@@ -45,10 +45,6 @@ public class Arista {
      */
     public Vertice get_N2(){
         return N2;
-    }
-    
-    public int get_ub(){
-        return direccion;
     }
     
 }  

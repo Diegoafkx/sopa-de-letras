@@ -8,9 +8,10 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 import java.io.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 /**
  *Codigo que genera la ventana inicial del programa, que a su vez, lee y analiza los datos diccionario.txt
- * @author Diego
+ * @author Diego Arreaza
  */
 public class Ventana1 extends javax.swing.JFrame {
 
