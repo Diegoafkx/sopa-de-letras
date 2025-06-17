@@ -35,6 +35,8 @@ public class Ventana1 extends javax.swing.JFrame {
      * Evita que el usuario pueda mover de posicion la interace
      */
     public Ventana1() {
+        this.setUndecorated(true);
+        this.setExtendedState(6);
         this.setLocationRelativeTo(null);
         initComponents();
     }
@@ -53,9 +55,9 @@ public class Ventana1 extends javax.swing.JFrame {
         Continue = new javax.swing.JButton();
         buscador = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jTextArea1 = new javax.swing.JTextArea();
         jLabel3 = new javax.swing.JLabel();
+        X = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -71,7 +73,7 @@ public class Ventana1 extends javax.swing.JFrame {
                 SearchActionPerformed(evt);
             }
         });
-        jPanel1.add(Search, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 220, -1, -1));
+        jPanel1.add(Search, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 220, 90, 30));
 
         Continue.setBackground(new java.awt.Color(255, 255, 255));
         Continue.setForeground(new java.awt.Color(0, 0, 0));
@@ -94,12 +96,7 @@ public class Ventana1 extends javax.swing.JFrame {
 
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Ingrese el archivo con el diccionario.");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 300, 30));
-
-        jLabel2.setFont(new java.awt.Font("sansserif", 0, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel2.setText("Buscador de Diccionario");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 280, 30));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 300, 30));
 
         jTextArea1.setEditable(false);
         jTextArea1.setBackground(new java.awt.Color(255, 255, 255));
@@ -107,10 +104,20 @@ public class Ventana1 extends javax.swing.JFrame {
         jTextArea1.setForeground(new java.awt.Color(0, 0, 0));
         jTextArea1.setRows(5);
         jTextArea1.setText("\nBienvenido porfavor ingrese el archivo con el diccionario.\nEste se encuentra dentro de la capeta de la aplicacion \ntiene de nombre el archivo \"Diccionario.txt\"");
-        jPanel1.add(jTextArea1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 340, 90));
+        jPanel1.add(jTextArea1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 320, 90));
 
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 340, 30));
+
+        X.setBackground(new java.awt.Color(255, 0, 0));
+        X.setForeground(new java.awt.Color(0, 0, 0));
+        X.setText("X");
+        X.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                XActionPerformed(evt);
+            }
+        });
+        jPanel1.add(X, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 0, 50, 30));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 300));
 
@@ -160,7 +167,7 @@ public class Ventana1 extends javax.swing.JFrame {
     private void ContinueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContinueActionPerformed
         // TODO add your handling code here:
         if (buscador.getText().equals("")){
-            jLabel3.setText("Error. No se a seleccionado el archivo diccionario");
+            buscador.setText("Error. No se a seleccionado el archivo diccionario");
         }else{
             if (retorno == JFileChooser.APPROVE_OPTION){
             try {
@@ -211,6 +218,16 @@ public class Ventana1 extends javax.swing.JFrame {
             menu v2 = new menu(this);
         }
     }//GEN-LAST:event_ContinueActionPerformed
+    /**
+     * metodo que se activa al precionar el boton X
+     * Este metodo se encarga de cerrar el programa
+     * @param evt 
+     */
+    private void XActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_XActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        System.exit(0);
+    }//GEN-LAST:event_XActionPerformed
 
     /**
      * retorna la lista con las palabras del diccionario
@@ -287,9 +304,9 @@ public class Ventana1 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Continue;
     private javax.swing.JButton Search;
+    private javax.swing.JButton X;
     private javax.swing.JTextField buscador;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextArea jTextArea1;

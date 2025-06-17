@@ -19,9 +19,12 @@ public class Agregar_palabra extends javax.swing.JFrame {
      * @param menu clase de la ventana anterior
      */
     public Agregar_palabra(menu menu) {
-        initComponents();
         Agregar_palabra.menu = menu;
         this.setVisible(true);
+        this.setUndecorated(true);
+        this.setExtendedState(6);
+        this.setLocationRelativeTo(null);
+        initComponents();
     }
 
     /**
@@ -41,6 +44,7 @@ public class Agregar_palabra extends javax.swing.JFrame {
         jTextArea1 = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -89,6 +93,15 @@ public class Agregar_palabra extends javax.swing.JFrame {
         });
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 270, -1, -1));
 
+        jButton3.setBackground(new java.awt.Color(255, 0, 0));
+        jButton3.setText("X");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, 60, -1));
+
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 300));
 
         pack();
@@ -134,6 +147,17 @@ public class Agregar_palabra extends javax.swing.JFrame {
         this.setVisible(false);
         menu.back();
     }//GEN-LAST:event_jButton2ActionPerformed
+    
+    /**
+     * metodo que se activa al precionar el boton X
+     * Este metodo se encarga de cerrar el programa
+     * @param evt 
+     */
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        System.exit(0);
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -173,6 +197,7 @@ public class Agregar_palabra extends javax.swing.JFrame {
     private javax.swing.JTextPane New_palabras;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
