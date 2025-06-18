@@ -4,6 +4,8 @@
  */
 package sopa.de.letras;
 
+import org.graphstream.graph.Node;
+
 /**
  * Clase que crea los Nodos para las Clases Lista y Cola
  * @author Diego Arreaza
@@ -21,6 +23,7 @@ public class Nodo {
     protected String data;
     protected Nodo  pNext;
     protected Nodo pPrevious;
+    protected Node n;
     
     /**
      * Constructor de la clase cuando se usar para la estructura de datos Lista
@@ -37,5 +40,9 @@ public class Nodo {
      */
     public Nodo (Vertice v){
         this.v = v;
+    }
+
+    Nodo(Node n) {
+        this.n = n;
     }
 }

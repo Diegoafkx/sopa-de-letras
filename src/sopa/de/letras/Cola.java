@@ -4,6 +4,8 @@
  */
 package sopa.de.letras;
 
+import org.graphstream.graph.Node;
+
 /**
  * Clase que se encarga de crear la Estructura de Datos cola para el metodo de busqueda BFS
  * @author Diego Arreaza
@@ -43,6 +45,17 @@ public class Cola {
         in++;
     }
     
+    public void encolar(Node N){
+        Nodo n = new Nodo(N);
+        if (pFinal == null) {
+            pFinal = n;
+            pFirst = n;
+        }else{
+            pFinal.pNext= n;
+            pFinal = n;
+        }   
+        in++;
+    }
     /**
      * Este metodo se encarga de retornar el tamaño de la cola
      * @return in el tamaño de la cola
@@ -55,12 +68,12 @@ public class Cola {
      * Este metodo se encarga de sacar al primero de la cola y retornarlo 
      * @return ptemp.v es el Vertice del primero de la cola
      */
-    public Vertice desencolar(){
+    public Nodo desencolar(){
         Nodo ptemp = pFirst;
         pFirst = pFirst.pNext;
         ptemp.pNext = null;
         in--;
-        return ptemp.v;
+        return ptemp;
     }
     
 }

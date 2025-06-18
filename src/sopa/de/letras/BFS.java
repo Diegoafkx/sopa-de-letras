@@ -127,7 +127,7 @@ public class BFS {
                     if(aux.equals(palabra)){
                         break;
                     }
-                    v2 = v2s.desencolar();
+                    v2 = v2s.desencolar().v;
                     Cola v3s= new Cola();
                     for (int k = 0; k<8; k++) {
                         if (v1!=v2.dar_vecino(k) && v2.dar_vecino(k)!=null) {
@@ -139,7 +139,7 @@ public class BFS {
                         if(aux.equals(palabra)){
                             break;
                         }   
-                        v3 = v3s.desencolar();
+                        v3 = v3s.desencolar().v;
                         aux =v1.get_dato() +v2.get_dato()+v3.get_dato();
                         if(palabra.length()==4){
                             Cola v4s= new Cola();
@@ -150,7 +150,7 @@ public class BFS {
                             }
                             int t4 = v4s.Tamaño();
                             for (int l = 0; l < t4; l++) {
-                                v4 = v4s.desencolar();
+                                v4 = v4s.desencolar().v;
                                 aux =v1.get_dato() +v2.get_dato()+v3.get_dato()+v4.get_dato();
                                 if(aux.equals(palabra)){
                                     long endTime = System.nanoTime();

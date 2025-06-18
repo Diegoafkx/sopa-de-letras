@@ -61,21 +61,12 @@ public class Grafo {
             if(i != 0 && i != 4 && i!=8 && i!= 12){  
                 Vertices[i].crear_vecinos(Vertices[i-1],0);
             }  
-
-        }
-
-        for (int i = 0; i < 16; i++) {
-
             if(i<=11){
                 Vertices[i].crear_vecinos(Vertices[i+4],1);
             }
             if(i >= 4){
                 Vertices[i].crear_vecinos(Vertices[i-4],1);
             }
-        }
-
-        for (int i = 0; i < 16; i++) {
-
             if(i != 3 && i!= 7 && i<11){
                 Vertices[i].crear_vecinos(Vertices[i+5],2);
             }
@@ -83,14 +74,10 @@ public class Grafo {
                 
                 Vertices[i].crear_vecinos(Vertices[i+3],3);
             }
-        }
-        
-        for (int i = 0; i < 16; i++) {
-
             if(i>= 5 && i!=8 && i !=12){
                 Vertices[i].crear_vecinos(Vertices[i-5],2);
             }
-            if(i> 3&& i!= 7 && i !=11 && i!= 15){
+            if(i>3&& i!= 7 && i !=11 && i!= 15){
                 
                 Vertices[i].crear_vecinos(Vertices[i-3],3);
             }
