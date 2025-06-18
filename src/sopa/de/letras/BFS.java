@@ -3,7 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package sopa.de.letras;
-
+import org.graphstream.graph.*;
+import org.graphstream.graph.implementations.*;
 /**
  * Clase que se encarga de realizar la busqueda Breadth First Search mediante el uso de colas 
  * @author Diego Arreaza
@@ -30,6 +31,7 @@ public class BFS {
     private String palabra;
     private Vertice v1,v2,v3,v4 = null;
     private int[] posiciones;
+    private Graph grafo;
     
     /**
      * constructor de la clase cuando se le entrega el parametro tipo garfo y tipo Lista
@@ -62,7 +64,7 @@ public class BFS {
         ps = new String[1];
         posiciones = new int[7];
         this.Desvisitar();
-        this.Search();    
+        this.Search();
     }
     
     /**
@@ -116,7 +118,6 @@ public class BFS {
                 for (int j = 0;j<8; j++) {
                     if (v1.dar_vecino(j)!=null) {
                         v2s.encolar(v1.dar_vecino(j)); 
-
                     }
                 }
                 int t2 = v2s.Tamaño();
@@ -132,8 +133,8 @@ public class BFS {
                     for (int k = 0; k < t3; k++) {
                         v3 = v3s.desencolar().v;
                         aux =v1.get_dato() +v2.get_dato()+v3.get_dato();
+                        Cola v4s= new Cola();
                         if(palabra.length()==4){
-                            Cola v4s= new Cola();
                             for (int l = 0; l<8; l++) {
                                 if (v2!=v3.dar_vecino(l)&&v1!=v3.dar_vecino(l) && v3.dar_vecino(l)!=null) {
                                     v4s.encolar(v3.dar_vecino(l));   
@@ -149,15 +150,14 @@ public class BFS {
                                     v1.visit();
                                     v2.visit();
                                     v3.visit();
-                                    if(palabra.length()==4){
-                                        v4.visit();
-                                    }
+                                    v4.visit();
                                     int m = 0;
                                     while(ps[m]!=null){
                                         m++;
                                     }
                                     ps[m] = palabra;
                                     time[m] = (double) elapsedTimeNanos / 1000000000.0;
+                                    this.Mostrar_Grafo(v2s, v3s, v4s);
                                     return;
                                 }      
                             }
@@ -168,15 +168,13 @@ public class BFS {
                                 v1.visit();
                                 v2.visit();
                                 v3.visit();
-                                if(palabra.length()==4){
-                                    v4.visit();
-                                }
                                 int m = 0;
                                 while(ps[m]!=null){
                                     m++;
                                 }
                                 ps[m] = palabra;
                                 time[m] = (double) elapsedTimeNanos / 1000000000.0;
+                                this.Mostrar_Grafo(v2s, v3s, v4s);
                                 return;
                             }
                         }              
@@ -200,5 +198,37 @@ public class BFS {
      */
     public String[] get_palabras(){
         return ps;
+    }
+    
+    private void Mostrar_Grafo(Cola v2s, Cola v3s, Cola v4s){
+        System.setProperty("org.graphstream.ui", "swing"); 
+        grafo = new SingleGraph("Mostrar grafico");
+        Node n1 = grafo.addNode("1");
+        n1.setAttribute("type", v1.get_dato());
+        Node n2 = grafo.addNode("2"); 
+        n2.setAttribute("type", v2.get_dato());
+        Node n3 = grafo.addNode("3");
+        n3.setAttribute("type", v3.get_dato());
+        grafo.addEdge("1", n1, n2);
+        grafo.addEdge("2", n2, n3);
+        int x = 4;
+        int y = 3;
+        if (palabra.length() == 4) {
+            Node n4 = grafo.addNode("4");
+            n4.setAttribute("type", v4.get_dato());
+            grafo.addEdge("3", n3, n4);
+            x++;
+            y++;
+        }
+        String styleSheet =
+        "edge {" +
+        "   fill-color: black;" +
+        "   size: 1px;" +
+        "}";
+        grafo.setAttribute("ui.stylesheet", styleSheet);
+    }
+    
+    public Graph get_grafo(){
+        return grafo;
     }
 }

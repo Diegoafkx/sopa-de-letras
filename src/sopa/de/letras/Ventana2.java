@@ -6,6 +6,7 @@ package sopa.de.letras;
 import java.awt.Color;
 import javax.swing.DefaultListModel;
 import javax.swing.JTextField;
+import org.graphstream.graph.Graph;
 
 /**
  * clase de la Ventana principal deel programa el que muestra la sopa de letras y la que la resuelve
@@ -692,21 +693,22 @@ public class Ventana2 extends javax.swing.JFrame {
                         this.colores(true);
                         buscador.Visitar();
                         
+                        
+                        
                     }else if (metodo.equals("BFS")) {
                         BFS buscador = new BFS(s_l,x);
                         palabras = buscador.get_palabras();
                         time = buscador.get_time();
                         this.colores(true);
                         buscador.Visitar();
-                    }
-                    
-                    boolean y = false;
-                    for (int i = 0; i < 7; i++) {
-                        if(palabras[i]!=null){
-                            y = true;
+                        Graph grafo =buscador.get_grafo();
+                        if(palabras[0]!=null){
+                            grafo.display();
                         }
                     }
-                    if(y == true){
+                    
+                    if(palabras[0]!=null){
+                        this.mostrar_palabras(palabras);
                         this.mostrar_tiempo(time);
                         Alerta.setText("Se encontro la palabra");
                         m_b.setText("");
