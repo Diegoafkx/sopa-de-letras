@@ -102,20 +102,16 @@ public class DFS {
      * Metodo se encarga de realizar  la  busqueda de los 2 primeros vertices
      */
     private void searching(){
-        boolean x = false;
         for (int i = 0; i < 16; i++) {
-            if(x == true){
-                break;
-            }
             long startTime = System.nanoTime();
             v1 = mG.get_vertice(i);
             for (int j = 0; j < 8; j++) {
-                if(v1.dar_vecino(j)!= null && v1.get_status() == false && v1.get_dato().equals(Character.toString(palabra.charAt(0)))){
+                if(v1.dar_vecino(j)!= null && v1.get_dato().equals(Character.toString(palabra.charAt(0)))){
                     v2 = v1.dar_vecino(j);
-                    if (v2.get_status()== false && v2.get_dato().equals(Character.toString(palabra.charAt(1)))){
+                    if (v2.get_dato().equals(Character.toString(palabra.charAt(1)))){
                         boolean aux = false;
                         if(aux == false){
-                            x = this.search(v2,2);
+                            boolean x = this.search(v2,2);
                             if(x == true){
                                 long endTime = System.nanoTime();
                                 int u = 0;
@@ -127,7 +123,7 @@ public class DFS {
                                 this.tiempo[u] = (double) elapsedTimeNanos / 1000000000.0;
                                 v1.visit();
                                 v2.visit();
-                                break;
+                                return;
                             }      
                         }
                     } 

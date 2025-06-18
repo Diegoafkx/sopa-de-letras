@@ -14,6 +14,7 @@ public class Mostrar_Busquedabfs {
     private Lista p;
     private String palabra;
     private Graph graph;
+    private Node n1, n2, n3;
     
     public Mostrar_Busquedabfs(Lista p, String w){
         this.p = p;

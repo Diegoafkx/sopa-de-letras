@@ -110,11 +110,8 @@ public class BFS {
         String s = Character.toString(palabra.charAt(0));
         long StartTime = System.nanoTime();
         for (int i = 0; i < 16; i++) {
-            if(aux.equals(palabra)){
-                break;
-            }
             v1 = gf.get_vertice(i);
-            if(v1.get_status()==false && s.equals(v1.get_dato())){
+            if(s.equals(v1.get_dato())){
                 Cola v2s= new Cola();
                 for (int j = 0;j<8; j++) {
                     if (v1.dar_vecino(j)!=null) {
@@ -124,9 +121,6 @@ public class BFS {
                 }
                 int t2 = v2s.Tamaño();
                 for (int j = 0; j < t2; j++) {
-                    if(aux.equals(palabra)){
-                        break;
-                    }
                     v2 = v2s.desencolar().v;
                     Cola v3s= new Cola();
                     for (int k = 0; k<8; k++) {
@@ -136,9 +130,6 @@ public class BFS {
                     }
                     int t3 = v3s.Tamaño();
                     for (int k = 0; k < t3; k++) {
-                        if(aux.equals(palabra)){
-                            break;
-                        }   
                         v3 = v3s.desencolar().v;
                         aux =v1.get_dato() +v2.get_dato()+v3.get_dato();
                         if(palabra.length()==4){
@@ -167,9 +158,7 @@ public class BFS {
                                     }
                                     ps[m] = palabra;
                                     time[m] = (double) elapsedTimeNanos / 1000000000.0;
-                                }
-                                if(aux.equals(palabra)){
-                                    break;
+                                    return;
                                 }      
                             }
                         }else{
@@ -188,6 +177,7 @@ public class BFS {
                                 }
                                 ps[m] = palabra;
                                 time[m] = (double) elapsedTimeNanos / 1000000000.0;
+                                return;
                             }
                         }              
                     }

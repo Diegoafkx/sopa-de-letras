@@ -36,7 +36,6 @@ public class Ventana1 extends javax.swing.JFrame {
      */
     public Ventana1() {
         this.setUndecorated(true);
-        this.setExtendedState(6);
         this.setLocationRelativeTo(null);
         initComponents();
     }

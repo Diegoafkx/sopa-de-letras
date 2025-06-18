@@ -42,7 +42,7 @@ public class Nodo {
         this.v = v;
     }
 
-    Nodo(Node n) {
+    public Nodo(Node n) {
         this.n = n;
     }
 }
