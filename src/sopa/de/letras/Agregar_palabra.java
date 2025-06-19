@@ -19,12 +19,11 @@ public class Agregar_palabra extends javax.swing.JFrame {
      * @param menu clase de la ventana anterior
      */
     public Agregar_palabra(menu menu) {
-        Agregar_palabra.menu = menu;
-        this.setVisible(true);
-        this.setUndecorated(true);
-        this.setExtendedState(6);
-        this.setLocationRelativeTo(null);
+        
         initComponents();
+        this.setVisible(true);
+        this.setLocationRelativeTo(null);
+        Agregar_palabra.menu = menu;
     }
 
     /**
@@ -47,7 +46,9 @@ public class Agregar_palabra extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setAlwaysOnTop(true);
         setBackground(new java.awt.Color(255, 255, 255));
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -105,6 +106,7 @@ public class Agregar_palabra extends javax.swing.JFrame {
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 300));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
     
     /**

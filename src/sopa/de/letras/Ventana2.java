@@ -3,6 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package sopa.de.letras;
+import metodos_de_busqueda.DFS;
+import Estructuras_de_datos.Grafo;
+import metodos_de_busqueda.BFS;
 import java.awt.Color;
 import javax.swing.DefaultListModel;
 import javax.swing.JTextField;
@@ -36,6 +39,10 @@ public class Ventana2 extends javax.swing.JFrame {
         initComponents();
         Ventana2.v1 = v1;
         this.Crear_sopa_de_letras();
+        this.setVisible(true);
+    }
+    
+    public void Back(){
         this.setVisible(true);
     }
     
@@ -703,7 +710,8 @@ public class Ventana2 extends javax.swing.JFrame {
                         buscador.Visitar();
                         Graph grafo =buscador.get_grafo();
                         if(palabras[0]!=null){
-                            grafo.display();
+                            this.setVisible(false);
+                            Mostrar_Busqueda v3 = new Mostrar_Busqueda(this, grafo);
                         }
                     }
                     

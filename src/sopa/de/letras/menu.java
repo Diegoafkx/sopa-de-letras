@@ -4,6 +4,8 @@
  */
 package sopa.de.letras;
 
+import Estructuras_de_datos.Lista;
+
 
 /**
  *Este es la segunda ventana que se genera despues de seleccionar el archivo diccionario.txt
@@ -28,8 +30,6 @@ public class menu extends javax.swing.JFrame {
         initComponents();
         menu.v1 = v1;
         this.setVisible(true);
-        this.setUndecorated(true);
-        this.setExtendedState(6);
         
     }
     
@@ -79,6 +79,7 @@ public class menu extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setAlwaysOnTop(true);
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -124,7 +125,7 @@ public class menu extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 0, 60, -1));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 0, 70, -1));
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("sansserif", 0, 36)); // NOI18N

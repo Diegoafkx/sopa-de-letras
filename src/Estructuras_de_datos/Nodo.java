@@ -1,8 +1,10 @@
+package Estructuras_de_datos;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package sopa.de.letras;
+
 
 import org.graphstream.graph.Node;
 
@@ -19,7 +21,7 @@ public class Nodo {
      * pNext es el Nodo que le sigue en la estructuras de datos Lista
      * pPrevious es el Nodo que le antecede en la estructuras de datos Lista
      */
-    protected Vertice v;
+    public Vertice v;
     protected String data;
     protected Nodo  pNext;
     protected Nodo pPrevious;

@@ -2,7 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package sopa.de.letras;
+package metodos_de_busqueda;
+
+import Estructuras_de_datos.Grafo;
+import Estructuras_de_datos.Lista;
+import Estructuras_de_datos.Vertice;
+
 /**
  * Clase que se encarga del metodo de busqueda DFS
  * @author Diego Arreaza
@@ -120,7 +125,7 @@ public class DFS {
                                 }
                                 this.ps[u] = palabra;
                                 long elapsedTimeNanos = endTime - startTime;
-                                this.tiempo[u] = (double) elapsedTimeNanos / 1000000000.0;
+                                this.tiempo[u] = (double) elapsedTimeNanos / 1000000.0;
                                 v1.visit();
                                 v2.visit();
                                 return;

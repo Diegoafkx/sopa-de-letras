@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package sopa.de.letras;
+package Estructuras_de_datos;
 
 /**
  * clase que se encarga de ser el puente entre dos vertices en un grafo

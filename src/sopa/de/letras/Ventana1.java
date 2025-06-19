@@ -8,6 +8,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 import java.io.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import Estructuras_de_datos.Lista;
 
 /**
  *Codigo que genera la ventana inicial del programa, que a su vez, lee y analiza los datos diccionario.txt
@@ -27,8 +28,8 @@ public class Ventana1 extends javax.swing.JFrame {
     private File Archivo;
     private FileReader Texto;
     private BufferedReader lector;
-    private final Lista palabras = new Lista ();
-    private final Lista Letras = new Lista();
+    private Lista palabras;
+    private Lista Letras;
     
     /**
      *Constructor de la ventana
@@ -109,7 +110,6 @@ public class Ventana1 extends javax.swing.JFrame {
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 340, 30));
 
         X.setBackground(new java.awt.Color(255, 0, 0));
-        X.setForeground(new java.awt.Color(0, 0, 0));
         X.setText("X");
         X.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -165,6 +165,8 @@ public class Ventana1 extends javax.swing.JFrame {
      */
     private void ContinueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContinueActionPerformed
         // TODO add your handling code here:
+        palabras = new Lista();
+        Letras = new Lista();
         if (buscador.getText().equals("")){
             buscador.setText("Error. No se a seleccionado el archivo diccionario");
         }else{

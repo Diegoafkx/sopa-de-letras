@@ -4,6 +4,7 @@
  */
 package sopa.de.letras;
 
+import Estructuras_de_datos.Lista;
 import javax.swing.DefaultListModel;
 
 

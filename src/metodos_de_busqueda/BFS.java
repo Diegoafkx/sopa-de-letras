@@ -2,7 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package sopa.de.letras;
+package metodos_de_busqueda;
+
+import Estructuras_de_datos.Cola;
+import Estructuras_de_datos.Grafo;
+import Estructuras_de_datos.Lista;
+import Estructuras_de_datos.Vertice;
 import org.graphstream.graph.*;
 import org.graphstream.graph.implementations.*;
 /**
@@ -115,18 +120,23 @@ public class BFS {
             v1 = gf.get_vertice(i);
             if(s.equals(v1.get_dato())){
                 Cola v2s= new Cola();
+                Cola v2x = new Cola();
                 for (int j = 0;j<8; j++) {
                     if (v1.dar_vecino(j)!=null) {
                         v2s.encolar(v1.dar_vecino(j)); 
+                        v2x.encolar(v1.dar_vecino(j)); 
                     }
                 }
+                
                 int t2 = v2s.Tamaño();
                 for (int j = 0; j < t2; j++) {
                     v2 = v2s.desencolar().v;
                     Cola v3s= new Cola();
+                    Cola v3x = new Cola();
                     for (int k = 0; k<8; k++) {
                         if (v1!=v2.dar_vecino(k) && v2.dar_vecino(k)!=null) {
                             v3s.encolar(v2.dar_vecino(k));
+                            v3x.encolar(v2.dar_vecino(k));
                         }
                     }
                     int t3 = v3s.Tamaño();
@@ -134,10 +144,12 @@ public class BFS {
                         v3 = v3s.desencolar().v;
                         aux =v1.get_dato() +v2.get_dato()+v3.get_dato();
                         Cola v4s= new Cola();
+                        Cola v4x = new Cola();
                         if(palabra.length()==4){
                             for (int l = 0; l<8; l++) {
                                 if (v2!=v3.dar_vecino(l)&&v1!=v3.dar_vecino(l) && v3.dar_vecino(l)!=null) {
-                                    v4s.encolar(v3.dar_vecino(l));   
+                                    v4s.encolar(v3.dar_vecino(l));
+                                    v4x.encolar(v3.dar_vecino(l));
                                 }
                             }
                             int t4 = v4s.Tamaño();
@@ -156,8 +168,8 @@ public class BFS {
                                         m++;
                                     }
                                     ps[m] = palabra;
-                                    time[m] = (double) elapsedTimeNanos / 1000000000.0;
-                                    this.Mostrar_Grafo(v2s, v3s, v4s);
+                                    time[m] = (double) elapsedTimeNanos / 1000000.0;
+                                    this.Mostrar_Grafo(v2x, v3x, v4x);
                                     return;
                                 }      
                             }
@@ -173,8 +185,8 @@ public class BFS {
                                     m++;
                                 }
                                 ps[m] = palabra;
-                                time[m] = (double) elapsedTimeNanos / 1000000000.0;
-                                this.Mostrar_Grafo(v2s, v3s, v4s);
+                                time[m] = (double) elapsedTimeNanos / 1000000.0;
+                                this.Mostrar_Grafo(v2x, v3x, v4x);
                                 return;
                             }
                         }              
@@ -201,6 +213,9 @@ public class BFS {
     }
     
     private void Mostrar_Grafo(Cola v2s, Cola v3s, Cola v4s){
+        int t2 = v2s.Tamaño();
+        int t3 = v3s.Tamaño();
+        int t4 = 0;
         System.setProperty("org.graphstream.ui", "swing"); 
         grafo = new SingleGraph("Mostrar grafico");
         Node n1 = grafo.addNode("1");
@@ -213,18 +228,93 @@ public class BFS {
         grafo.addEdge("2", n2, n3);
         int x = 4;
         int y = 3;
-        if (palabra.length() == 4) {
+        int z = 1;
+        if (palabra.length() == 4) {   
             Node n4 = grafo.addNode("4");
             n4.setAttribute("type", v4.get_dato());
             grafo.addEdge("3", n3, n4);
+            t4 = v4s.Tamaño();
             x++;
             y++;
         }
+        
+        for (int i = 0; i < 8; i++) {
+            Vertice v2x = null;
+            Vertice v3x = null;
+            Vertice v4x = null;
+            if (z <= t2) {
+                v2x = v2s.desencolar().v;
+            }
+            if (z <= t3) {
+                v3x = v3s.desencolar().v;
+            }
+            
+            if (v2s.Tamaño()!=0 && v2x !=v2) {
+                Node n = grafo.addNode(String.valueOf(x));
+                n.setAttribute("type", v2x.get_dato() );
+                grafo.addEdge(String.valueOf(y), n1,n);
+                x++;
+                y++;
+            }
+            if (v3s.Tamaño()!=0 && v3x !=v3) {
+                Node n = grafo.addNode(String.valueOf(x));
+                n.setAttribute("type", v3x.get_dato() );
+                grafo.addEdge(String.valueOf(y), n2, n);
+                x++;
+                y++;
+            }
+            if (palabra.length() == 4) {
+                if (z <= t4) {
+                    v4x = v4s.desencolar().v;
+                }
+                if (v4s.Tamaño()!=0 && v4x !=v4) {
+                    Node n = grafo.addNode(String.valueOf(x));
+                    n.setAttribute("type", v3x.get_dato() );
+                    grafo.addEdge(String.valueOf(y), n3, n);
+                    x++;
+                    y++;
+                }
+            }
+            z++;
+        }
+
         String styleSheet =
-        "edge {" +
-        "   fill-color: black;" +
-        "   size: 1px;" +
-        "}";
+        "}" +
+            "node {" +
+            "   fill-color: white;" + 
+            "   size: 30px;" + 
+            "   text-mode: SPREAD;" + 
+            "   text-color: black;" + 
+            "   text-size: 14px;" + 
+            "   text-alignment: center;" +
+            "   stroke-mode: PLAIN;" + 
+            "   stroke-color: black;" + 
+            "   stroke-width: 2px;" + 
+            "}" +
+            "edge {" +
+            "   fill-color: #2F4F4F;" + 
+            "   size: 2px;" +
+            "   arrow-shape: BARS;" +
+            "   arrow-size: 10px, 5px;" + 
+            "}" +
+            "node#1 {" +
+            "   fill-color: green;" +
+            "   text-color: white;" +
+            "}" +
+            "node#2 {" +
+            "   fill-color: green;" +
+            "   text-color: white;" +
+            "}" +
+            "node#3 {" +
+            "   fill-color: green;" +
+            "   text-color: white;" +
+            "}";
+        if (palabra.length() == 4) {
+            styleSheet = styleSheet +"\nnode#4 {" +
+            "   fill-color: green;" +
+            "   text-color: white;" +
+            "}";        
+        }
         grafo.setAttribute("ui.stylesheet", styleSheet);
     }
     
