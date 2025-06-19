@@ -277,45 +277,6 @@ public class BFS {
             }
             z++;
         }
-
-        String styleSheet =
-        "}" +
-            "node {" +
-            "   fill-color: white;" + 
-            "   size: 30px;" + 
-            "   text-mode: SPREAD;" + 
-            "   text-color: black;" + 
-            "   text-size: 14px;" + 
-            "   text-alignment: center;" +
-            "   stroke-mode: PLAIN;" + 
-            "   stroke-color: black;" + 
-            "   stroke-width: 2px;" + 
-            "}" +
-            "edge {" +
-            "   fill-color: #2F4F4F;" + 
-            "   size: 2px;" +
-            "   arrow-shape: BARS;" +
-            "   arrow-size: 10px, 5px;" + 
-            "}" +
-            "node#1 {" +
-            "   fill-color: green;" +
-            "   text-color: white;" +
-            "}" +
-            "node#2 {" +
-            "   fill-color: green;" +
-            "   text-color: white;" +
-            "}" +
-            "node#3 {" +
-            "   fill-color: green;" +
-            "   text-color: white;" +
-            "}";
-        if (palabra.length() == 4) {
-            styleSheet = styleSheet +"\nnode#4 {" +
-            "   fill-color: green;" +
-            "   text-color: white;" +
-            "}";        
-        }
-        grafo.setAttribute("ui.stylesheet", styleSheet);
     }
     
     public Graph get_grafo(){
