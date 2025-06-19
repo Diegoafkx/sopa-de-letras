@@ -289,9 +289,9 @@ public class BFS {
     String styleSheet =
     "node {" +
     "   fill-color: red;" + 
-    "   size: 20px;" +
+    "   size: 30px;" +
     "   text-mode: normal;" + 
-    "   text-color: white;" +
+    "   text-color: black;" +
     "   text-alignment: center;" +
     "}" +
     "node.greenNode {" +

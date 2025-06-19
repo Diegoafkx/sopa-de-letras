@@ -6,8 +6,6 @@ package sopa.de.letras;
 
 import java.awt.BorderLayout;
 import java.awt.Component;
-import java.awt.Dimension;
-import javax.swing.JComponent;
 import javax.swing.JPanel;
 import org.graphstream.graph.Graph;
 import org.graphstream.ui.swing_viewer.SwingViewer;
@@ -41,6 +39,8 @@ public class Mostrar_Busqueda extends javax.swing.JFrame {
         viewer.enableAutoLayout();
         Component componenteview = (Component) view;
         jPanel2.add(componenteview,BorderLayout.CENTER);
+        
+         
     }
     
     /**
