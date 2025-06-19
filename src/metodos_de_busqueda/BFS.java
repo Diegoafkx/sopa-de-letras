@@ -37,6 +37,7 @@ public class BFS {
     private Vertice v1,v2,v3,v4 = null;
     private int[] posiciones;
     private Graph grafo;
+    private boolean option;
     
     /**
      * constructor de la clase cuando se le entrega el parametro tipo garfo y tipo Lista
@@ -46,6 +47,7 @@ public class BFS {
      */
     public BFS(Grafo g, Lista p){
         gf = g;
+        option = false;
         palabras = new String[p.Tamaño()];
         time = new double[7];
         ps = new String[7];
@@ -65,6 +67,7 @@ public class BFS {
     public BFS(Grafo g, String p){
         gf = g;
         palabra = p;
+        option = true;
         time = new double[1];
         ps = new String[1];
         posiciones = new int[7];
@@ -169,7 +172,9 @@ public class BFS {
                                     }
                                     ps[m] = palabra;
                                     time[m] = (double) elapsedTimeNanos / 1000000.0;
-                                    this.Mostrar_Grafo(v2x, v3x, v4x);
+                                    if (option == true) {
+                                        this.Mostrar_Grafo(v2x, v3x, v4x);
+                                    }
                                     return;
                                 }      
                             }
@@ -186,7 +191,9 @@ public class BFS {
                                 }
                                 ps[m] = palabra;
                                 time[m] = (double) elapsedTimeNanos / 1000000.0;
-                                this.Mostrar_Grafo(v2x, v3x, v4x);
+                                if (option == true) {
+                                    this.Mostrar_Grafo(v2x, v3x, v4x);
+                                }
                                 return;
                             }
                         }              
@@ -213,63 +220,65 @@ public class BFS {
     }
     
     private void Mostrar_Grafo(Cola v2s, Cola v3s, Cola v4s){
-        int t2 = v2s.Tamaño();
-        int t3 = v3s.Tamaño();
-        int t4 = 0;
+
         System.setProperty("org.graphstream.ui", "swing"); 
         grafo = new SingleGraph("Mostrar grafico");
         Node n1 = grafo.addNode("1");
-        n1.setAttribute("type", v1.get_dato());
+        n1.setAttribute("ui.label", v1.get_dato());
         Node n2 = grafo.addNode("2"); 
-        n2.setAttribute("type", v2.get_dato());
+        n2.setAttribute("ui.label", v2.get_dato());
         Node n3 = grafo.addNode("3");
-        n3.setAttribute("type", v3.get_dato());
+        n3.setAttribute("ui.label", v3.get_dato());
         grafo.addEdge("1", n1, n2);
         grafo.addEdge("2", n2, n3);
         int x = 4;
         int y = 3;
-        int z = 1;
+        
+        n1.setAttribute("ui.class", "greenNode");
+        n2.setAttribute("ui.class", "greenNode");
+        n3.setAttribute("ui.class", "greenNode");
+        
         if (palabra.length() == 4) {   
             Node n4 = grafo.addNode("4");
-            n4.setAttribute("type", v4.get_dato());
+            n4.setAttribute("ui.label", v4.get_dato());
+            n4.setAttribute("ui.class", "greenNode");
             grafo.addEdge("3", n3, n4);
-            t4 = v4s.Tamaño();
             x++;
             y++;
         }
         
-        for (int i = 0; i < 8; i++) {
+        for (int z = 0;z < 8; z++) {
             Vertice v2x = null;
             Vertice v3x = null;
             Vertice v4x = null;
-            if (z <= t2) {
+            if (v2s.Tamaño()>0) {
                 v2x = v2s.desencolar().v;
             }
-            if (z <= t3) {
+            if (v3s.Tamaño()>0) {
                 v3x = v3s.desencolar().v;
             }
             
-            if (v2s.Tamaño()!=0 && v2x !=v2) {
+            if (v2s.Tamaño()>=0 && v2x !=v2 && v2x != null) {
                 Node n = grafo.addNode(String.valueOf(x));
-                n.setAttribute("type", v2x.get_dato() );
+                n.setAttribute("ui.label", v2x.get_dato() );
                 grafo.addEdge(String.valueOf(y), n1,n);
                 x++;
                 y++;
             }
-            if (v3s.Tamaño()!=0 && v3x !=v3) {
+            if (v3s.Tamaño()>=0 && v3x !=v3 && v3x != null) {
                 Node n = grafo.addNode(String.valueOf(x));
-                n.setAttribute("type", v3x.get_dato() );
+                n.setAttribute("ui.label", v3x.get_dato() );
                 grafo.addEdge(String.valueOf(y), n2, n);
                 x++;
                 y++;
             }
             if (palabra.length() == 4) {
-                if (z <= t4) {
+                if (v4s.Tamaño()>0) {
                     v4x = v4s.desencolar().v;
                 }
-                if (v4s.Tamaño()!=0 && v4x !=v4) {
+                if (v4s.Tamaño()>=0 && v4x !=v4 && v4x != null) {
                     Node n = grafo.addNode(String.valueOf(x));
-                    n.setAttribute("type", v3x.get_dato() );
+                    n.setAttribute("ui.label", v4x.get_dato() );
                     grafo.addEdge(String.valueOf(y), n3, n);
                     x++;
                     y++;
@@ -277,6 +286,19 @@ public class BFS {
             }
             z++;
         }
+    String styleSheet =
+    "node {" +
+    "   fill-color: red;" + 
+    "   size: 20px;" +
+    "   text-mode: normal;" + 
+    "   text-color: white;" +
+    "   text-alignment: center;" +
+    "}" +
+    "node.greenNode {" +
+    "   fill-color: green;" +
+    "}";
+    
+    grafo.setAttribute("ui.stylesheet", styleSheet);
     }
     
     public Graph get_grafo(){
