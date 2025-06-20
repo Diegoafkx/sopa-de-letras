@@ -28,7 +28,7 @@ public class Vertice {
      */
     public Vertice(Nodo n1){
         vecinos = new Arista[8];
-        letra = n1.data;
+        letra = (String) n1.data;
         visited = false;
     } 
     

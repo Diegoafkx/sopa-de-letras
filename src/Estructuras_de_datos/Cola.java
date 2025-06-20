@@ -10,7 +10,7 @@ import org.graphstream.graph.Node;
  * Clase que se encarga de crear la Estructura de Datos cola para el metodo de busqueda BFS
  * @author Diego Arreaza
  */
-public class Cola {
+public class Cola<T> {
     /**
      * Atributos de la clase
      * in Es el tamaño de la cola
@@ -31,9 +31,9 @@ public class Cola {
     
     /**
      * Aqui Se inicializa la cola o se agrega el siguiente en la cola
-     * @param v es el Vertice que se va a agregar a la cola
+     * @param v es el dato que se va a agregar a la cola
      */
-    public void encolar(Vertice v){
+    public void encolar(T v){
         Nodo n = new Nodo(v);
         if (pFinal == null) {
             pFinal = n;
@@ -44,18 +44,7 @@ public class Cola {
         }   
         in++;
     }
-    
-    public void encolar(Node N){
-        Nodo n = new Nodo(N);
-        if (pFinal == null) {
-            pFinal = n;
-            pFirst = n;
-        }else{
-            pFinal.pNext= n;
-            pFinal = n;
-        }   
-        in++;
-    }
+
     /**
      * Este metodo se encarga de retornar el tamaño de la cola
      * @return in el tamaño de la cola
@@ -68,12 +57,12 @@ public class Cola {
      * Este metodo se encarga de sacar al primero de la cola y retornarlo 
      * @return ptemp.v es el Vertice del primero de la cola
      */
-    public Nodo desencolar(){
+    public T desencolar(){
         Nodo ptemp = pFirst;
         pFirst = pFirst.pNext;
         ptemp.pNext = null;
         in--;
-        return ptemp;
+        return (T) ptemp.data;
     }
     
 }

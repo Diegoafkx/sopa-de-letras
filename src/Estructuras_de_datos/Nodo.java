@@ -11,40 +11,26 @@ import org.graphstream.graph.Node;
 /**
  * Clase que crea los Nodos para las Clases Lista y Cola
  * @author Diego Arreaza
+ * @param <T>
  */
-public class Nodo {
+public class Nodo<T> {
     
     /**
      * Atributos de la clase
-     * v es Vertice que contiene cuando se usa la Estructura de Datos Cola
      * data es el dato que guarda el Nodo
      * pNext es el Nodo que le sigue en la estructuras de datos Lista
      * pPrevious es el Nodo que le antecede en la estructuras de datos Lista
      */
-    public Vertice v;
-    protected String data;
+    protected T data;
     protected Nodo  pNext;
     protected Nodo pPrevious;
-    protected Node n;
     
     /**
      * Constructor de la clase cuando se usar para la estructura de datos Lista
      * @param elem es el dato que guarda el Nodo
      */
-    public Nodo(String elem){
+    public Nodo(T elem){
         data=elem;
         pNext=null;
-    }
-    
-    /**
-     * Constructor de la clase cuando se usar para la estructura de datos Cola
-     * @param v es el Vertice que guarda el Nodo
-     */
-    public Nodo (Vertice v){
-        this.v = v;
-    }
-
-    public Nodo(Node n) {
-        this.n = n;
     }
 }

@@ -99,7 +99,7 @@ public class DFS {
      */
     private void Agregar_p(Lista p){
         for (int i = 0; i < p.Tamaño(); i++) {
-            palabras[i] = p.Datos(i);
+            palabras[i] = (String) p.Datos(i);
         }
     }
     

@@ -8,7 +8,7 @@ package Estructuras_de_datos;
  * Clase que se encarga de crear la Estructura de Datos Lista
  * @author Diego Arreaza
  */
-public class Lista  {
+public class Lista<T>  {
     
     /**
      * Atributos de la Lista
@@ -53,7 +53,7 @@ public class Lista  {
      * Este metodo se encarga de agregar a la Lista al primer o los siguiwntwa Nodos de la Lista
      * @param x es el dato que pertenece al nuevo Nodo de la Lista
      */
-    public void Insertar(String x){
+    public void Insertar(T x){
         
         pNew = new Nodo(x);
         iN++;
@@ -72,14 +72,14 @@ public class Lista  {
      * @param posicion es la posicion del dato que se requiere 
      * @return aux.data el dato que se requiere
      */
-    public String Datos(int posicion){
+    public T Datos(int posicion){
         Nodo aux = pfirst;
         if (posicion!= 0){ 
             for (int i = 0; i < posicion; i++) {
                 aux = aux.pNext;
             }
         }
-        return aux.data;
+        return (T) aux.data;
     }
     
     /**

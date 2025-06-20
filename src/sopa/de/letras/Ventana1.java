@@ -66,8 +66,6 @@ public class Ventana1 extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Search.setBackground(new java.awt.Color(255, 255, 255));
-        Search.setForeground(new java.awt.Color(0, 0, 0));
         Search.setText("Buscador");
         Search.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -76,8 +74,6 @@ public class Ventana1 extends javax.swing.JFrame {
         });
         jPanel1.add(Search, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 220, 90, 30));
 
-        Continue.setBackground(new java.awt.Color(255, 255, 255));
-        Continue.setForeground(new java.awt.Color(0, 0, 0));
         Continue.setText("Continuar");
         Continue.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -86,8 +82,6 @@ public class Ventana1 extends javax.swing.JFrame {
         });
         jPanel1.add(Continue, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 270, -1, -1));
 
-        buscador.setBackground(new java.awt.Color(255, 255, 255));
-        buscador.setForeground(new java.awt.Color(0, 0, 0));
         buscador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buscadorActionPerformed(evt);
@@ -95,19 +89,15 @@ public class Ventana1 extends javax.swing.JFrame {
         });
         jPanel1.add(buscador, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 270, -1));
 
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Ingrese el archivo con el diccionario.");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 300, 30));
 
         jTextArea1.setEditable(false);
         jTextArea1.setBackground(new java.awt.Color(255, 255, 255));
         jTextArea1.setColumns(20);
-        jTextArea1.setForeground(new java.awt.Color(0, 0, 0));
         jTextArea1.setRows(5);
         jTextArea1.setText("Bienvenido porfavor ingrese el archivo con el diccionario.\nEste se encuentra dentro de la capeta de la aplicacion \ntiene de nombre el archivo \"Diccionario.txt\"");
         jPanel1.add(jTextArea1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 320, 60));
-
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 340, 30));
 
         X.setBackground(new java.awt.Color(255, 0, 0));
@@ -249,7 +239,7 @@ public class Ventana1 extends javax.swing.JFrame {
         try (FileWriter escritor = new FileWriter(Archivo, false)) {
             escritor.write("dic\n");
             for (int i = 0; i < palabras.Tamaño(); i++) {
-                escritor.write(palabras.Datos(i));
+                escritor.write((String) palabras.Datos(i));
                 escritor.write("\n");
             }
             escritor.write("/dic\ntab\n");

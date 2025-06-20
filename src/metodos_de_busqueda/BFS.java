@@ -108,7 +108,7 @@ public class BFS {
      */
     private void Agregar_p(Lista p){
         for (int i = 0; i < p.Tamaño(); i++) {
-            palabras[i] = p.Datos(i);
+            palabras[i] = (String) p.Datos(i);
         }
     }
     
@@ -133,7 +133,7 @@ public class BFS {
                 
                 int t2 = v2s.Tamaño();
                 for (int j = 0; j < t2; j++) {
-                    v2 = v2s.desencolar().v;
+                    v2 = (Vertice) v2s.desencolar();
                     Cola v3s= new Cola();
                     Cola v3x = new Cola();
                     for (int k = 0; k<8; k++) {
@@ -144,7 +144,7 @@ public class BFS {
                     }
                     int t3 = v3s.Tamaño();
                     for (int k = 0; k < t3; k++) {
-                        v3 = v3s.desencolar().v;
+                        v3 = (Vertice) v3s.desencolar();
                         aux =v1.get_dato() +v2.get_dato()+v3.get_dato();
                         Cola v4s= new Cola();
                         Cola v4x = new Cola();
@@ -157,7 +157,7 @@ public class BFS {
                             }
                             int t4 = v4s.Tamaño();
                             for (int l = 0; l < t4; l++) {
-                                v4 = v4s.desencolar().v;
+                                v4 = (Vertice) v4s.desencolar();
                                 aux =v1.get_dato() +v2.get_dato()+v3.get_dato()+v4.get_dato();
                                 if(aux.equals(palabra)){
                                     long endTime = System.nanoTime();
@@ -219,6 +219,12 @@ public class BFS {
         return ps;
     }
     
+    /**
+     * Metodo 
+     * @param v2s
+     * @param v3s
+     * @param v4s 
+     */
     private void Mostrar_Grafo(Cola v2s, Cola v3s, Cola v4s){
 
         System.setProperty("org.graphstream.ui", "swing"); 
@@ -252,10 +258,10 @@ public class BFS {
             Vertice v3x = null;
             Vertice v4x = null;
             if (v2s.Tamaño()>0) {
-                v2x = v2s.desencolar().v;
+                v2x = (Vertice) v2s.desencolar();
             }
             if (v3s.Tamaño()>0) {
-                v3x = v3s.desencolar().v;
+                v3x = (Vertice) v3s.desencolar();
             }
             
             if (v2s.Tamaño()>=0 && v2x !=v2 && v2x != null) {
@@ -274,7 +280,7 @@ public class BFS {
             }
             if (palabra.length() == 4) {
                 if (v4s.Tamaño()>0) {
-                    v4x = v4s.desencolar().v;
+                    v4x = (Vertice) v4s.desencolar();
                 }
                 if (v4s.Tamaño()>=0 && v4x !=v4 && v4x != null) {
                     Node n = grafo.addNode(String.valueOf(x));
@@ -301,6 +307,10 @@ public class BFS {
     grafo.setAttribute("ui.stylesheet", styleSheet);
     }
     
+    /**
+     * Metodo que se encarga de devolver el grafo con el arbol de la busqueda
+     * @return grafo del arbol de la busqueda
+     */
     public Graph get_grafo(){
         return grafo;
     }

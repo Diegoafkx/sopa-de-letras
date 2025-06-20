@@ -32,7 +32,7 @@ public class diccionary extends javax.swing.JFrame {
         this.setVisible(true);
         model = new DefaultListModel<>();
         for (int i = 0; i < lista.Tamaño(); i++) {
-            model.addElement(lista.Datos(i));   
+            model.addElement((String) lista.Datos(i));   
         }
         jList.setModel(model);
     }
