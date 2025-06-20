@@ -58,6 +58,7 @@ public class Ventana1 extends javax.swing.JFrame {
         jTextArea1 = new javax.swing.JTextArea();
         jLabel3 = new javax.swing.JLabel();
         X = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -103,11 +104,11 @@ public class Ventana1 extends javax.swing.JFrame {
         jTextArea1.setColumns(20);
         jTextArea1.setForeground(new java.awt.Color(0, 0, 0));
         jTextArea1.setRows(5);
-        jTextArea1.setText("\nBienvenido porfavor ingrese el archivo con el diccionario.\nEste se encuentra dentro de la capeta de la aplicacion \ntiene de nombre el archivo \"Diccionario.txt\"");
-        jPanel1.add(jTextArea1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 320, 90));
+        jTextArea1.setText("Bienvenido porfavor ingrese el archivo con el diccionario.\nEste se encuentra dentro de la capeta de la aplicacion \ntiene de nombre el archivo \"Diccionario.txt\"");
+        jPanel1.add(jTextArea1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 320, 60));
 
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 340, 30));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 340, 30));
 
         X.setBackground(new java.awt.Color(255, 0, 0));
         X.setText("X");
@@ -117,6 +118,9 @@ public class Ventana1 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(X, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 0, 50, 30));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/v1.png"))); // NOI18N
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 300));
 
@@ -308,6 +312,7 @@ public class Ventana1 extends javax.swing.JFrame {
     private javax.swing.JButton X;
     private javax.swing.JTextField buscador;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextArea jTextArea1;
