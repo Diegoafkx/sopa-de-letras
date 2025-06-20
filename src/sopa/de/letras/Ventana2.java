@@ -112,7 +112,6 @@ public class Ventana2 extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
         palabras_sopa = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         letra1 = new javax.swing.JTextField();
@@ -167,16 +166,6 @@ public class Ventana2 extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setMinimumSize(new java.awt.Dimension(1280, 720));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel2.setFont(new java.awt.Font("sansserif", 0, 36)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel2.setText("Sopa De Letras");
-        jLabel2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jLabel2.setMaximumSize(new java.awt.Dimension(200, 150));
-        jLabel2.setMinimumSize(new java.awt.Dimension(200, 150));
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 50, -1, -1));
-        jLabel2.getAccessibleContext().setAccessibleDescription("");
 
         palabras_sopa.setFont(new java.awt.Font("sansserif", 0, 24)); // NOI18N
         palabras_sopa.setForeground(new java.awt.Color(0, 0, 0));
@@ -539,12 +528,9 @@ public class Ventana2 extends javax.swing.JFrame {
 
         Alerta.setFont(new java.awt.Font("sansserif", 0, 24)); // NOI18N
         Alerta.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(Alerta, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 660, 1050, 40));
+        jPanel1.add(Alerta, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 660, 1060, 40));
 
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/x.png"))); // NOI18N
-        jLabel5.setText("jLabel5");
-        jLabel5.setToolTipText("");
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/v2.png"))); // NOI18N
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
@@ -820,7 +806,6 @@ public class Ventana2 extends javax.swing.JFrame {
     private javax.swing.JButton iniciar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
