@@ -18,17 +18,24 @@ import org.graphstream.graph.Graph;
 public class Ventana2 extends javax.swing.JFrame {
     
     /**
-     * Atributos de la clase
-     * v1 contiene a la clase que muestra a la primera ventana del proyecto
-     * s_l es el grafo de la sopa de letras
-     * metodo es el metodo de busqueda de la sopa de letras
-     * words es la lista que contiene las palabras encontradas de la sopa de letra
-     * tiempo es la lista que contiene el tiempo en que se tardo en buscar cada palabra de la sopa de letras
+     * menu contiene a la clase que muestra a la ventana menu
      */
     private static menu  menu;
+    /**
+     * s_l es el grafo de la sopa de letras
+     */
     private static Grafo s_l;
+    /**
+     * metodo es el metodo de busqueda de la sopa de letras
+     */
     private String metodo = "";
+    /**
+     * words es la lista que contiene las palabras encontradas de la sopa de letra
+     */
     private DefaultListModel<String> words = new DefaultListModel<>();
+    /**
+     * tiempo es la lista que contiene el tiempo en que se tardo en buscar cada palabra de la sopa de letras
+     */
     private DefaultListModel<String> tiempo = new DefaultListModel<>();
     
     /**
@@ -778,7 +785,11 @@ public class Ventana2 extends javax.swing.JFrame {
         this.Crear_sopa_de_letras();
         
     }//GEN-LAST:event_nextActionPerformed
-
+    /**
+     * Metodo que se activa al precionar el jButton1
+     * Se encarga ded regresar a la ventana menu
+     * @param evt 
+     */
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);

@@ -10,6 +10,7 @@ import Estructuras_de_datos.Lista;
 import Estructuras_de_datos.Vertice;
 import org.graphstream.graph.*;
 import org.graphstream.graph.implementations.*;
+
 /**
  * Clase que se encarga de realizar la busqueda Breadth First Search mediante el uso de colas 
  * @author Diego Arreaza
@@ -17,26 +18,43 @@ import org.graphstream.graph.implementations.*;
 public class BFS {
     
     /**
-     * Atributos de clase
      * ps contiene las palabras encontradas de la sopa de letras
+     */
+    private String[] ps;
+    /**
      * palabras contiene las palabras del diccionario.txt
-     * time contiene el tepo en milisegundos en la que cada palabra se encontro
+     */
+    private String[] palabras;
+    /**
+     *  time contiene el tepo en milisegundos en la que cada palabra se encontro
+     */
+    private double[] time;
+    /**
      * gf contiene el grafo de la sopa de letras
+     */
+    private Grafo gf;
+    /**
      * palabra contiene la palabra ue se esta buscando
+     */
+    private String palabra;
+    /**
      * v1 es el primer vertice con el que se esta intenado formar la palabra
      * v2 es el segundo vertice con el que se esta intenado formar la palabra
      * v3 es el tercer vertice con el que se esta intenado formar la palabra
      * v4 es el cuarto vertice con el que se esta intenado formar la palabra
-     * posiciones contiene la posicion de los vertices que orman las letras para auxiliar al momento de uscar una palara escrita por el usuario
      */
-    private String[] ps;
-    private String[] palabras;
-    private double[] time;
-    private Grafo gf;
-    private String palabra;
     private Vertice v1,v2,v3,v4 = null;
+    /**
+     *  posiciones contiene la posicion de los vertices que orman las letras para auxiliar al momento de uscar una palara escrita por el usuario
+     */
     private int[] posiciones;
+    /**
+     * grafo Es el grafo que contiene el Arbol que representa la busqueda de la palabra 
+     */
     private Graph grafo;
+    /**
+     *  option es la opcion que avisa a la bsuqueda si se esta buscando la palabra en especifico o la lista de palabras
+     */
     private boolean option;
     
     /**
@@ -222,10 +240,10 @@ public class BFS {
     }
     
     /**
-     * Metodo 
-     * @param v2s
-     * @param v3s
-     * @param v4s 
+     * Metodo que se encarga de crear el grafo en el que se mostrara el arbol de busqueda de la palabra
+     * @param v2s Cola de los Vertices que rodean al primer Vertice
+     * @param v3s Cola de los Vertices que rodean el segundo Vertice
+     * @param v4s Cola de los Vertices que rodean el tercero Vertice
      */
     private void Mostrar_Grafo(Cola v2s, Cola v3s, Cola v4s){
 

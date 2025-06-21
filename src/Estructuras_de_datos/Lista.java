@@ -11,15 +11,20 @@ package Estructuras_de_datos;
 public class Lista<T>  {
     
     /**
-     * Atributos de la Lista
      * pfirst es el primer Nodo de la Lista
-     * pfinal es el ultimo Nodo de la Lista
-     * pNew es el nuevo Nodo que se crea cuando se inserta un nuevo integrante a la Lista
-     * iN es el tamaño de la Lista
      */
     private Nodo pfirst;
+    /**
+     * pfinal es el ultimo Nodo de la Lista
+     */
     private Nodo pfinal;
+    /**
+     * pNew es el nuevo Nodo que se crea cuando se inserta un nuevo integrante a la Lista
+     */
     private Nodo pNew; 
+    /**
+     * iN es el tamaño de la Lista
+     */
     private int iN;
 
     /**

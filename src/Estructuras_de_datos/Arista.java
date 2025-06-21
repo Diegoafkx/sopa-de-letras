@@ -10,13 +10,16 @@ package Estructuras_de_datos;
  */
 public class Arista {
     /**
-     * Atriutos de la clase
-     * direccion contendra un entero que indicara la orientacion del ppuente entre el N1 y el N2
-     * N1 es el vertice inicial de la arista
-     * N2 es el vertice final de la arista
+     * direccion contendra un entero que indicara la orientacion del puente entre el N1 y el N2
      */
     private final int direccion;
+    /**
+     *  N1 es el vertice inicial de la arista
+     */
     private final Vertice N1;
+    /**
+     * N2 es el vertice final de la arista
+     */
     private final Vertice N2;
     
     /**

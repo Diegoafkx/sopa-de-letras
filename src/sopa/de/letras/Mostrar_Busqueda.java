@@ -13,16 +13,26 @@ import org.graphstream.ui.view.View;
 import org.graphstream.ui.view.Viewer;
 
 /**
- *
- * @author Windows 10 Pro
+ * Clase que se encargaa de crear a la interface que muestra al arbol de busqueda
+ * @author Diego Arreaza
  */
 public class Mostrar_Busqueda extends javax.swing.JFrame {
-    
+    /**
+     * 
+     */
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Mostrar_Busqueda.class.getName());
+    /**
+     * v2 contiene la Clase que mustra a la ventana2 
+     */
     private static Ventana2 v2;
+    /**
+     * grafo contiene a la grafica del arbol de busqueda
+     */
     private static Graph grafo;
     /**
-     * Creates new form Mostrar_Busqueda
+     * Constructor de la clase
+     * @param v2 contiene a la clase que crea a la clase v2
+     * @param grafo grafo que contiene al arbol de busqueda
      */
     public Mostrar_Busqueda(Ventana2 v2, Graph grafo) {
         this.v2 = v2;
@@ -33,6 +43,9 @@ public class Mostrar_Busqueda extends javax.swing.JFrame {
         
     }
     
+    /**
+     * metodo que se encarga de mostrar al arbol de busqueda
+     */
     private void mostrar(){
         SwingViewer viewer = new SwingViewer(grafo, Viewer.ThreadingModel.GRAPH_IN_GUI_THREAD);
         View view = viewer.addDefaultView(false);
@@ -93,13 +106,21 @@ public class Mostrar_Busqueda extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    /**
+     * Metodo que se encarga ded regresar a la Ventana2
+     * @param evt 
+     */
     private void RegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegresarActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
         v2.Back();
     }//GEN-LAST:event_RegresarActionPerformed
-
+    
+    /**
+     * Metodo que se encarga de cerrar el proyecto
+     * @param evt 
+     */
     private void ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitActionPerformed
         // TODO add your handling code here:
         dispose();

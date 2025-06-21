@@ -10,7 +10,6 @@ package sopa.de.letras;
  */
 public class Agregar_palabra extends javax.swing.JFrame {
     /**
-     * Atributos de la clase
      * menu contiene a la clase de la ventana anterior
      */
     private static menu menu;
@@ -142,7 +141,7 @@ public class Agregar_palabra extends javax.swing.JFrame {
     
     /**
      * metodo que se llama cuando se hace click en el boton jButton2
-     * Hace invisible la interface  llama al metodo back() de obj menu
+     * Hace invisible la interface llama al metodo back() de obj menu
      * @param evt 
      */
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

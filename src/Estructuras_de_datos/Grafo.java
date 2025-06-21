@@ -10,7 +10,6 @@ package Estructuras_de_datos;
  */
 public class Grafo {
     /**
-     * Atributos de la clase
      * Vertices es una matriz que contiene todos los Vertices de l sopaa de letras 
      */
     private final Vertice[] Vertices = new Vertice[16];

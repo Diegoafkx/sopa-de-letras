@@ -17,18 +17,29 @@ import Estructuras_de_datos.Lista;
 public class Ventana1 extends javax.swing.JFrame {
 
     /**
-     * Atributos de la clase
      * retorno contiene un entero el cual es el que verifica si es posible leer/aceder al archivo diccionario.txt 
-     * Archivo contiene el Archivo de diccionario.txt cuando el usuario lo seleccione
-     * Texto lee el archivo de diccioanrio.txr
-     * lector almacena el contenido de Texto para ser legible
      */
     
     private int retorno;
+    /**
+     * Archivo contiene el Archivo de diccionario.txt cuando el usuario lo seleccione
+     */
     private File Archivo;
+    /**
+     * Texto lee el archivo de diccioanrio.txr
+     */
     private FileReader Texto;
+    /**
+     * lector almacena el contenido de Texto para ser legible
+     */
     private BufferedReader lector;
+    /**
+     * Lista de las palabras del diccionario
+     */
     private Lista palabras;
+    /**
+     * Lista de las letras del diccionario
+     */
     private Lista Letras;
     
     /**

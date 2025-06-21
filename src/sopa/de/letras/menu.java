@@ -16,7 +16,7 @@ import Estructuras_de_datos.Lista;
 
 public class menu extends javax.swing.JFrame {
     /**
-     *el atributo v1 contiene el contenido de la Ventana1
+     *v1 contiene el clase que se encarga de mostrar a la primera Ventana del proyecto
      */
     
     private static Ventana1 v1;

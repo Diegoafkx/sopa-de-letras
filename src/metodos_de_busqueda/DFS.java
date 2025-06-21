@@ -14,22 +14,33 @@ import Estructuras_de_datos.Vertice;
  */
 public class DFS {
     /**
-     * Atributos de clase
-     * ps contiene las palabras encontradas de la sopa de letras
-     * palabras contiene las palabras del diccionario.txt
-     * tiempo contiene el tepo en milisegundos en la que cada palabra se encontro
      * mG contiene el grafo de la sopa de letras
-     * palabra contiene la palabra ue se esta buscando
-     * v1 es el primer vertice con el que se esta intenado formar la palabra
-     * v2 es el segundo vertice con el que se esta intenado formar la palabra
-     * posiciones contiene la posicion de los vertices que orman las letras para auxiliar al momento de uscar una palara escrita por el usuario
      */
     private Grafo mG;
+    /**
+     * palabras contiene las palabras del diccionario.txt
+     */
     private String[] palabras;
+    /**
+     * palabra contiene la palabra que se esta buscando
+     */
     private String palabra;
+    /**
+     *  tiempo contiene el tepo en milisegundos en la que cada palabra se encontro
+     */
     private double[] tiempo;
+    /**
+     * ps contiene las palabras que se encontraros
+     */
     private String[] ps;
+    /**
+     * posiciones contiene la posicion de los vertices que orman las letras para auxiliar al momento de uscar una palara escrita por el usuario
+     */
     private int[] posiciones;
+    /**
+     * v1 es el primer vertice con el que se esta intenado formar la palabra
+     * v2 es el segundo vertice con el que se esta intenado formar la palabra
+     */
     private Vertice v1, v2;
     
     /**

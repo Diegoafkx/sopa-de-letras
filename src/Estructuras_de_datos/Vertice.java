@@ -13,13 +13,16 @@ package Estructuras_de_datos;
 public class Vertice {
     
     /**
-     * Atributos de la clase
      * vecinos es una matriz con las Aristas del vertice
-     * letra es letra que contiene el vertice
-     * visited es el estado del vertice para saber si con esta se forma una palabra
      */
     private final Arista[] vecinos;
+    /**
+     * letra es letra que contiene el vertice
+     */
     private final String letra;
+    /**
+     * visited es el estado del vertice para saber si con esta se forma una palabra
+     */
     private boolean visited;
     
     /**

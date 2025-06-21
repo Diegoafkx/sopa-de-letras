@@ -15,11 +15,12 @@ import javax.swing.DefaultListModel;
 public class diccionary extends javax.swing.JFrame {
     
     /**
-     * atributos de la clase
      * menu contra la clase menu de la ventana anterior
-     * model contendra la palabras del la Lista palabras 
      */
     private static menu menu;
+    /**
+     * model contendra la palabras del la Lista palabras 
+     */
     private final DefaultListModel<String> model;
     /**
      * Creates new form diccionary
@@ -122,7 +123,11 @@ public class diccionary extends javax.swing.JFrame {
         this.setVisible(false);
         menu.back();
     }//GEN-LAST:event_ReturnActionPerformed
-
+    /**
+     * Metodo que se activa al precionar el botton jButton1
+     * Metodo que cierra el programa
+     * @param evt 
+     */
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         dispose();

@@ -5,9 +5,6 @@ package Estructuras_de_datos;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 
-
-import org.graphstream.graph.Node;
-
 /**
  * Clase que crea los Nodos para las Clases Lista y Cola
  * @author Diego Arreaza
@@ -16,13 +13,16 @@ import org.graphstream.graph.Node;
 public class Nodo<T> {
     
     /**
-     * Atributos de la clase
      * data es el dato que guarda el Nodo
-     * pNext es el Nodo que le sigue en la estructuras de datos Lista
-     * pPrevious es el Nodo que le antecede en la estructuras de datos Lista
      */
     protected T data;
+    /**
+     * pNext es el Nodo que le sigue en la estructuras de datos Lista
+     */
     protected Nodo  pNext;
+    /**
+     * pPrevious es el Nodo que le antecede en la estructuras de datos Lista
+     */
     protected Nodo pPrevious;
     
     /**

@@ -4,21 +4,23 @@
  */
 package Estructuras_de_datos;
 
-import org.graphstream.graph.Node;
-
 /**
  * Clase que se encarga de crear la Estructura de Datos cola para el metodo de busqueda BFS
  * @author Diego Arreaza
+ * @param <T>
  */
 public class Cola<T> {
     /**
-     * Atributos de la clase
      * in Es el tamaño de la cola
-     * pFirst es el Nodo inicial de la cola
-     * pFirst es el Nodo final de la cola
      */
     private int in = 0;
+    /**
+     * pFirst es el Nodo inicial de la cola
+     */
     private Nodo pFirst;
+    /**
+     * pFirst es el Nodo final de la cola
+     */
     private Nodo pFinal;
     
     /**
