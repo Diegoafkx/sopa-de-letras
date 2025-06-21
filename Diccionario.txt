@@ -5,6 +5,7 @@ PATA
 ORO
 RATA
 RARA
+CARO
 /dic
 tab
 C,H,A,O,X,A,T,M,P,R,R,A,A,O,R,O,

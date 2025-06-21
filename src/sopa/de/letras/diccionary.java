@@ -52,6 +52,8 @@ public class diccionary extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jList = new javax.swing.JList<>();
         Return = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -61,13 +63,15 @@ public class diccionary extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jList1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setAlwaysOnTop(true);
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jScrollPane2.setBackground(new java.awt.Color(255, 255, 255));
-        jScrollPane2.setForeground(new java.awt.Color(0, 0, 0));
+        jScrollPane2.setBackground(new java.awt.Color(0, 0, 0));
+        jScrollPane2.setForeground(new java.awt.Color(255, 255, 255));
 
         jList.setBackground(new java.awt.Color(255, 255, 255));
         jList.setForeground(new java.awt.Color(0, 0, 0));
@@ -90,6 +94,18 @@ public class diccionary extends javax.swing.JFrame {
         });
         jPanel1.add(Return, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 250, -1, -1));
 
+        jButton1.setBackground(new java.awt.Color(204, 0, 0));
+        jButton1.setText("x");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 0, 50, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/Diccionario.png"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 300));
 
         pack();
@@ -106,6 +122,12 @@ public class diccionary extends javax.swing.JFrame {
         this.setVisible(false);
         menu.back();
     }//GEN-LAST:event_ReturnActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        System.exit(0);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -142,6 +164,8 @@ public class diccionary extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Return;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JList<String> jList;
     private javax.swing.JList<String> jList1;
     private javax.swing.JPanel jPanel1;

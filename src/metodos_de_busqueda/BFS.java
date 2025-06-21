@@ -125,9 +125,9 @@ public class BFS {
                 Cola v2s= new Cola();
                 Cola v2x = new Cola();
                 for (int j = 0;j<8; j++) {
+                    v2x.encolar(v1.dar_vecino(j)); 
                     if (v1.dar_vecino(j)!=null) {
-                        v2s.encolar(v1.dar_vecino(j)); 
-                        v2x.encolar(v1.dar_vecino(j)); 
+                        v2s.encolar(v1.dar_vecino(j));     
                     }
                 }
                 
@@ -137,9 +137,10 @@ public class BFS {
                     Cola v3s= new Cola();
                     Cola v3x = new Cola();
                     for (int k = 0; k<8; k++) {
+                        v3x.encolar(v2.dar_vecino(k));
                         if (v1!=v2.dar_vecino(k) && v2.dar_vecino(k)!=null) {
                             v3s.encolar(v2.dar_vecino(k));
-                            v3x.encolar(v2.dar_vecino(k));
+                            
                         }
                     }
                     int t3 = v3s.Tamaño();
@@ -150,9 +151,10 @@ public class BFS {
                         Cola v4x = new Cola();
                         if(palabra.length()==4){
                             for (int l = 0; l<8; l++) {
+                                v4x.encolar(v3.dar_vecino(l));
                                 if (v2!=v3.dar_vecino(l)&&v1!=v3.dar_vecino(l) && v3.dar_vecino(l)!=null) {
                                     v4s.encolar(v3.dar_vecino(l));
-                                    v4x.encolar(v3.dar_vecino(l));
+                                    
                                 }
                             }
                             int t4 = v4s.Tamaño();
@@ -253,7 +255,7 @@ public class BFS {
             y++;
         }
         
-        for (int z = 0;z < 8; z++) {
+        for (int z = 0;z <  9; z++) {
             Vertice v2x = null;
             Vertice v3x = null;
             Vertice v4x = null;

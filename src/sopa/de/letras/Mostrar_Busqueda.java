@@ -77,7 +77,7 @@ public class Mostrar_Busqueda extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(102, 102, 102));
         jPanel2.setLayout(new java.awt.BorderLayout());
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 780, 430));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 780, 430));
 
         Exit.setBackground(new java.awt.Color(255, 0, 0));
         Exit.setText("x");

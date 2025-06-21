@@ -25,7 +25,7 @@ public class Ventana2 extends javax.swing.JFrame {
      * words es la lista que contiene las palabras encontradas de la sopa de letra
      * tiempo es la lista que contiene el tiempo en que se tardo en buscar cada palabra de la sopa de letras
      */
-    private static Ventana1 v1;
+    private static menu  menu;
     private static Grafo s_l;
     private String metodo = "";
     private DefaultListModel<String> words = new DefaultListModel<>();
@@ -33,11 +33,11 @@ public class Ventana2 extends javax.swing.JFrame {
     
     /**
      * Creates new form ventana2, jText.setText(words);
-     * @param v1
+     * @param menu
      */
-    public Ventana2( Ventana1 v1) {
+    public Ventana2( menu menu) {
         initComponents();
-        Ventana2.v1 = v1;
+        Ventana2.menu = menu;
         this.Crear_sopa_de_letras();
         this.setVisible(true);
     }
@@ -68,7 +68,7 @@ public class Ventana2 extends javax.swing.JFrame {
      * Este metodo se encarga de crear la sopa
      */
     private void Crear_sopa_de_letras(){
-        s_l = new Grafo(v1.get_letras());
+        s_l = new Grafo(menu.getlist_l());
         JTextField[] aux = {this.letra1, this.letra2, this.letra3, this.letra4, this.letra5, this.letra6,this.letra7, this.letra8, this.letra9, this.letra10, this.letra11, this.letra12, this.letra13, this.letra14, this.letra15, this.letra16};
         for (int i = 0; i < 16; i++) {
             aux[i].setText(s_l.get_vertice(i).get_dato());
@@ -112,6 +112,7 @@ public class Ventana2 extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
         palabras_sopa = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         letra1 = new javax.swing.JTextField();
@@ -166,6 +167,16 @@ public class Ventana2 extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setMinimumSize(new java.awt.Dimension(1280, 720));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jButton1.setBackground(new java.awt.Color(255, 255, 255));
+        jButton1.setForeground(new java.awt.Color(0, 0, 0));
+        jButton1.setText("Regresar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 680, -1, -1));
 
         palabras_sopa.setFont(new java.awt.Font("sansserif", 0, 24)); // NOI18N
         palabras_sopa.setForeground(new java.awt.Color(0, 0, 0));
@@ -602,11 +613,11 @@ public class Ventana2 extends javax.swing.JFrame {
         double[] time = null ;
         if(metodo.equals("DFS") || metodo.equals("BFS")){
             if(metodo.equals("DFS") ){
-                DFS buscador = new DFS(s_l,v1.get_palabras());
+                DFS buscador = new DFS(s_l,menu.getlist_p());
                 palabras = buscador.get_palabras();
                 time = buscador.get_time();
             }else if(metodo.equals("BFS")){
-                BFS buscador = new BFS(s_l,v1.get_palabras());
+                BFS buscador = new BFS(s_l,menu.getlist_p());
                 palabras = buscador.get_palabras();
                 time = buscador.get_time();
             }
@@ -660,60 +671,66 @@ public class Ventana2 extends javax.swing.JFrame {
         // TODO add your handling code here:
         String x = this.New_palabra.getText().toUpperCase();
         boolean aux = true;
-        for (int i = 0; i < v1.get_palabras().Tamaño(); i++) {
-            if(v1.get_palabras().Datos(i).equals(x)){
-                this.Alerta.setText("Ya se encuentra en el diccionario la palabra.");
+        for (int i = 0; i < menu.getlist_p().Tamaño(); i++) {
+            if(menu.getlist_p().Datos(i).equals(x)){
                 aux = false;
             }
         }
-        if(aux == true ){
-            if(x.length() < 3 || x.length() >4){
-                if (x.equals("")){
-                    this.Alerta.setText("Error. No se ha escribio ninguna palabra");
-                }else{
-                    this.Alerta.setText("Error. Tamaño de la palabra es invalida");
-                }
+        
+        if(x.length() < 3 || x.length() >4){
+            if (x.equals("")){
+                this.Alerta.setText("Error. No se ha escribio ninguna palabra");
             }else{
-                String[] palabras = null;
-                double[] time = null ;
-                if (metodo.equals("")) {
-                    this.Alerta.setText("Error. porfavor elija el metodo de busqueda y vuelva a escribir la palabra");
-                }else{
-                    if (metodo.equals("DFS")) {
-                        DFS buscador = new DFS(s_l,x);
-                        palabras = buscador.get_palabras();
-                        time = buscador.get_time();
-                        this.colores(true);
-                        buscador.Visitar();
-                        
-                        
-                        
-                    }else if (metodo.equals("BFS")) {
-                        BFS buscador = new BFS(s_l,x);
-                        palabras = buscador.get_palabras();
-                        time = buscador.get_time();
-                        this.colores(true);
-                        buscador.Visitar();
-                        Graph grafo =buscador.get_grafo();
-                        if(palabras[0]!=null){
-                            this.setVisible(false);
-                            Mostrar_Busqueda v3 = new Mostrar_Busqueda(this, grafo);
-                        }
-                    }
-                    
+                this.Alerta.setText("Error. Tamaño de la palabra es invalida");
+            }
+        }else{
+            String[] palabras = null;
+            double[] time = null ;
+            if (metodo.equals("")) {
+                this.Alerta.setText("Error. porfavor elija el metodo de busqueda y vuelva a escribir la palabra");
+            }else{
+                if (metodo.equals("DFS")) {
+                    DFS buscador = new DFS(s_l,x);
+                    palabras = buscador.get_palabras();
+                    time = buscador.get_time();
+                    this.colores(true);
+                    buscador.Visitar();
+
+
+
+                }else if (metodo.equals("BFS")) {
+                    BFS buscador = new BFS(s_l,x);
+                    palabras = buscador.get_palabras();
+                    time = buscador.get_time();
+                    this.colores(true);
+                    buscador.Visitar();
+                    Graph grafo =buscador.get_grafo();
                     if(palabras[0]!=null){
-                        this.mostrar_palabras(palabras);
-                        this.mostrar_tiempo(time);
-                        Alerta.setText("Se encontro la palabra");
-                        m_b.setText("");
-                        metodo = "";
-                    }else{
-                        Alerta.setText("No se encontro la palabra");
+                        this.setVisible(false);
+                        Mostrar_Busqueda v3 = new Mostrar_Busqueda(this, grafo);
                     }
                 }
+
+                if(palabras[0]!=null){
+                    this.mostrar_palabras(palabras);
+                    this.mostrar_tiempo(time);
+                    Alerta.setText("Se encontro la palabra");
+                    if (aux) {
+                        menu.getlist_p().Insertar(x);
+                        menu.ag();
+                        Alerta.setText("Se encontro la palabra y sea ha agregado  al diccionario");
+                    }
+                    m_b.setText("");
+                    metodo = "";
+                }else{
+                    Alerta.setText("No se encontro la palabra");
+                }
+
             }
         }
+        
         this.New_palabra.setText("");
+        
     }//GEN-LAST:event_BuscarActionPerformed
     
     /**
@@ -762,6 +779,12 @@ public class Ventana2 extends javax.swing.JFrame {
         
     }//GEN-LAST:event_nextActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+        menu.back();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -792,7 +815,7 @@ public class Ventana2 extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new Ventana2(v1).setVisible(true);
+            new Ventana2(menu).setVisible(true);
         });
     }
 
@@ -804,6 +827,7 @@ public class Ventana2 extends javax.swing.JFrame {
     private javax.swing.JButton Exit;
     private javax.swing.JTextField New_palabra;
     private javax.swing.JButton iniciar;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel3;

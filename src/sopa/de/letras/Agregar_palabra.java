@@ -41,9 +41,9 @@ public class Agregar_palabra extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         Aviso = new javax.swing.JLabel();
         jTextArea1 = new javax.swing.JTextArea();
-        jLabel1 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
@@ -54,6 +54,8 @@ public class Agregar_palabra extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        New_palabras.setBackground(new java.awt.Color(255, 255, 255));
+        New_palabras.setForeground(new java.awt.Color(0, 0, 0));
         jScrollPane1.setViewportView(New_palabras);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 210, -1));
@@ -69,20 +71,15 @@ public class Agregar_palabra extends javax.swing.JFrame {
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 230, -1, -1));
 
         Aviso.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(Aviso, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 186, 290, 30));
+        jPanel1.add(Aviso, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 290, 30));
 
         jTextArea1.setEditable(false);
         jTextArea1.setBackground(new java.awt.Color(255, 255, 255));
         jTextArea1.setColumns(20);
         jTextArea1.setForeground(new java.awt.Color(0, 0, 0));
         jTextArea1.setRows(5);
-        jTextArea1.setText("Puedes escribir una palabra que no se encuentre en el diccionario \npara que el programa lo busque, y a su vez, lo agregara al mismo. \n\t\n\t----IMPORTANTE----\n\nUna palabra valida tiene minimo 3 y maximo 4 letras");
-        jPanel1.add(jTextArea1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, 110));
-
-        jLabel1.setFont(new java.awt.Font("sansserif", 0, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("Agregar Nueva Palabra");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 340, -1));
+        jTextArea1.setText("Puedes escribir una palabra que no se \nencuentre en el diccionario para que el \nprograma lo busque, y a su vez, lo\n agregara al mismo. \n                    ----IMPORTANTE----\nUna palabra valida tiene minimo 3 y\n maximo 4 letras");
+        jPanel1.add(jTextArea1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 240, 120));
 
         jButton2.setBackground(new java.awt.Color(255, 255, 255));
         jButton2.setForeground(new java.awt.Color(0, 0, 0));
@@ -102,6 +99,9 @@ public class Agregar_palabra extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, 60, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/Agregar palabras.png"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 300));
 
@@ -136,6 +136,7 @@ public class Agregar_palabra extends javax.swing.JFrame {
                 menu.ag();
             }
         }
+        this.Aviso.setText("Se ha agregado la pa");
         this.New_palabras.setText(""); 
     }//GEN-LAST:event_jButton1ActionPerformed
     
