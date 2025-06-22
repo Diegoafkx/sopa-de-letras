@@ -35,7 +35,7 @@ public class diccionary extends javax.swing.JFrame {
         for (int i = 0; i < lista.Tamaño(); i++) {
             model.addElement((String) lista.Datos(i));   
         }
-        jList.setModel(model);
+        Lista_de_Palabras.setModel(model);
     }
 
     /**
@@ -51,9 +51,9 @@ public class diccionary extends javax.swing.JFrame {
         jList1 = new javax.swing.JList<>();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jList = new javax.swing.JList<>();
+        Lista_de_Palabras = new javax.swing.JList<>();
         Return = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        Exit = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
@@ -74,14 +74,14 @@ public class diccionary extends javax.swing.JFrame {
         jScrollPane2.setBackground(new java.awt.Color(0, 0, 0));
         jScrollPane2.setForeground(new java.awt.Color(255, 255, 255));
 
-        jList.setBackground(new java.awt.Color(255, 255, 255));
-        jList.setForeground(new java.awt.Color(0, 0, 0));
-        jList.setModel(new javax.swing.AbstractListModel<String>() {
+        Lista_de_Palabras.setBackground(new java.awt.Color(255, 255, 255));
+        Lista_de_Palabras.setForeground(new java.awt.Color(0, 0, 0));
+        Lista_de_Palabras.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane2.setViewportView(jList);
+        jScrollPane2.setViewportView(Lista_de_Palabras);
 
         jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 130, 250));
 
@@ -95,14 +95,14 @@ public class diccionary extends javax.swing.JFrame {
         });
         jPanel1.add(Return, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 250, -1, -1));
 
-        jButton1.setBackground(new java.awt.Color(204, 0, 0));
-        jButton1.setText("x");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        Exit.setBackground(new java.awt.Color(204, 0, 0));
+        Exit.setText("x");
+        Exit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                ExitActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 0, 50, -1));
+        jPanel1.add(Exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 0, 50, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/Diccionario.png"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -124,15 +124,15 @@ public class diccionary extends javax.swing.JFrame {
         menu.back();
     }//GEN-LAST:event_ReturnActionPerformed
     /**
-     * Metodo que se activa al precionar el botton jButton1
+     * Metodo que se activa al precionar el botton Exit
      * Metodo que cierra el programa
      * @param evt 
      */
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitActionPerformed
         // TODO add your handling code here:
         dispose();
         System.exit(0);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_ExitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -168,10 +168,10 @@ public class diccionary extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Exit;
+    private javax.swing.JList<String> Lista_de_Palabras;
     private javax.swing.JButton Return;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JList<String> jList;
     private javax.swing.JList<String> jList1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;

@@ -37,11 +37,11 @@ public class Agregar_palabra extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         New_palabras = new javax.swing.JTextPane();
-        jButton1 = new javax.swing.JButton();
+        Agregar = new javax.swing.JButton();
         Aviso = new javax.swing.JLabel();
         jTextArea1 = new javax.swing.JTextArea();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        Regresar = new javax.swing.JButton();
+        exit = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -59,15 +59,15 @@ public class Agregar_palabra extends javax.swing.JFrame {
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 210, -1));
 
-        jButton1.setBackground(new java.awt.Color(103, 148, 153));
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
-        jButton1.setText("Agregar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        Agregar.setBackground(new java.awt.Color(103, 148, 153));
+        Agregar.setForeground(new java.awt.Color(0, 0, 0));
+        Agregar.setText("Agregar");
+        Agregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                AgregarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 230, -1, -1));
+        jPanel1.add(Agregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 230, -1, -1));
 
         Aviso.setForeground(new java.awt.Color(0, 0, 0));
         jPanel1.add(Aviso, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 290, 30));
@@ -80,24 +80,24 @@ public class Agregar_palabra extends javax.swing.JFrame {
         jTextArea1.setText("Puedes escribir una palabra que no se \nencuentre en el diccionario para que el \nprograma lo busque, y a su vez, lo\n agregara al mismo. \n                    ----IMPORTANTE----\nUna palabra valida tiene minimo 3 y\n maximo 4 letras");
         jPanel1.add(jTextArea1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 240, 120));
 
-        jButton2.setBackground(new java.awt.Color(103, 148, 153));
-        jButton2.setForeground(new java.awt.Color(0, 0, 0));
-        jButton2.setText("Regresar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        Regresar.setBackground(new java.awt.Color(103, 148, 153));
+        Regresar.setForeground(new java.awt.Color(0, 0, 0));
+        Regresar.setText("Regresar");
+        Regresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                RegresarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 270, -1, -1));
+        jPanel1.add(Regresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 270, -1, -1));
 
-        jButton3.setBackground(new java.awt.Color(255, 0, 0));
-        jButton3.setText("X");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        exit.setBackground(new java.awt.Color(255, 0, 0));
+        exit.setText("X");
+        exit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                exitActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, 60, -1));
+        jPanel1.add(exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, 60, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/Agregar palabras.png"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -109,11 +109,11 @@ public class Agregar_palabra extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
     
     /**
-     * metodo que se llama despues de hacer click en el boton jButton1
+     * metodo que se llama despues de hacer click en el boton Agregar
      * Este metodo se encara de leer la palabra escrita por el usuario hacer verificaciones y meterla en el diccionario.
      * @param evt 
      */
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void AgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarActionPerformed
         // TODO add your handling code here:
         String x = this.New_palabras.getText().toUpperCase(); 
         boolean aux = true;
@@ -137,29 +137,29 @@ public class Agregar_palabra extends javax.swing.JFrame {
         }
         this.Aviso.setText("Se ha agregado la pa");
         this.New_palabras.setText(""); 
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_AgregarActionPerformed
     
     /**
-     * metodo que se llama cuando se hace click en el boton jButton2
+     * metodo que se llama cuando se hace click en el boton Regresar
      * Hace invisible la interface llama al metodo back() de obj menu
      * @param evt 
      */
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void RegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegresarActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
         menu.back();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_RegresarActionPerformed
     
     /**
-     * metodo que se activa al precionar el boton X
+     * metodo que se activa al precionar el boton exit
      * Este metodo se encarga de cerrar el programa
      * @param evt 
      */
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
         // TODO add your handling code here:
         dispose();
         System.exit(0);
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_exitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -195,11 +195,11 @@ public class Agregar_palabra extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Agregar;
     private javax.swing.JLabel Aviso;
     private javax.swing.JTextPane New_palabras;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton Regresar;
+    private javax.swing.JButton exit;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;

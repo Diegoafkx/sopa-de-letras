@@ -93,7 +93,7 @@ public class Ventana2 extends javax.swing.JFrame {
                 words.addElement(p1);   
             }
         }
-        jList1.setModel(words);
+        Lista_de_Palabras.setModel(words);
     }
     
     /**
@@ -107,7 +107,7 @@ public class Ventana2 extends javax.swing.JFrame {
                 tiempo.addElement(Double.toString(t[i]));   
             }
         }
-        jList2.setModel(tiempo);
+        Lista_de_Tiempo.setModel(tiempo);
     }
     
     /**
@@ -120,7 +120,7 @@ public class Ventana2 extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        Regresar = new javax.swing.JButton();
         palabras_sopa = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         letra1 = new javax.swing.JTextField();
@@ -140,9 +140,9 @@ public class Ventana2 extends javax.swing.JFrame {
         letra15 = new javax.swing.JTextField();
         letra16 = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        Lista_de_Palabras = new javax.swing.JList<>();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jList2 = new javax.swing.JList<>();
+        Lista_de_Tiempo = new javax.swing.JList<>();
         Exit = new javax.swing.JButton();
         New_palabra = new javax.swing.JTextField();
         Buscar = new javax.swing.JButton();
@@ -176,15 +176,15 @@ public class Ventana2 extends javax.swing.JFrame {
         jPanel1.setMinimumSize(new java.awt.Dimension(1280, 720));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setBackground(new java.awt.Color(103, 148, 153));
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
-        jButton1.setText("Regresar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        Regresar.setBackground(new java.awt.Color(103, 148, 153));
+        Regresar.setForeground(new java.awt.Color(0, 0, 0));
+        Regresar.setText("Regresar");
+        Regresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                RegresarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 680, -1, -1));
+        jPanel1.add(Regresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 680, -1, -1));
 
         palabras_sopa.setFont(new java.awt.Font("sansserif", 0, 24)); // NOI18N
         palabras_sopa.setForeground(new java.awt.Color(0, 0, 0));
@@ -398,17 +398,17 @@ public class Ventana2 extends javax.swing.JFrame {
 
         jScrollPane1.setForeground(new java.awt.Color(0, 0, 0));
 
-        jList1.setBackground(new java.awt.Color(255, 255, 255));
-        jList1.setForeground(new java.awt.Color(0, 0, 0));
-        jScrollPane1.setViewportView(jList1);
+        Lista_de_Palabras.setBackground(new java.awt.Color(255, 255, 255));
+        Lista_de_Palabras.setForeground(new java.awt.Color(0, 0, 0));
+        jScrollPane1.setViewportView(Lista_de_Palabras);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, 110, 230));
 
         jScrollPane2.setForeground(new java.awt.Color(0, 0, 0));
 
-        jList2.setBackground(new java.awt.Color(255, 255, 255));
-        jList2.setForeground(new java.awt.Color(0, 0, 0));
-        jScrollPane2.setViewportView(jList2);
+        Lista_de_Tiempo.setBackground(new java.awt.Color(255, 255, 255));
+        Lista_de_Tiempo.setForeground(new java.awt.Color(0, 0, 0));
+        jScrollPane2.setViewportView(Lista_de_Tiempo);
 
         jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, 110, 230));
 
@@ -780,22 +780,22 @@ public class Ventana2 extends javax.swing.JFrame {
         tiempo.clear();
         metodo = "";
         words.clear();
-        jList1.setModel(words);
-        jList2.setModel(tiempo);
+        Lista_de_Palabras.setModel(words);
+        Lista_de_Tiempo.setModel(tiempo);
         m_b.setText("");
         this.Crear_sopa_de_letras();
         
     }//GEN-LAST:event_nextActionPerformed
     /**
-     * Metodo que se activa al precionar el jButton1
+     * Metodo que se activa al precionar el Regresar
      * Se encarga ded regresar a la ventana menu
      * @param evt 
      */
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void RegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegresarActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
         menu.back();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_RegresarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -837,9 +837,11 @@ public class Ventana2 extends javax.swing.JFrame {
     private javax.swing.JButton Buscar;
     private javax.swing.JButton DFS;
     private javax.swing.JButton Exit;
+    private javax.swing.JList<String> Lista_de_Palabras;
+    private javax.swing.JList<String> Lista_de_Tiempo;
     private javax.swing.JTextField New_palabra;
+    private javax.swing.JButton Regresar;
     private javax.swing.JButton iniciar;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel3;
@@ -848,8 +850,6 @@ public class Ventana2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JList<String> jList1;
-    private javax.swing.JList<String> jList2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;

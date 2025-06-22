@@ -75,7 +75,7 @@ public class menu extends javax.swing.JFrame {
         new_word = new javax.swing.JToggleButton();
         inicio = new javax.swing.JToggleButton();
         ver_palabras = new javax.swing.JToggleButton();
-        jButton1 = new javax.swing.JButton();
+        exit = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -117,15 +117,15 @@ public class menu extends javax.swing.JFrame {
         });
         jPanel1.add(ver_palabras, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, 490, 80));
 
-        jButton1.setBackground(new java.awt.Color(204, 0, 51));
-        jButton1.setText("X");
-        jButton1.setToolTipText("");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        exit.setBackground(new java.awt.Color(204, 0, 51));
+        exit.setText("X");
+        exit.setToolTipText("");
+        exit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                exitActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 0, 70, -1));
+        jPanel1.add(exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 0, 70, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/menu.png"))); // NOI18N
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -165,15 +165,15 @@ public class menu extends javax.swing.JFrame {
         
     }//GEN-LAST:event_ver_palabrasActionPerformed
     /**
-     *  metodo que se activa al dar clic al boton jBurron1
+     *  metodo que se activa al dar clic al boton exit
      * metodo que cierra el programa
      * @param evt
      */
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
         // TODO add your handling code here:
         dispose();
         System.exit(0);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_exitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -210,8 +210,8 @@ public class menu extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton exit;
     private javax.swing.JToggleButton inicio;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JToggleButton new_word;
