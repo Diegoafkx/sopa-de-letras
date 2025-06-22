@@ -6,6 +6,7 @@ ORO
 RATA
 RARA
 CARO
+CARA
 /dic
 tab
 C,H,A,O,X,A,T,M,P,R,R,A,A,O,R,O,

@@ -87,8 +87,9 @@ public class Ventana2 extends javax.swing.JFrame {
      * @param p es la matriz con las palabras encontradas en la sopa de letras
      */
     private void mostrar_palabras(String[] p){
+        words.clear();
         for (String p1 : p) {
-            if (p1 != null) {
+            if (p1 != null ) {
                 words.addElement(p1);   
             }
         }
@@ -100,7 +101,7 @@ public class Ventana2 extends javax.swing.JFrame {
      * @param t es la matriz con el tiempo que se encontro las palabras encontradas en la sopa de letras
      */
     private void mostrar_tiempo(double[] t){
-        
+        tiempo.clear();
         for (int i = 0; i < t.length; i++) {
             if(t[i] != 0.0){
                 tiempo.addElement(Double.toString(t[i]));   
@@ -719,8 +720,8 @@ public class Ventana2 extends javax.swing.JFrame {
                 }
 
                 if(palabras[0]!=null){
-                    this.mostrar_palabras(palabras);
-                    this.mostrar_tiempo(time);
+                    words.addElement(x);
+                    tiempo.addElement(Double.toString(time[0]));
                     Alerta.setText("Se encontro la palabra");
                     if (aux) {
                         menu.getlist_p().Insertar(x);
