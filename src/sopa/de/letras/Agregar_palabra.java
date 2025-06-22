@@ -59,7 +59,7 @@ public class Agregar_palabra extends javax.swing.JFrame {
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 210, -1));
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
+        jButton1.setBackground(new java.awt.Color(103, 148, 153));
         jButton1.setForeground(new java.awt.Color(0, 0, 0));
         jButton1.setText("Agregar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -80,7 +80,7 @@ public class Agregar_palabra extends javax.swing.JFrame {
         jTextArea1.setText("Puedes escribir una palabra que no se \nencuentre en el diccionario para que el \nprograma lo busque, y a su vez, lo\n agregara al mismo. \n                    ----IMPORTANTE----\nUna palabra valida tiene minimo 3 y\n maximo 4 letras");
         jPanel1.add(jTextArea1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 240, 120));
 
-        jButton2.setBackground(new java.awt.Color(255, 255, 255));
+        jButton2.setBackground(new java.awt.Color(103, 148, 153));
         jButton2.setForeground(new java.awt.Color(0, 0, 0));
         jButton2.setText("Regresar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {

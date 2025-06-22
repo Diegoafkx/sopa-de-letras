@@ -176,7 +176,7 @@ public class Ventana2 extends javax.swing.JFrame {
         jPanel1.setMinimumSize(new java.awt.Dimension(1280, 720));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
+        jButton1.setBackground(new java.awt.Color(103, 148, 153));
         jButton1.setForeground(new java.awt.Color(0, 0, 0));
         jButton1.setText("Regresar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -430,7 +430,7 @@ public class Ventana2 extends javax.swing.JFrame {
         });
         jPanel1.add(New_palabra, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 590, 200, -1));
 
-        Buscar.setBackground(new java.awt.Color(255, 255, 255));
+        Buscar.setBackground(new java.awt.Color(103, 148, 153));
         Buscar.setForeground(new java.awt.Color(0, 0, 0));
         Buscar.setText("Buscar");
         Buscar.addActionListener(new java.awt.event.ActionListener() {
@@ -440,7 +440,7 @@ public class Ventana2 extends javax.swing.JFrame {
         });
         jPanel1.add(Buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 590, -1, -1));
 
-        iniciar.setBackground(new java.awt.Color(255, 255, 255));
+        iniciar.setBackground(new java.awt.Color(103, 148, 153));
         iniciar.setForeground(new java.awt.Color(0, 0, 0));
         iniciar.setText("Iniciar");
         iniciar.addActionListener(new java.awt.event.ActionListener() {
@@ -450,7 +450,7 @@ public class Ventana2 extends javax.swing.JFrame {
         });
         jPanel1.add(iniciar, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 410, 100, 30));
 
-        DFS.setBackground(new java.awt.Color(255, 255, 255));
+        DFS.setBackground(new java.awt.Color(103, 148, 153));
         DFS.setForeground(new java.awt.Color(0, 0, 0));
         DFS.setText("DFS");
         DFS.addActionListener(new java.awt.event.ActionListener() {
@@ -460,7 +460,7 @@ public class Ventana2 extends javax.swing.JFrame {
         });
         jPanel1.add(DFS, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 330, -1, -1));
 
-        BFS.setBackground(new java.awt.Color(255, 255, 255));
+        BFS.setBackground(new java.awt.Color(103, 148, 153));
         BFS.setForeground(new java.awt.Color(0, 0, 0));
         BFS.setText("BFS");
         BFS.addActionListener(new java.awt.event.ActionListener() {
@@ -535,7 +535,7 @@ public class Ventana2 extends javax.swing.JFrame {
         jLabel4.setText("Metodo Selecionado:");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 370, 130, 30));
 
-        next.setBackground(new java.awt.Color(255, 255, 255));
+        next.setBackground(new java.awt.Color(103, 148, 153));
         next.setForeground(new java.awt.Color(0, 0, 0));
         next.setText("siguiente");
         next.addActionListener(new java.awt.event.ActionListener() {

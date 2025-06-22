@@ -85,7 +85,7 @@ public class diccionary extends javax.swing.JFrame {
 
         jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 130, 250));
 
-        Return.setBackground(new java.awt.Color(255, 255, 255));
+        Return.setBackground(new java.awt.Color(103, 148, 153));
         Return.setForeground(new java.awt.Color(0, 0, 0));
         Return.setText("Regresar");
         Return.addActionListener(new java.awt.event.ActionListener() {

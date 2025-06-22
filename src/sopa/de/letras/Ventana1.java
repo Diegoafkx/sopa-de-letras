@@ -77,7 +77,7 @@ public class Ventana1 extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Search.setBackground(new java.awt.Color(255, 255, 255));
+        Search.setBackground(new java.awt.Color(103, 148, 153));
         Search.setForeground(new java.awt.Color(0, 0, 0));
         Search.setText("Buscador");
         Search.addActionListener(new java.awt.event.ActionListener() {
@@ -87,7 +87,7 @@ public class Ventana1 extends javax.swing.JFrame {
         });
         jPanel1.add(Search, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 220, 90, 30));
 
-        Continue.setBackground(new java.awt.Color(255, 255, 255));
+        Continue.setBackground(new java.awt.Color(103, 148, 153));
         Continue.setForeground(new java.awt.Color(0, 0, 0));
         Continue.setText("Continuar");
         Continue.addActionListener(new java.awt.event.ActionListener() {

@@ -87,7 +87,7 @@ public class menu extends javax.swing.JFrame {
         jPanel1.setPreferredSize(new java.awt.Dimension(1920, 1080));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        new_word.setBackground(new java.awt.Color(255, 255, 255));
+        new_word.setBackground(new java.awt.Color(103, 148, 153));
         new_word.setForeground(new java.awt.Color(0, 0, 0));
         new_word.setText("Agregar Palabra al Diccionario");
         new_word.addActionListener(new java.awt.event.ActionListener() {
@@ -97,7 +97,7 @@ public class menu extends javax.swing.JFrame {
         });
         jPanel1.add(new_word, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 400, 490, 90));
 
-        inicio.setBackground(new java.awt.Color(255, 255, 255));
+        inicio.setBackground(new java.awt.Color(103, 148, 153));
         inicio.setForeground(new java.awt.Color(0, 0, 0));
         inicio.setText("Iniciar Sopa de Letras");
         inicio.addActionListener(new java.awt.event.ActionListener() {
@@ -107,7 +107,7 @@ public class menu extends javax.swing.JFrame {
         });
         jPanel1.add(inicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 250, 490, 90));
 
-        ver_palabras.setBackground(new java.awt.Color(255, 255, 255));
+        ver_palabras.setBackground(new java.awt.Color(103, 148, 153));
         ver_palabras.setForeground(new java.awt.Color(0, 0, 0));
         ver_palabras.setText("Ver Diccionario");
         ver_palabras.addActionListener(new java.awt.event.ActionListener() {

@@ -78,7 +78,7 @@ public class Mostrar_Busqueda extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Regresar.setBackground(new java.awt.Color(255, 255, 255));
+        Regresar.setBackground(new java.awt.Color(103, 148, 153));
         Regresar.setForeground(new java.awt.Color(0, 0, 0));
         Regresar.setText("Regresar");
         Regresar.addActionListener(new java.awt.event.ActionListener() {
